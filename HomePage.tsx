@@ -7,6 +7,7 @@ import {
   ImageStyle,
   Image,
   Text,
+  TextInput,
 } from "react-native";
 
 const HomePage = () => {
@@ -16,8 +17,7 @@ const HomePage = () => {
       <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
-          <Image
-             
+          <Image   
             source={{
               uri: `https://cdn.builder.io/api/v1/image/assets/TEMP/2fe6238cae16bee719b5431619bced28b7eb02e6a193a55920a1961936296431?apiKey=42bb954c825745999302100cb42c8fd0&`,
             }}
@@ -34,10 +34,10 @@ const HomePage = () => {
           source={{
             uri: `https://cdn.builder.io/api/v1/image/assets/TEMP/fa2c6a261a92cb26dc7384595f18b312e18bb1bd2ee58852d1bb8b7e19d76c17?apiKey=42bb954c825745999302100cb42c8fd0&`,
           }}
-          style={styles.image2 as ImageStyle }
+          
         />
         <View style={styles.view6}>
-          <Text>Search for mental health support</Text>
+          <TextInput>Search for mental health support</TextInput>
         </View>
       </View>
       <View style={styles.view7}>
@@ -233,7 +233,7 @@ export default HomePage;
 const styles = StyleSheet.create({
   view1: {
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     maxWidth: 480,
     width: "100%",
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   },
   view2: {
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     width: "100%",
     flexDirection: "column",
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
   view13: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     marginTop: 8,
     width: "100%",
@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
   view17: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     width: "100%",
     gap: 20,
@@ -426,7 +426,7 @@ const styles = StyleSheet.create({
   view21: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     gap: 18,
     paddingVertical: 8,
@@ -471,7 +471,7 @@ const styles = StyleSheet.create({
   view26: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     marginTop: 8,
     width: "100%",
@@ -505,7 +505,7 @@ const styles = StyleSheet.create({
   view30: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     width: "100%",
     gap: 20,
@@ -540,7 +540,7 @@ const styles = StyleSheet.create({
   view34: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     width: "100%",
     gap: 20,
@@ -573,7 +573,7 @@ const styles = StyleSheet.create({
   view38: {
     justifyContent: "space-between",
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     gap: 19,
     paddingVertical: 14,
@@ -605,7 +605,7 @@ const styles = StyleSheet.create({
   },
   view42: {
     alignItems: "stretch",
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#grey",
     display: "flex",
     width: "100%",
     flexDirection: "column",
@@ -631,9 +631,7 @@ const styles = StyleSheet.create({
   image10: {
     alignSelf: "center",
     position: "relative",
-    width: 36,
-    backgroundColor:"blue",
-    aspectRatio: "1.49",
+    width: 50,
   },
   view45: {
 
@@ -681,7 +679,7 @@ const styles = StyleSheet.create({
     fontFamily: "Epilogue, sans-serif",
     marginTop: 8,
   },
-  view50: { backgroundColor: "#F7FAFC", minHeight: 20, width: "100%" },
+  view50: { backgroundColor: "#grey", minHeight: 20, width: "100%" },
 });
 
 
