@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
-import HomePage from '../../HomePage';
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { MaterialIcon } from '../Icons';
+// import { Icon } from 'react-native-elements'; EvilIcons
+import HomePage from '../HomePage';
+import SearchPage from '../SearchPage';
+import RequestConst from '../consultation/RequestConst';
+import Icon from 'react-native-vector-icons/Ionicons'
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import EvilIcons from 'react-native-vector-icons/EvilIcons'
 const BottomTabs = createBottomTabNavigator();
 
 export const BottomTabsNavigation: React.FC = () => {
@@ -18,7 +24,7 @@ export const BottomTabsNavigation: React.FC = () => {
           
           
         },
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
         headerStyle: {
           backgroundColor: '#e0f2fe'
         },
@@ -28,24 +34,23 @@ export const BottomTabsNavigation: React.FC = () => {
     >
       <BottomTabs.Screen
 
-        name="Home" component={HomePage}
+        name="Home" component={SearchPage}
         options={{
-         
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="home" color={color} size={30} />
+            <AntDesign size={25} name="home" color={color}/>
           ),
         }}
       />
       <BottomTabs.Screen
-        name="User" component={HomePage}
+        name="Exprets" component={RequestConst}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="user" color={color} size={30} />
+            <Icon name='person-outline' size={25} color={color} />       
           ),
         }}
       />
       <BottomTabs.Screen
-        name="groups" component={HomePage}
+        name="Community" component={HomePage}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="groups" color={color} size={30} />
@@ -53,18 +58,18 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="sticky_note_2" component={HomePage}
+        name="stories" component={HomePage}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="note" color={color} size={30} />
+            <MaterialIcons name="description" color={color} size={30} />
           ),
         }}
       />
       <BottomTabs.Screen
-        name="person" component={HomePage}
+        name="Profile" component={SearchPage}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="person" color={color} size={30} />
+            <EvilIcons name="user" size={30} color={color} />
           ),
         }}
       />

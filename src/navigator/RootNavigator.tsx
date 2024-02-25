@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomePage from '../../HomePage';
+import SearchPage from '../SearchPage';
+
 import { BottomTabsNavigation } from './BottomTabNavigator';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
@@ -19,7 +20,7 @@ export const RootNavigator: React.FC = () => {
       />
       <RootStack.Screen
         name="HomePage"
-        component={HomePage}
+        component={SearchPage}
         options={{ headerShown: false }}
       />
       {/* <RootStack.Screen

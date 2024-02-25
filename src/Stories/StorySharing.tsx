@@ -1,0 +1,309 @@
+import * as React from "react";
+import {
+  FlatList,
+  ScrollView,
+  View,
+  StyleSheet,
+  Image,
+  Text,
+} from "react-native";
+
+const StorySharing = () => {
+  return (
+    <View style={styles.view1}>
+      <View style={styles.view2}>
+        <View style={styles.view3}>
+          <View style={styles.view4}>
+            {/* <Image
+              resizeMode="auto"
+              source={{
+                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f0e34ffdba38061f3b26d2a43bae1e648d07cc208537a86428cafb3c4ded1a33?apiKey=42bb954c825745999302100cb42c8fd0&",
+              }}
+              style={styles.image1}
+            /> */}
+            <View style={styles.view5}>
+              <Text>Create a story</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.view6}>
+          {/* <Image
+            resizeMode="auto"
+            source={{
+              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/4ab555df0b2e44c85e54dd36aaf74b7cf724cc212ddabc4b782c612d0343d903?apiKey=42bb954c825745999302100cb42c8fd0&",
+            }}
+            style={styles.image2}
+          /> */}
+          <View style={styles.view7}>
+            <Text>What's your story?</Text>
+          </View>
+        </View>
+        <View style={styles.view8}>
+          <View style={styles.view9}>
+            <View style={styles.view10}>
+              <View style={styles.view11} />
+              <View style={styles.view12} />
+              <View style={styles.view13} />
+            </View>
+            <View style={styles.view14}>
+              <Text>When did you start to feel better?</Text>
+            </View>
+          </View>
+          <View style={styles.view15}>
+            <View style={styles.view16}>
+              <View style={styles.view17} />
+              <View style={styles.view18} />
+              <View style={styles.view19} />
+            </View>
+            <View style={styles.view20}>
+              <Text>How would you describe the recovery process?</Text>
+            </View>
+          </View>
+          <View style={styles.view21}>
+            <View style={styles.view22}>
+              <View style={styles.view23} />
+              <View style={styles.view24} />
+              <View style={styles.view25} />
+            </View>
+            <View style={styles.view26}>
+              <Text>What are some tips you'd like to share?</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.view27}>
+          <View style={styles.view28}>
+            <Text>Post story</Text>
+          </View>
+        </View>
+        <View style={styles.view29} />
+      </View>
+    </View>
+  );
+}
+export default StorySharing;
+const styles = StyleSheet.create({
+  view1: {
+    alignItems: "stretch",
+    backgroundColor: "#FFF",
+    display: "flex",
+    maxWidth: 480,
+    width: "100%",
+    flexDirection: "column",
+    justifyContent: "center",
+    marginHorizontal: 0,
+    marginVertical: "auto",
+  },
+  view2: {
+    alignItems: "stretch",
+    backgroundColor: "#FFF",
+    display: "flex",
+    width: "100%",
+    flexDirection: "column",
+  },
+  view3: {
+    alignItems: "stretch",
+    backgroundColor: "#FFF",
+    display: "flex",
+    width: "100%",
+    flexDirection: "column",
+    fontSize: 18,
+    color: "#121217",
+    fontWeight: "700",
+    padding: "16px 16px 8px",
+  },
+  view4: {
+    justifyContent: "space-between",
+    alignItems: "stretch",
+    display: "flex",
+    gap: 20,
+    padding: "12px 0",
+  },
+  image1: { position: "relative", width: 24, aspectRatio: 1 },
+  view5: {
+    // fontFeatureSettings: "'dlig' on",
+    fontFamily: "Inter, sans-serif",
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "auto",
+  },
+  view6: {
+    justifyContent: "space-between",
+    alignItems: 'flex-start',
+    borderRadius: 12,
+    border: "1px solid #DEDBE5",
+    backgroundColor: "#FFF",
+    alignSelf: "center",
+    display: "flex",
+    marginTop: 12,
+    width: "100%",
+    maxWidth: 358,
+    flexDirection: "column",
+    fontSize: 16,
+    color: "#BFBACF",
+    fontWeight: "400",
+    padding: "16px 80px 16px 17px",
+  },
+  image2: { position: "relative", width: 40, aspectRatio: 1 },
+  view7: {
+    // fontFeatureSettings: "'dlig' on",
+    fontFamily: "Inter, sans-serif",
+    marginTop: 368,
+  },
+  view8: {
+    alignItems: "stretch",
+    display: "flex",
+    marginTop: 12,
+    width: "100%",
+    flexDirection: "column",
+    padding: "0 16px",
+  },
+  view9: {
+    alignItems: "stretch",
+    display: "flex",
+    justifyContent: "space-between",
+    gap: 8,
+  },
+  view10: {
+    justifyContent: "center",
+    alignItems: "stretch",
+    display: "flex",
+    flexBasis: "0%",
+    flexDirection: "column",
+    padding: "0 16px",
+  },
+  view11: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
+  view12: {
+    borderRadius: 4,
+    backgroundColor: "#141414",
+    marginTop: 4,
+    flexShrink: 0,
+    height: 8,
+  },
+  view13: {
+    backgroundColor: "#DEDBE5",
+    marginTop: 4,
+    flexShrink: 0,
+    height: 24,
+  },
+  view14: {
+    color: "#121217",
+    // fontFeatureSettings: "'dlig' on",
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "auto",
+    margin: "auto 0",
+    fontFamily: 'Epilogue, sans-serif',
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 24, 
+  },
+  view15: {
+    alignItems: "stretch",
+    display: "flex",
+    justifyContent: "space-between",
+    gap: 8,
+  },
+  view16: {
+    justifyContent: "center",
+    alignItems: "stretch",
+    display: "flex",
+    flexBasis: "0%",
+    flexDirection: "column",
+    padding: "0 16px",
+  },
+  view17: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
+  view18: {
+    borderRadius: 4,
+    backgroundColor: "#141414",
+    marginTop: 4,
+    flexShrink: 0,
+    height: 8,
+  },
+  view19: {
+    backgroundColor: "#DEDBE5",
+    marginTop: 4,
+    flexShrink: 0,
+    height: 48,
+  },
+  view20: {
+    color: "#121217",
+    // fontFeatureSettings: "'dlig' on",
+    alignSelf: "flex-start",
+    marginTop: 12,
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: "auto",
+    fontFamily: 'Epilogue, sans-serif',
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 24, 
+  },
+  view21: {
+    alignItems: "stretch",
+    display: "flex",
+    justifyContent: "space-between",
+    gap: 8,
+  },
+  view22: {
+    justifyContent: "center",
+    alignItems: "stretch",
+    display: "flex",
+    flexBasis: "0%",
+    flexDirection: "column",
+    padding: "0 16px",
+  },
+  view23: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
+  view24: {
+    borderRadius: 4,
+    backgroundColor: "#141414",
+    marginTop: 4,
+    flexShrink: 0,
+    height: 8,
+  },
+  view25: {
+    backgroundColor: "#DEDBE5",
+    marginTop: 4,
+    flexShrink: 0,
+    height: 24,
+  },
+  view26: {
+    color: "#121217",
+    // fontFeatureSettings: "'dlig' on",
+    flexGrow: 1,
+    margin: "auto 0",
+    fontFamily: 'Epilogue, sans-serif',
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 24, 
+  },
+  view27: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 12,
+    backgroundColor: "#421AE5",
+    alignSelf: "center",
+    display: "flex",
+    marginTop: 12,
+    width: "100%",
+    maxWidth: 358,
+    fontSize: 16,
+    color: "#FFF",
+    fontWeight: "700",
+    letterSpacing: 0.24,
+    padding: "12px 60px",
+  },
+  view28: {
+    // fontFeatureSettings: "'dlig' on",
+    fontFamily: "Inter, sans-serif",
+    alignItems: "stretch",
+    backgroundColor: "#421AE5",
+    justifyContent: "center",
+  },
+  view29: {
+    backgroundColor: "#FFF",
+    minHeight: 20,
+    marginTop: 12,
+    width: "100%",
+  },
+});
+

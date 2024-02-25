@@ -9,6 +9,8 @@ import {
   Text,
   TextInput,
 } from "react-native";
+import AntDesign from 'react-native-vector-icons/AntDesign'
+
 
 const HomePage = () => {
   return (
@@ -66,13 +68,17 @@ const HomePage = () => {
             <Text>Psychologist</Text>
           </View>
         </View>
-        <Image
+        {/* <Image
            
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/0c3b361e53bb9be6dbeee212eabc873be3cf52ade18e50657e4679280c420603?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           style={styles.image3 as ImageStyle }
-        />
+        /> */}
+        <View style={styles.image3} >
+          <AntDesign size={25} name="home" color={"black"}/>
+        </View>
+        
       </View>
       <View style={styles.view17}>
         <View style={styles.view18}>
@@ -182,47 +188,7 @@ const HomePage = () => {
           style={styles.image9 as ImageStyle}
         />
       </View>
-      <View style={styles.view42}>
-        <View style={styles.view43}>
-          <View style={styles.view44}>
-            <Image
-               
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/e9a6fe5aff9de9f1dd270c7a873f8d0bb59637c28707d05426e3820e7562d040?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image10 as ImageStyle}
-            />
-            <View style={styles.view45}>
-              <Text>Home</Text>
-            </View>
-          </View>
-          <View style={styles.view46}>
-            <Image
-               
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/9f5c4cd5052ca4a7b09c009327ad9155f8c5d77963d1205f3ffc1ba1e3fabdc2?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image11 as ImageStyle}
-            />
-            <View style={styles.view47}>
-              <Text>Chat</Text>
-            </View>
-          </View>
-          <View style={styles.view48}>
-            <Image
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/47f467416da66fc4d4589feebff51a0cd7623734955d497039b96ab3ed67bf5d?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image12 as ImageStyle}
-            />
-            <View style={styles.view49}>
-              <Text>Profile</Text>
-            </View>
-          </View>
-        </View>
       </View>
-      <View style={styles.view50} />
-    </View>
     </View>
     </ScrollView>
   );
@@ -587,15 +553,7 @@ const styles = StyleSheet.create({
     flexBasis: "0%",
     flexDirection: "column",
   },
-  view40: {
-    color: "#0D141C",
-
-    // font: "500 16px Epilogue, sans-serif ",
-  },
-  view41: {
-    color: "#4F7596",
-    // font: "400 14px Epilogue, sans-serif ",
-  },
+  
   image9: {
     position: "relative",
     width: 24,
@@ -603,83 +561,6 @@ const styles = StyleSheet.create({
     marginTop: 0,
     aspectRatio: 1,
   },
-  view42: {
-    alignItems: "stretch",
-    backgroundColor: "#grey",
-    display: "flex",
-    width: "100%",
-    flexDirection: "column",
-    justifyContent: "center",
-    fontSize: 12,
-    color: "#4F7596",
-    fontWeight: "500",
-    textAlign: "center",
-    letterSpacing: 0.18,
-    paddingVertical: 11,
-    paddingHorizontal: 16,
-  },
-  view43: { alignItems: "stretch", display: "flex", gap: 8 },
-  view44: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    paddingVertical: 2,
-    paddingHorizontal: 39,
-  },
-  image10: {
-    alignSelf: "center",
-    position: "relative",
-    width: 50,
-  },
-  view45: {
-
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view46: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    color: "#0D141C",
-    paddingVertical: 2,
-    paddingHorizontal: 16,
-  },
-  image11: {
-    alignSelf: "center",
-    position: "relative",
-    width: 30,
-    aspectRatio: "1.25",
-  },
-  view47: {
-
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view48: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    paddingVertical: 2,
-    paddingHorizontal: 16,
-  },
-  image12: {
-    alignSelf: "center",
-    position: "relative",
-    width: 40,
-    aspectRatio: "1.67",
-  },
-  view49: {
-
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view50: { backgroundColor: "#grey", minHeight: 20, width: "100%" },
 });
 
 
