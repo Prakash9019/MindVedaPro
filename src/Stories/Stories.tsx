@@ -155,7 +155,10 @@ const Stories = () => {
         fontSize: 18,
         color: "#0D141C",
         fontWeight: "700",
-        padding: "16px 16px 8px",
+        paddingTop: 16,
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingBottom: 8,
       },
       view4: {
         justifyContent: "space-between",
