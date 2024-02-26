@@ -6,10 +6,16 @@ import {
   StyleSheet,
   Image,
   Text,
+  TouchableOpacity,
 } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
 
 const DoctorProfile = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
+    <ScrollView>
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
@@ -45,14 +51,14 @@ const DoctorProfile = () => {
           </View>
           <View style={styles.view10}>
             <View style={styles.view11}>
-              <View style={styles.view12}>
+              <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("RequestConst")} >
                 <Text>Request Consultation</Text>
-              </View>
+              </TouchableOpacity>
             </View>
             <View style={styles.view11}>
-              <View style={styles.view12}>
+              <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("MsgRequest")} >
                 <Text>Send Query Anonymously</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.view15}>
@@ -72,8 +78,8 @@ const DoctorProfile = () => {
         <View style={styles.view18}>
           <View style={styles.view19}>
             <View style={styles.view20}>
-              <View style={styles.view21}>
-                <Text>The secret to managing stress</Text>
+              <View>
+                <Text style={styles.view21}>The secret to managing stress</Text>
               </View>
               <View style={styles.view22}>
                 <Text>Mental Health · 3d ago · #StressRelief</Text>
@@ -91,8 +97,8 @@ const DoctorProfile = () => {
         <View style={styles.view23}>
           <View style={styles.view24}>
             <View style={styles.view25}>
-              <View style={styles.view21}>
-                <Text>How to overcome anxiety</Text>
+              <View>
+                <Text  style={styles.view21}>How to overcome anxiety</Text>
               </View>
               <View style={styles.view22}>
                 <Text>Mental Health · 5d ago · #Anxiety</Text>
@@ -110,8 +116,8 @@ const DoctorProfile = () => {
         <View style={styles.view23}>
           <View style={styles.view24}>
             <View style={styles.view25}>
-              <View style={styles.view21}>
-                <Text>What is burnout?</Text>
+              <View>
+                <Text  style={styles.view21}>What is burnout?</Text>
               </View>
               <View style={styles.view22}>
                 <Text>Mental Health · 8d ago · #Burnout</Text>
@@ -129,6 +135,7 @@ const DoctorProfile = () => {
         <View style={styles.view33} />
       </View>
     </View>
+    </ScrollView>
   );
 }
 
@@ -163,14 +170,18 @@ const styles = StyleSheet.create({
     color: "#0D141C",
     fontWeight: "700",
    
-    padding: "16px 16px 8px",
+    paddingTop: 16,
+    paddingRight: 16,
+    paddingBottom: 8,
+    paddingLeft: 16,
   },
   view4: {
     justifyContent: "space-between",
     alignItems: "stretch",
     display: "flex",
     gap: 20,
-    padding: "12px 0",
+    paddingBottom: 12,
+    paddingTop:12,
   },
   image1: { position: "relative", width: 24, aspectRatio: 1 },
   view5: {
@@ -188,7 +199,8 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     fontSize: 22,
     fontWeight: "700",
-    padding: "0 16px",
+    paddingLeft:16,
+    paddingRight:16,
   },
   image2: {
     position: "relative",
@@ -232,8 +244,10 @@ const styles = StyleSheet.create({
     flexBasis: "0%",
     flexDirection: "column",
     color: "#0D141C",
-   
-    padding: "10px 16px",
+    paddingTop: 10,
+    paddingRight: 16,
+    paddingBottom: 10,
+    paddingLeft: 16,
   },
   view12: {
     
@@ -286,7 +300,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexBasis: "0%",
     flexDirection: "column",
-    padding: "0 39px 21px 0",
+    paddingRight:39,
+    paddingBottom:21,
   },
   view21: {
     color: "#0D141C",

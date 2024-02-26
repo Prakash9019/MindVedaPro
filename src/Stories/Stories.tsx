@@ -6,10 +6,18 @@ import * as React from "react";
       StyleSheet,
       Image,
       Text,
+      TouchableOpacity,
     } from "react-native";
-
+ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
+import { Button } from "react-native-elements";
 const Stories = () => {
+  //const navigation=useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
+    <ScrollView>
         <View style={styles.view1}>
           <View style={styles.view2}>
             <View style={styles.view3}>
@@ -21,8 +29,8 @@ const Stories = () => {
                   }}
                   style={styles.image1}
                 /> */}
-                <View style={styles.view5}>
-                  <Text>Stories</Text>
+                <View>
+                  <Text  style={styles.view5}> Stories</Text>
                 </View>
                 {/* <Image
                   resizeMode="auto"
@@ -63,14 +71,14 @@ const Stories = () => {
             <View style={styles.view16}>
               <View style={styles.view17}>
                 <View style={styles.view18}>
-                  <View style={styles.view19}>
-                    <Text>Mental Health</Text>
+                  <View>
+                    <Text style={styles.view19}>Mental Health</Text>
                   </View>
                   <View style={styles.view20}>
                     <Text>Neeraj Chopra</Text>
                   </View>
-                  <View style={styles.view19}>
-                    <Text>How I gained confidence and overcame anxiety</Text>
+                  <View >
+                    <Text style={styles.view19}>How I gained confidence and overcame anxiety</Text>
                   </View>
                 </View>
                 {/* <Image
@@ -85,14 +93,14 @@ const Stories = () => {
             <View style={styles.view16}>
               <View style={styles.view17}>
                 <View style={styles.view18}>
-                  <View style={styles.view19}>
-                    <Text>Bipolar Disorder</Text>
+                  <View >
+                    <Text style={styles.view19}>Bipolar Disorder</Text>
                   </View>
-                  <View style={styles.view20}>
-                    <Text>Masa Vaishnavi</Text>
+                  <View >
+                    <Text style={styles.view20}>Masa Vaishnavi</Text>
                   </View>
-                  <View style={styles.view19}>
-                    <Text>
+                  <View >
+                    <Text style={styles.view19}>
                       Riding the waves: My experience with bipolar disorder
                     </Text>
                   </View>
@@ -112,15 +120,16 @@ const Stories = () => {
                   <Text>Do you have a story to share?</Text>
                 </View>
                 <View style={styles.view49}>
-                  <View style={styles.view50}>
+                  <TouchableOpacity style={styles.view50} onPress={()=> navigation.navigate("StorySharing")}>
                     <Text>Share</Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>
           
           </View>
         </View>
+        </ScrollView>
       );
     }
 
@@ -155,14 +164,18 @@ const Stories = () => {
         fontSize: 18,
         color: "#0D141C",
         fontWeight: "700",
-        padding: "16px 16px 8px",
+        paddingTop: 16,
+    paddingRight: 16,
+    paddingBottom: 8,
+    paddingLeft: 16,
       },
       view4: {
         justifyContent: "space-between",
         alignItems: "stretch",
         display: "flex",
         gap: 20,
-        padding: "12px 0",
+        paddingVertical: 12, // Padding for top and bottom
+        paddingHorizontal: 0, // Padding for left and right
       },
       image1: { position: "relative", width: 24, aspectRatio: 1 },
       view5: {
@@ -178,7 +191,10 @@ const Stories = () => {
         fontSize: 14,
         color: "#0D141C",
         fontWeight: "500",
-        padding: "12px 58px 12px 12px",
+        paddingTop: 12,
+    paddingRight: 58,
+    paddingBottom: 12,
+    paddingLeft: 12,
       },
       view7: {
         display: "flex",
@@ -194,7 +210,8 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
-        padding: "6px 16px",
+         paddingVertical: 6, // Padding for top and bottom
+         paddingHorizontal: 16, // Padding for left and right
       },
       view9: {
         // fontFeatureSettings: "'dlig' on",
@@ -204,7 +221,8 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
-        padding: "6px 16px",
+         paddingVertical: 6, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
       },
       view10: {
         // fontFeatureSettings: "'dlig' on",
@@ -214,7 +232,8 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
-        padding: "6px 16px",
+         paddingVertical: 6, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
       },
       view11: {
         display: "flex",
@@ -231,7 +250,8 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
-        padding: "6px 16px",
+         paddingVertical: 6, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
       },
       view13: {
         // fontFeatureSettings: "'dlig' on",
@@ -241,7 +261,8 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
-        padding: "6px 16px",
+         paddingVertical: 6, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
       },
       view14: {
         // fontFeatureSettings: "'dlig' on",
@@ -251,13 +272,15 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         marginTop: 12,
-        padding: "6px 16px",
+         paddingVertical: 6, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
       },
       view15: {
         color: "#0D141C",
         // fontFeatureSettings: "'dlig' on",
         alignSelf: "flex-start",
-        margin: "20px 0 0 16px",
+        marginTop: 20,
+        marginLeft: 16,
         fontFamily: 'Epilogue, sans-serif',
         fontWeight: '700',
         fontSize: 22,
@@ -286,7 +309,8 @@ const Stories = () => {
         flexGrow: 1,
         flexBasis: "0%",
         flexDirection: "column",
-        padding: "0 26px 21px 0",
+        paddingBottom:21,
+        paddingRight:26,
       },
       view19: {
         // fontFeatureSettings: "'dlig' on",
@@ -308,7 +332,8 @@ const Stories = () => {
         width: "100%",
         flexDirection: "column",
         color: "#0D141C",
-        padding: "12px 16px",
+        paddingVertical: 12, // Padding for top and bottom
+        paddingHorizontal: 16, // Padding for left and right
       },
       view47: {
         alignItems: "stretch",
@@ -321,7 +346,6 @@ const Stories = () => {
         flexGrow: 1,
         flexShrink: 1,
         flexBasis: "auto",
-        margin: "auto 0",
         fontFamily: 'Epilogue, sans-serif',
         fontWeight: '700',
         fontSize: 16,
@@ -336,7 +360,8 @@ const Stories = () => {
         flexDirection: "column",
         fontSize: 14,
         fontWeight: "500",
-        padding: "6px 22px",
+        paddingVertical: 6, // Padding for top and bottom
+        paddingHorizontal: 22, // Padding for left and right
       },
       view50: {
         // fontFeatureSettings: "'dlig' on",

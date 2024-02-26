@@ -5,6 +5,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { MaterialIcon } from '../Icons';
 // import { Icon } from 'react-native-elements'; MaterialCommunityIcons
 import HomePage from '../HomePage';
+import Stories from '../Stories/Stories';
+import DoctorProfile from '../Profiles/DoctorProfile';
 import SearchPage from '../SearchPage';
 import RequestConst from '../consultation/RequestConst';
 import MsgRequest from '../consultation/MsgRequest';
@@ -12,7 +14,7 @@ import RequestSent from '../consultation/RequestSent';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import EvilIcons from 'react-native-vector-icons/EvilIcons'
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 const BottomTabs = createBottomTabNavigator();
 
 export const BottomTabsNavigation: React.FC = () => {
@@ -23,7 +25,7 @@ export const BottomTabsNavigation: React.FC = () => {
         tabBarInactiveTintColor: '#6366f1',
         tabBarActiveTintColor: 'red',
         tabBarLabelStyle: {
-          fontSize: 20,
+          fontSize: 14,
           
           
         },
@@ -45,7 +47,7 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="Exprets" component={RequestConst}
+        name="Exprets" component={DoctorProfile}
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome6 name='user-graduate' size={25} color={color} />       
@@ -56,12 +58,12 @@ export const BottomTabsNavigation: React.FC = () => {
         name="Community" component={MsgRequest}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="groups" color={color} size={30} />
+            <MaterialIcons name="groups" color={color} size={35} />
           ),
         }}
       />
       <BottomTabs.Screen
-        name="stories" component={HomePage}
+        name="stories" component={Stories}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="description" color={color} size={30} />
@@ -72,7 +74,7 @@ export const BottomTabsNavigation: React.FC = () => {
         name="Profile" component={RequestSent}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <EvilIcons name="user" size={30} color={color} />
+            <FontAwesome5 name="user-circle" size={28} color={color} />
           ),
         }}
       />

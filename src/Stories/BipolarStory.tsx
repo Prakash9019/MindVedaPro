@@ -21,8 +21,8 @@ const BipolarStory = () => {
               }}
               style={styles.image1}
             /> */}
-            <View style={styles.view5}>
-              <Text>Stories</Text>
+            <View>
+              <Text  style={styles.view5}>Stories</Text>
             </View>
             {/* <Image
               resizeMode="auto"
@@ -39,8 +39,8 @@ const BipolarStory = () => {
         <View style={styles.view16}>
           <View style={styles.view17}>
             <View style={styles.view18}>
-              <View style={styles.view19}>
-                <Text>Bipolar Disorder</Text>
+              <View >
+                <Text style={styles.view19} >Bipolar Disorder</Text>
               </View>
               <View >
                 <Text style={styles.view20}>A.Prakash</Text>
@@ -61,8 +61,8 @@ const BipolarStory = () => {
         <View style={styles.view16}>
           <View style={styles.view17}>
             <View style={styles.view18}>
-              <View style={styles.view19}>
-                <Text>Bipolar Disorder</Text>
+              <View >
+                <Text style={styles.view19}>Bipolar Disorder</Text>
               </View>
               <View >
                 <Text style={styles.view20} >Pavan Kumar</Text>
@@ -129,14 +129,19 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     fontSize: 18,
     fontWeight: "700",
-    padding: "16px 16px 8px",
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 16,
+    paddingBottom: 8,
   },
   view4: {
     justifyContent: "space-between",
     alignItems: "stretch",
     display: "flex",
     gap: 20,
-    padding: "12px 0",
+    padding: 12,
+    paddingLeft: 0,
+    paddingRight: 0,
   },
   image1: { position: "relative", width: 24, aspectRatio: 1 },
   view5: {
@@ -147,7 +152,8 @@ const styles = StyleSheet.create({
   view15: {
     // fontFeatureSettings: "'dlig' on",
     alignSelf: "flex-start",
-    margin: "20px 0 0 16px",
+    marginTop: 20,
+    marginLeft: 16,
     fontFamily: 'Epilogue, sans-serif',
     fontWeight: '700',
     fontSize: 22,
@@ -177,7 +183,10 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexBasis: "0%",
     flexDirection: "column",
-    padding: "0 25px 21px 0",
+    paddingLeft: 0,
+    paddingRight: 25,
+    paddingTop: 0,
+    paddingBottom: 21,
   },
   view19: {
     // fontFeatureSettings: "'dlig' on",
@@ -210,7 +219,9 @@ const styles = StyleSheet.create({
     marginTop: 193,
     width: "100%",
     flexDirection: "column",
-    padding: "12px 16px",
+    padding: 12,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
   view29: {
     alignItems: "stretch",
@@ -223,7 +234,11 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
     flexBasis: "auto",
-    margin: "auto 0",
+    // margin: "auto 0",
+    flexDirection: 'row', // Assuming you want to center horizontally
+    justifyContent: 'center', // Center horizontally
+    alignItems: 'center', // Center vertically
+    flex: 1,
     fontFamily: 'Epilogue, sans-serif',
     fontWeight: '400',
     fontSize: 16,
@@ -238,7 +253,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     fontSize: 14,
     fontWeight: "500",
-    padding: "6px 22px",
+    padding: 6,
+    paddingLeft: 22,
+    paddingRight: 22,
   },
   view32: {
     // fontFeatureSettings: "'dlig' on",

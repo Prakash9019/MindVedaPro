@@ -6,9 +6,14 @@ import {
   StyleSheet,
   Image,
   Text,
+  TouchableOpacity,
 } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
 
 const RequestConst = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView>
     <View style={styles.view1}>
@@ -65,9 +70,9 @@ const RequestConst = () => {
             <Text>Anything else you'd like to share with your doctor?</Text>
           </View>
           <View style={styles.view15}>
-            <View style={styles.view16}>
+            <TouchableOpacity style={styles.view16} onPress={()=> navigation.navigate("RequestSent")} >
               <Text>Submit request</Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.view17} />

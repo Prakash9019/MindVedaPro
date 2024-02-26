@@ -67,7 +67,10 @@ const ThankForStory = () => {
         display: "flex",
         width: "100%",
         flexDirection: "column",
-        padding: "0 20px 50px",
+        paddingTop: 0,
+    paddingRight: 20,
+    paddingBottom: 50,
+    paddingLeft: 20,
       },
       view3: {
         alignItems: 'flex-start',
@@ -76,7 +79,10 @@ const ThankForStory = () => {
         width: "100%",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "24px 60px 24px 16px",
+        paddingTop: 24,
+    paddingRight: 60,
+    paddingBottom: 24,
+    paddingLeft: 16,
       },
       image1: { position: "relative", width: 24, aspectRatio: 1 },
       view4: {
@@ -121,7 +127,8 @@ const ThankForStory = () => {
         color: "#F7FAFC",
         fontWeight: "700",
         letterSpacing: 0.24,
-        padding: "12px 60px",
+        paddingVertical: 12, // Padding for top and bottom
+        paddingHorizontal: 60, // Padding for left and right
       },
       view8: {
         // fontFeatureSettings: "'dlig' on",
@@ -134,7 +141,8 @@ const ThankForStory = () => {
         backgroundColor: "#F7FAFC",
         minHeight: 20,
         width: "100%",
-        margin: "12px 0 187px",
+        marginTop: 12,
+    marginBottom: 187,
       },
     });
     

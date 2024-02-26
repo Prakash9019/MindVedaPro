@@ -6,10 +6,16 @@ import {
   StyleSheet,
   Image,
   Text,
+  TouchableOpacity,
 } from "react-native";
-
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+// import StorySharing from "./StorySharing";
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
 const StorySharing = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
+    <ScrollView>
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
@@ -71,13 +77,14 @@ const StorySharing = () => {
           </View>
         </View>
         <View style={styles.view27}>
-          <View style={styles.view28}>
+          <TouchableOpacity style={styles.view28} onPress={()=>navigation.navigate("ThankForStory")}>
             <Text>Post story</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.view29} />
       </View>
     </View>
+    </ScrollView>
   );
 }
 export default StorySharing;
@@ -109,14 +116,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#121217",
     fontWeight: "700",
-    padding: "16px 16px 8px",
+    paddingTop: 16,
+    paddingRight: 16,
+    paddingBottom: 8,
+    paddingLeft: 16,
   },
   view4: {
     justifyContent: "space-between",
     alignItems: "stretch",
     display: "flex",
     gap: 20,
-    padding: "12px 0",
+    paddingVertical: 12, // Padding for top and bottom
+    paddingHorizontal: 0, // Padding for left and right
   },
   image1: { position: "relative", width: 24, aspectRatio: 1 },
   view5: {
@@ -130,7 +141,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: 'flex-start',
     borderRadius: 12,
-    border: "1px solid #DEDBE5",
+    borderWidth: 1,
+    borderColor: '#DEDBE5',
+    borderStyle: 'solid',
     backgroundColor: "#FFF",
     alignSelf: "center",
     display: "flex",
@@ -141,7 +154,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#BFBACF",
     fontWeight: "400",
-    padding: "16px 80px 16px 17px",
+    paddingTop: 16,
+    paddingRight: 80,
+    paddingBottom: 16,
+    paddingLeft: 17,
   },
   image2: { position: "relative", width: 40, aspectRatio: 1 },
   view7: {
@@ -155,7 +171,8 @@ const styles = StyleSheet.create({
     marginTop: 12,
     width: "100%",
     flexDirection: "column",
-    padding: "0 16px",
+    paddingVertical: 0, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
   },
   view9: {
     alignItems: "stretch",
@@ -169,7 +186,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexBasis: "0%",
     flexDirection: "column",
-    padding: "0 16px",
+    paddingVertical: 0, // Padding for top and bottom
+    paddingHorizontal: 16, // Padding for left and right
   },
   view11: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
   view12: {
@@ -191,7 +209,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
     flexBasis: "auto",
-    margin: "auto 0",
+    // margin: "auto 0",
     fontFamily: 'Epilogue, sans-serif',
     fontSize: 16,
     fontWeight: '500',
@@ -215,7 +233,7 @@ const styles = StyleSheet.create({
     color: "#121217",
     // fontFeatureSettings: "'dlig' on",
     flexGrow: 1,
-    margin: "auto 0",
+    // margin: "auto 0",
     fontFamily: 'Epilogue, sans-serif',
     fontSize: 16,
     fontWeight: '500',
@@ -235,7 +253,8 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontWeight: "700",
     letterSpacing: 0.24,
-    padding: "12px 60px",
+    paddingVertical: 12, // Padding for top and bottom
+    paddingHorizontal: 60, // Padding for left and right
   },
   view28: {
     // fontFeatureSettings: "'dlig' on",
