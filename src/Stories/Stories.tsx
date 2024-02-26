@@ -165,9 +165,9 @@ const Stories = () => {
         color: "#0D141C",
         fontWeight: "700",
         paddingTop: 16,
+    paddingLeft: 16,
     paddingRight: 16,
     paddingBottom: 8,
-    paddingLeft: 16,
       },
       view4: {
         justifyContent: "space-between",
@@ -192,9 +192,9 @@ const Stories = () => {
         color: "#0D141C",
         fontWeight: "500",
         paddingTop: 12,
+    paddingLeft: 12,
     paddingRight: 58,
     paddingBottom: 12,
-    paddingLeft: 12,
       },
       view7: {
         display: "flex",
