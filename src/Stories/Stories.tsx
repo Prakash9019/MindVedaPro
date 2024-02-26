@@ -155,7 +155,6 @@ const Stories = () => {
         fontSize: 18,
         color: "#0D141C",
         fontWeight: "700",
-        whiteSpace: "nowrap",
         padding: "16px 16px 8px",
       },
       view4: {
@@ -186,7 +185,6 @@ const Stories = () => {
         alignItems: "stretch",
         justifyContent: "space-between",
         gap: 12,
-        whiteSpace: "nowrap",
       },
       view8: {
         // fontFeatureSettings: "'dlig' on",
@@ -224,7 +222,6 @@ const Stories = () => {
         alignItems: "stretch",
         justifyContent: "space-between",
         gap: 12,
-        whiteSpace: "nowrap",
       },
       view12: {
         // fontFeatureSettings: "'dlig' on",
@@ -260,7 +257,6 @@ const Stories = () => {
         color: "#0D141C",
         // fontFeatureSettings: "'dlig' on",
         alignSelf: "flex-start",
-        whiteSpace: "nowrap",
         margin: "20px 0 0 16px",
         fontFamily: 'Epilogue, sans-serif',
         fontWeight: '700',
@@ -340,7 +336,6 @@ const Stories = () => {
         flexDirection: "column",
         fontSize: 14,
         fontWeight: "500",
-        whiteSpace: "nowrap",
         padding: "6px 22px",
       },
       view50: {

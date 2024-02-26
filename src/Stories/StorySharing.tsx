@@ -49,21 +49,21 @@ const StorySharing = () => {
               <Text>When did you start to feel better?</Text>
             </View>
           </View>
-          <View style={styles.view15}>
-            <View style={styles.view16}>
-              <View style={styles.view17} />
-              <View style={styles.view18} />
-              <View style={styles.view19} />
+          <View style={styles.view9}>
+            <View style={styles.view10}>
+              <View style={styles.view11} />
+              <View style={styles.view12} />
+              <View style={styles.view13} />
             </View>
             <View style={styles.view20}>
               <Text>How would you describe the recovery process?</Text>
             </View>
           </View>
-          <View style={styles.view21}>
-            <View style={styles.view22}>
-              <View style={styles.view23} />
-              <View style={styles.view24} />
-              <View style={styles.view25} />
+          <View style={styles.view9}>
+            <View style={styles.view10}>
+              <View style={styles.view11} />
+              <View style={styles.view12} />
+              <View style={styles.view13} />
             </View>
             <View style={styles.view26}>
               <Text>What are some tips you'd like to share?</Text>
@@ -197,34 +197,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 24, 
   },
-  view15: {
-    alignItems: "stretch",
-    display: "flex",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  view16: {
-    justifyContent: "center",
-    alignItems: "stretch",
-    display: "flex",
-    flexBasis: "0%",
-    flexDirection: "column",
-    padding: "0 16px",
-  },
-  view17: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
-  view18: {
-    borderRadius: 4,
-    backgroundColor: "#141414",
-    marginTop: 4,
-    flexShrink: 0,
-    height: 8,
-  },
-  view19: {
-    backgroundColor: "#DEDBE5",
-    marginTop: 4,
-    flexShrink: 0,
-    height: 48,
-  },
+  
   view20: {
     color: "#121217",
     // fontFeatureSettings: "'dlig' on",
@@ -237,34 +210,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 24, 
-  },
-  view21: {
-    alignItems: "stretch",
-    display: "flex",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  view22: {
-    justifyContent: "center",
-    alignItems: "stretch",
-    display: "flex",
-    flexBasis: "0%",
-    flexDirection: "column",
-    padding: "0 16px",
-  },
-  view23: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
-  view24: {
-    borderRadius: 4,
-    backgroundColor: "#141414",
-    marginTop: 4,
-    flexShrink: 0,
-    height: 8,
-  },
-  view25: {
-    backgroundColor: "#DEDBE5",
-    marginTop: 4,
-    flexShrink: 0,
-    height: 24,
   },
   view26: {
     color: "#121217",

@@ -120,7 +120,6 @@ const ThankForStory = () => {
         fontSize: 16,
         color: "#F7FAFC",
         fontWeight: "700",
-        whiteSpace: "nowrap",
         letterSpacing: 0.24,
         padding: "12px 60px",
       },
