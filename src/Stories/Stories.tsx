@@ -178,7 +178,10 @@ const Stories = () => {
         fontSize: 14,
         color: "#0D141C",
         fontWeight: "500",
-        padding: "12px 58px 12px 12px",
+        paddingTop: 12,
+    paddingLeft: 12,
+    paddingRight: 58,
+    paddingBottom: 12,
       },
       view7: {
         display: "flex",
