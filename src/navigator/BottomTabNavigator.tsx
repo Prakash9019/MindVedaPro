@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { MaterialIcon } from '../Icons';
-// import { Icon } from 'react-native-elements'; MaterialCommunityIcons
+// import { Icon } from 'react-native-elements'; AntDesign
 import HomePage from '../HomePage';
 import Stories from '../Stories/Stories';
 import DoctorProfile from '../Profiles/DoctorProfile';

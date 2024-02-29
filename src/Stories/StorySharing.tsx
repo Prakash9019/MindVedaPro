@@ -4,16 +4,14 @@ import {
   ScrollView,
   View,
   StyleSheet,
+  TextInput,
   Image,
   Text,
   TouchableOpacity,
 } from "react-native";
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-// import StorySharing from "./StorySharing";
-import {RootStackParamList} from '../type';
- import {  useNavigation } from '@react-navigation/native';
 const StorySharing = () => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const [value, onChangeText] =React.useState("");
+ // const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView>
     <View style={styles.view1}>
@@ -40,10 +38,19 @@ const StorySharing = () => {
             }}
             style={styles.image2}
           /> */}
-          <View style={styles.view7}>
-            <Text>What's your story?</Text>
-          </View>
+          {/* <View style={styles.view7}> */}
+          <TextInput
+        editable
+        multiline={true}
+        numberOfLines={10}
+        onChangeText={text => onChangeText(text)}
+        value={value}
+        placeholder="What's your story?" style={styles.view7}
+      />
+            {/* <TextInput  placeholder="What's your story?" style={styles.view7}/> */}
+          {/* </View> */}
         </View>
+       
         <View style={styles.view8}>
           <View style={styles.view9}>
             <View style={styles.view10}>
@@ -77,7 +84,7 @@ const StorySharing = () => {
           </View>
         </View>
         <View style={styles.view27}>
-          <TouchableOpacity style={styles.view28} onPress={()=>navigation.navigate("ThankForStory")}>
+          <TouchableOpacity style={styles.view28}>
             <Text>Post story</Text>
           </TouchableOpacity>
         </View>
@@ -166,19 +173,20 @@ const styles = StyleSheet.create({
     marginTop: 368,
   },
   view8: {
-    alignItems: "stretch",
+    // alignItems: "stretch",
     display: "flex",
     marginTop: 12,
-    width: "100%",
-    flexDirection: "column",
+    // width: "100%",
+    // flexDirection: "column",
     paddingVertical: 0, // Padding for top and bottom
     paddingHorizontal: 16, // Padding for left and right
   },
   view9: {
-    alignItems: "stretch",
+  //  alignItems: "stretch",
     display: "flex",
+     flexDirection:"row",
     justifyContent: "space-between",
-    gap: 8,
+    // gap: 2,
   },
   view10: {
     justifyContent: "center",
@@ -186,22 +194,22 @@ const styles = StyleSheet.create({
     display: "flex",
     flexBasis: "0%",
     flexDirection: "column",
-    paddingVertical: 0, // Padding for top and bottom
-    paddingHorizontal: 16, // Padding for left and right
   },
-  view11: { backgroundColor: "#DEDBE5", flexShrink: 0, height: 16 },
+  view11: { backgroundColor:"blue", flexShrink: 0, height: 16 },
   view12: {
     borderRadius: 4,
-    backgroundColor: "#141414",
+    backgroundColor:"blue",
     marginTop: 4,
     flexShrink: 0,
+    // marginRight:325,
     height: 8,
   },
   view13: {
-    backgroundColor: "#DEDBE5",
+    backgroundColor:"blue",
     marginTop: 4,
     flexShrink: 0,
-    height: 24,
+    height: 14,
+    // marginRight:325,
   },
   view14: {
     color: "#121217",
@@ -217,7 +225,7 @@ const styles = StyleSheet.create({
   },
   
   view20: {
-    color: "#121217",
+    backgroundColor:"blue",
     // fontFeatureSettings: "'dlig' on",
     alignSelf: "flex-start",
     marginTop: 12,
@@ -269,5 +277,37 @@ const styles = StyleSheet.create({
     marginTop: 12,
     width: "100%",
   },
+  progressBarSection: {
+    marginTop: 12,
+    paddingVertical: 12,
+  },
+  progressBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#DEDBE5",
+    height: 8,
+    borderRadius: 4,
+  },
+  progressBarComplete: {
+    backgroundColor: "#141414",
+    height: 8,
+    flex: 2,
+  },
+  progressIndicator: {
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: "#141414",
+    marginHorizontal: 4,
+  },
+  progressBarRemaining: {
+    flex: 3,
+    height: 8,
+    backgroundColor: "#DEDBE5",
+  },
+  questionText: {
+    marginTop: 8,
+  },
+
 });
 

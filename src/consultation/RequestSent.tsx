@@ -4,11 +4,16 @@ import {
   ScrollView,
   View,
   StyleSheet,
+  TouchableOpacity,
   Image,
   Text,
 } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
 
 const RequestSent = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.view1}>
       <View style={styles.view2}>
@@ -32,9 +37,9 @@ const RequestSent = () => {
             </Text>
           </View>
           <View style={styles.view7}>
-            <View style={styles.view8}>
-              <Text>Back to profile</Text>
-            </View>
+          <TouchableOpacity style={styles.view8} onPress={()=> navigation.navigate("Stories")} >
+              <Text style={{color:"white"}}>Back to Profile</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.view9} />
@@ -120,7 +125,7 @@ const styles = StyleSheet.create({
   view8: {
     // fontFeatureSettings: "'dlig' on",
     fontFamily: "Inter, sans-serif",
-    alignItems: "stretch",
+    alignItems: "center",
     backgroundColor: "#1A5CE5",
     justifyContent: "center",
   },

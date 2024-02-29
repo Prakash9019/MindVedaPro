@@ -41,7 +41,6 @@ const Stories = () => {
                 /> */}
               </View>
             </View>
-            <View style={styles.view6}>
               <View style={styles.view7}>
                 <View style={styles.view8}>
                   <Text>All stories</Text>
@@ -53,18 +52,7 @@ const Stories = () => {
                   <Text>Depression</Text>
                 </View>
               </View>
-              <View style={styles.view11}>
-                <View style={styles.view12}>
-                  <Text>Paranoia</Text>
-                </View>
-                <View style={styles.view13}>
-                  <Text>Schizophrenia</Text>
-                </View>
-              </View>
-              <View style={styles.view14}>
-                <Text>Bipolar Disorder</Text>
-              </View>
-            </View>
+             
             <View style={styles.view15}>
               <Text>Positive stories</Text>
             </View>
@@ -116,15 +104,15 @@ const Stories = () => {
             </View>
             <View style={styles.view46}>
               <View style={styles.view47}>
-                <View style={styles.view48}>
+                {/* <View style={styles.view48}> */}
                   <Text>Do you have a story to share?</Text>
-                </View>
-                <View style={styles.view49}>
+                {/* </View> */}
+                {/* <View style={styles.view49}> */}
                   <TouchableOpacity style={styles.view50} onPress={()=> navigation.navigate("StorySharing")}>
                     <Text>Share</Text>
                   </TouchableOpacity>
                 </View>
-              </View>
+              {/* </View> */}
             </View>
           
           </View>
@@ -190,6 +178,8 @@ const Stories = () => {
         alignItems: "stretch",
         fontSize: 14,
         color: "#0D141C",
+        marginLeft: 12,
+        marginRight: 12,
         fontWeight: "500",
         paddingTop: 12,
     paddingLeft: 12,
@@ -198,20 +188,21 @@ const Stories = () => {
       },
       view7: {
         display: "flex",
-        alignItems: "stretch",
-        justifyContent: "space-between",
-        gap: 12,
+        alignItems: "center",
+        flexDirection: "row" ,marginLeft: 20, justifyContent: 'space-evenly',
+        marginRight:12,
       },
       view8: {
         // fontFeatureSettings: "'dlig' on",
         fontFamily: "Epilogue, sans-serif",
         justifyContent: "center",
-        alignItems: "stretch",
+        alignItems: "center",
         borderRadius: 12,
+         marginRight: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
          paddingVertical: 6, // Padding for top and bottom
-         paddingHorizontal: 16, // Padding for left and right
+         paddingHorizontal: 6, // Padding for left and right
       },
       view9: {
         // fontFeatureSettings: "'dlig' on",
@@ -219,6 +210,7 @@ const Stories = () => {
         justifyContent: "center",
         alignItems: "stretch",
         borderRadius: 12,
+        // marginLeft: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
          paddingVertical: 6, // Padding for top and bottom
@@ -232,49 +224,11 @@ const Stories = () => {
         borderRadius: 12,
         backgroundColor: "#E8EDF2",
         flexGrow: 1,
+        marginLeft: 12,
          paddingVertical: 6, // Padding for top and bottom
     paddingHorizontal: 16, // Padding for left and right
       },
-      view11: {
-        display: "flex",
-        marginTop: 12,
-        alignItems: "stretch",
-        justifyContent: "space-between",
-        gap: 12,
-      },
-      view12: {
-        // fontFeatureSettings: "'dlig' on",
-        fontFamily: "Epilogue, sans-serif",
-        justifyContent: "center",
-        alignItems: "stretch",
-        borderRadius: 12,
-        backgroundColor: "#E8EDF2",
-        flexGrow: 1,
-         paddingVertical: 6, // Padding for top and bottom
-    paddingHorizontal: 16, // Padding for left and right
-      },
-      view13: {
-        // fontFeatureSettings: "'dlig' on",
-        fontFamily: "Epilogue, sans-serif",
-        justifyContent: "center",
-        alignItems: "stretch",
-        borderRadius: 12,
-        backgroundColor: "#E8EDF2",
-        flexGrow: 1,
-         paddingVertical: 6, // Padding for top and bottom
-    paddingHorizontal: 16, // Padding for left and right
-      },
-      view14: {
-        // fontFeatureSettings: "'dlig' on",
-        fontFamily: "Epilogue, sans-serif",
-        justifyContent: "center",
-        alignItems: "stretch",
-        borderRadius: 12,
-        backgroundColor: "#E8EDF2",
-        marginTop: 12,
-         paddingVertical: 6, // Padding for top and bottom
-    paddingHorizontal: 16, // Padding for left and right
-      },
+
       view15: {
         color: "#0D141C",
         // fontFeatureSettings: "'dlig' on",
@@ -336,39 +290,23 @@ const Stories = () => {
         paddingHorizontal: 16, // Padding for left and right
       },
       view47: {
-        alignItems: "stretch",
+        // alignItems: "stretch",
         display: "flex",
+        flexDirection: "row",
         justifyContent: "space-between",
-        gap: 20,
-      },
-      view48: {
-        // fontFeatureSettings: "'dlig' on",
-        flexGrow: 1,
-        flexShrink: 1,
-        flexBasis: "auto",
-        fontFamily: 'Epilogue, sans-serif',
-        fontWeight: '700',
-        fontSize: 16,
-      },
-      view49: {
-        justifyContent: "center",
-        alignItems: "stretch",
-        borderRadius: 12,
-        backgroundColor: "#E8EDF2",
-        display: "flex",
-        flexBasis: "0%",
-        flexDirection: "column",
-        fontSize: 14,
-        fontWeight: "500",
-        paddingVertical: 6, // Padding for top and bottom
-        paddingHorizontal: 22, // Padding for left and right
+        gap: 2,
       },
       view50: {
         // fontFeatureSettings: "'dlig' on",
         fontFamily: "Epilogue, sans-serif",
-        alignItems: "stretch",
+        paddingTop: 8,
+        borderRadius: 12,
+        paddingBottom: 8,
+        paddingLeft: 12,
+        paddingRight: 12,
         backgroundColor: "#E8EDF2",
-        aspectRatio: "1.9",
         justifyContent: "center",
+        alignItems: "center",
+        // alignItems: "flex-end",
       },
     });

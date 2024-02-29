@@ -3,6 +3,8 @@ import {
     ScrollView,
     View,
     StyleSheet,
+    TextInput,
+    TouchableOpacity,
     Image,
     Text,
   } from "react-native";
@@ -28,14 +30,15 @@ const MsgRequest = () => {
                 <Text>Your message</Text>
               </View>
               <View style={styles.view7}>
-                <Text>
-                  What are the main reasons you're reaching out to this expert for?
-                </Text>
+              <TextInput style={{marginRight:12,}} placeholder="What are the main reasons you're reaching 
+               out to this expert for?" />
               </View>
               <View style={styles.view8}>
-                <View style={styles.view9}>
-                  <Text>Send message request</Text>
-                </View>
+              {/* onPress={()=> navigation.navigate("Stories")} */}
+              <TouchableOpacity style={styles.view9}  >
+              <Text style={{color:"white"}}>Send message request</Text>
+            </TouchableOpacity>
+               
               </View>
             </View>
             <View style={styles.view10} />
@@ -112,7 +115,8 @@ export default MsgRequest;
         borderColor: '#DBDEE5',
         borderStyle: 'solid',
         backgroundColor: "#FFF",
-        marginTop: 8,
+        marginTop: 3,
+        marginBottom: 3,
         color: "#637087",
         fontWeight: "400",
         paddingTop: 15,

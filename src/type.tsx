@@ -15,6 +15,7 @@ export type RootStackParamList = {
     ThankForStory: undefined;
     RequestConst: undefined;
     MsgRequest: undefined;
+    Stories: undefined;
     RequestSent: undefined;
     // details: {id: string, name: string, description: string,images: string[],  price: string;};
 }

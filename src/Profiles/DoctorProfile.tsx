@@ -11,6 +11,7 @@ import {
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
  import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const DoctorProfile = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -20,13 +21,11 @@ const DoctorProfile = () => {
       <View style={styles.view2}>
         <View style={styles.view3}>
           <View style={styles.view4}>
-            {/* <Image
-              // 
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/0039fa493d745ec2d42d736904cd6cb00840c6faa8124d03081b9cc8db125cb8?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image1}
-            /> */}
+            <TouchableOpacity >
+            <AntDesign size={25} name="arrowleft"/>
+            </TouchableOpacity>
+          <AntDesign size={25} name="arrowleft"/>
+
             <View style={styles.view5}>
               <Text>Profile</Text>
             </View>
@@ -226,10 +225,13 @@ const styles = StyleSheet.create({
   },
  
   view10: {
-    alignItems: "stretch",
     display: "flex",
-    marginTop: 16,
-    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row" ,
+    // marginLeft: 20,
+     justifyContent: 'space-evenly',
+    marginRight:12,
+    // marginTop: 16,
     gap: 12,
     fontSize: 14,
     letterSpacing: 0.21,
@@ -245,14 +247,14 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     color: "#0D141C",
     paddingTop: 10,
-    paddingRight: 16,
+    paddingRight: 3,
     paddingBottom: 10,
-    paddingLeft: 16,
+    paddingLeft: 3,
   },
   view12: {
     
     fontFamily: "Inter, sans-serif",
-    alignItems: "stretch",
+    // alignItems: "stretch",
     backgroundColor: "#E8EDF2",
     justifyContent: "center",
   },

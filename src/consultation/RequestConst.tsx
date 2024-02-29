@@ -7,6 +7,7 @@ import {
   Image,
   Text,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
@@ -31,9 +32,7 @@ const RequestConst = () => {
             <Text style={styles.view5} >Request a Consultation</Text>
           </View>
           <View style={styles.view6}>
-            <View style={styles.view7}>
               <Text>Select date and time</Text>
-            </View>
             {/* <Image
               resizeMode="auto"
               source={{
@@ -46,15 +45,14 @@ const RequestConst = () => {
             <Text>Your concerns</Text>
           </View>
           <View style={styles.view9}>
-            <Text>What are the main reasons you're seeking help for?</Text>
+            <TextInput placeholder="What are the main reasons you're seeking help for?"/>
           </View>
           <View style={styles.view8}>
             <Text>Preferred consultation method</Text>
           </View>
           <View style={styles.view9}>
-            <View style={styles.view7}>
-              <Text>Video call, in-person, no preference</Text>
-            </View>
+            <TextInput placeholder="Video call, in-person, no preference" />
+           
             {/* <Image
               resizeMode="auto"
               source={{
@@ -63,15 +61,15 @@ const RequestConst = () => {
               style={styles.image3}
             /> */}
           </View>
-          <View style={styles.view13}>
+          <View style={styles.view8}>
             <Text>Additional notes</Text>
           </View>
           <View style={styles.view9}>
-            <Text>Anything else you'd like to share with your doctor?</Text>
+          <TextInput placeholder="Anything else you'd like to share with your doctor?"/>
           </View>
           <View style={styles.view15}>
             <TouchableOpacity style={styles.view16} onPress={()=> navigation.navigate("RequestSent")} >
-              <Text>Submit request</Text>
+              <Text style={{color:"white"}}>Submit request</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -142,52 +140,43 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     display: "flex",
     marginTop: 24,
+    marginLeft: 10,
+    marginRight: 12,
     gap: 20,
     color: "#637087",
     paddingVertical: 16,
     paddingHorizontal: 15,
   },
-  view7: {
-   // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Inter, sans-serif",
-    flexGrow: 1,
-    flexShrink: 1,
-    flexBasis: "auto",
-  },
+
   image2: { position: "relative", width: 24, aspectRatio: "1" },
   view8: {
   //  fontFeatureSettings: "'dlig' on",
     fontFamily: "Inter, sans-serif",
     fontWeight: "500",
     marginTop: 24,
+    marginLeft: 10,
   },
   view9: {
 
     fontFamily: "Inter, sans-serif",
     justifyContent: "space-between",
-    alignItems: "stretch",
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#DBDEE5',
     borderStyle: 'solid',
     backgroundColor: "#FFF",
     marginTop: 8,
+    marginLeft: 10,
+    marginRight: 12,
     color: "#637087",
-    paddingTop: 15,
+    // paddingTop: 15,
     paddingRight: 15,
-    paddingLeft: 15,
+    // paddingLeft: 15,
     paddingBottom: 84,
   },
   
   
   image3: { position: "relative", width: 24, aspectRatio: "1" },
-  view13: {
-
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "500",
-    marginTop: 24,
-    // whiteSpace: "nowrap",
-  },
   
   view15: {
     justifyContent: "center",
@@ -196,17 +185,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#1A5CE5",
     display: "flex",
     marginTop: 24,
+    marginLeft: 100,
+    marginRight: 100,
     color: "#FFF",
     fontWeight: "700",
     // whiteSpace: "nowrap",
     letterSpacing: 0.24,
-    paddingVertical: 12,
-    paddingHorizontal: 60,
+    // color: "#FFF",
+    // fontWeight: "700",
+    // // whiteSpace: "nowrap",
+    // letterSpacing: 0.24,
+    paddingVertical: 9,
+    paddingHorizontal: 6,
   },
   view16: {
     fontFamily: "Inter, sans-serif",
-    alignItems: "stretch",
-    backgroundColor: "#1A5CE5",
+    alignItems: "center",
+    color: "red",
+    // backgroundColor: "white",
     justifyContent: "center",
   },
   view17: {
