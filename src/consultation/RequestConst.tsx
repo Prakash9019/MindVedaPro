@@ -9,64 +9,74 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import DatePicker from 'react-native-date-picker'
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
  import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign'
+ import Foundation from 'react-native-vector-icons/Foundation'
 
 const RequestConst = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const [date, setDate] = React.useState(new Date())
+  const [open, setOpen] = React.useState(false)
+  const [value, onChangeText] = React.useState('');
   return (
     <ScrollView>
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
-          <Image
-            source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/82a8f6a4069aaecb2290702867cfe0f01e2f73cf101a47e09524b0a1f8185a98?apiKey=42bb954c825745999302100cb42c8fd0&",
-            }}
-            style={styles.image1}
-          />
+        <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
         </View>
         <View style={styles.view4}>
           <View >
             <Text style={styles.view5} >Request a Consultation</Text>
           </View>
           <View style={styles.view6}>
-              <Text>Select date and time</Text>
-            {/* <Image
-              resizeMode="auto"
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/781e7c67f55f475eb2897edb3fecb01daa0bb79267d827a128555a9cba5acfb6?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image2}
-            /> */}
+          <TouchableOpacity onPress={() => setOpen(true)} ><Text>Select date and time</Text></TouchableOpacity>
+              <Foundation size={25} name="calendar"/>
+              {/* <DatePicker  mode="datetime"/> */}
+              <DatePicker
+        modal
+        open={open}
+        date={date}
+        onConfirm={(date) => {
+          setOpen(false)
+          setDate(date)
+        }}
+        onCancel={() => {
+          setOpen(false)
+        }}
+      />
           </View>
           <View style={styles.view8}>
             <Text>Your concerns</Text>
           </View>
-          <View style={styles.view9}>
-            <TextInput placeholder="What are the main reasons you're seeking help for?"/>
-          </View>
+          <TextInput editable multiline={true} numberOfLines={2} onChangeText={text => onChangeText(text)} value={value}
+        placeholder="What are the main reasons you're seeking help for?" style={styles.view9}
+      />
+         
           <View style={styles.view8}>
             <Text>Preferred consultation method</Text>
           </View>
           <View style={styles.view9}>
-            <TextInput placeholder="Video call, in-person, no preference" />
-           
-            {/* <Image
-              resizeMode="auto"
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/7fcca66fd698349d85724b20345e679cf2b9cce5034943e7b9f023a7330dedaf?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image3}
-            /> */}
-          </View>
+         
+          <TextInput editable multiline={true} numberOfLines={2} onChangeText={text => onChangeText(text)} value={value}
+        placeholder="Video call, in-person, no preference" 
+      />  
+        </View>
+            <Foundation size={25} name="comment-video"/>
           <View style={styles.view8}>
             <Text>Additional notes</Text>
           </View>
-          <View style={styles.view9}>
-          <TextInput placeholder="Anything else you'd like to share with your doctor?"/>
-          </View>
+          {/* <View style={styles.view9}> */}
+          <TextInput editable multiline={true} numberOfLines={2} onChangeText={text => onChangeText(text)} value={value}
+        placeholder="Anything else you'd like to share with your doctor?" style={styles.view9}
+      />
+         
+          {/* </View> */}
           <View style={styles.view15}>
             <TouchableOpacity style={styles.view16} onPress={()=> navigation.navigate("RequestSent")} >
               <Text style={{color:"white"}}>Submit request</Text>
@@ -114,7 +124,7 @@ const styles = StyleSheet.create({
   image1: { position: "relative", width: 24, aspectRatio: "1" },
   view4: {
     display: "flex",
-    marginTop: 20,
+    marginTop: 10,
     width: "100%",
     flexDirection: "column",
     alignItems: "stretch",
@@ -157,7 +167,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   view9: {
-
     fontFamily: "Inter, sans-serif",
     justifyContent: "space-between",
     borderRadius: 12,
@@ -168,11 +177,11 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginLeft: 10,
     marginRight: 12,
-    color: "#637087",
+    color: "blue",
     // paddingTop: 15,
     paddingRight: 15,
     // paddingLeft: 15,
-    paddingBottom: 84,
+    // paddingBottom: 84,
   },
   
   

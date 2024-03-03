@@ -6,6 +6,8 @@ export type BottomTabParamList = {
     Community: undefined;
     Profile: undefined;
     stories: undefined;
+    ProfileScreen: undefined;
+    DoctorProfile:undefined;
 
 }
 
@@ -15,7 +17,10 @@ export type RootStackParamList = {
     ThankForStory: undefined;
     RequestConst: undefined;
     MsgRequest: undefined;
+    ArticleScreen: undefined;
     Stories: undefined;
     RequestSent: undefined;
+    ConsultHomePage:undefined;
+    DoctorProfile: undefined;
     // details: {id: string, name: string, description: string,images: string[],  price: string;};
 }

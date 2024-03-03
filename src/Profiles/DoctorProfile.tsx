@@ -12,42 +12,91 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
  import {  useNavigation } from '@react-navigation/native';
  import AntDesign from 'react-native-vector-icons/AntDesign'
+import ArticleScreen from "../consultation/Blog2";
+ 
+
+const ProfileHeader = () => (
+  <View style={styles.profileHeaderContainer}>
+    <Image
+      resizeMode="cover"
+      source={{ uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/54aa71ad7638140251d45c2a1cbe31fe5991738fe9b6523e5dc6e0e6faa63ea8?apiKey=42bb954c825745999302100cb42c8fd0&" }}
+      style={styles.profileImage}
+    />
+    <View style={styles.profileInfo}>
+      <Text style={styles.profileName}>Dr. Emilia</Text>
+      <Text style={styles.profileUniversity}>Stanford University</Text>
+      <Text style={styles.profileLocation}>Palo Alto, CA</Text>
+    </View>
+  </View>
+);
+interface Action{
+    title: string;
+    buttonStyle: string;
+    textStyle: string;
+}
+
+interface Post{
+    title: string;
+    subtitle: string;
+    imageUrl: string;
+}
+// const ActionButton: React.FC <Action> = ({ title, buttonStyle, textStyle }) => (
+//   <View style={[styles.buttonContainer, buttonStyle]}>
+//     <Text style={[styles.buttonText, textStyle]}>{title}</Text>
+//   </View>
+// );
+
+const Post : React.FC<Post> = ({ title, subtitle, imageUrl }) => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  return (
+    <TouchableOpacity style={styles.articleContainer}  onPress={()=> navigation.navigate("ArticleScreen")} >
+    <View style={styles.headerContainer}>
+      <Text style={styles.postTitle}>{title}</Text>
+      <Text style={styles.postSubtitle}>{subtitle}</Text>
+      </View>
+      <Image resizeMode="cover" source={{ uri: imageUrl }} style={styles.postImage} />
+    </TouchableOpacity>
+  )
+};
+  
+
 
 const DoctorProfile = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const posts = [
+    {
+      title: "The secret to managing stress",
+      subtitle: "Mental Health · 3d ago · #StressRelief",
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/319dc1e48bea128e89302e66ad0758266213944e12c0e857475ad66aaedbaf5d",
+    },
+    {
+      title: "How to overcome anxiety",
+      subtitle: "Mental Health · 5d ago · #Anxiety",
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/0ebbe8c7a5a2c4da90d57cf7a37af6a3fe743679e23b26be825512fec8f6fada",
+    },
+    {
+      title: "What is burnout?",
+      subtitle: "Mental Health · 8d ago · #Burnout",
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/8d5614b44a9fae83ec40b6b23689ceba6f77ada07188569aca356b634e75ae59",
+    },
+  ];
   return (
     <ScrollView>
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
           <View style={styles.view4}>
-            <TouchableOpacity >
+          <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
-            </TouchableOpacity>
-          <AntDesign size={25} name="arrowleft"/>
-
+          </TouchableOpacity>
             <View style={styles.view5}>
               <Text>Profile</Text>
             </View>
           </View>
         </View>
         <View style={styles.view6}>
-          {/* <Image
-            
-            source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/46efc83b97142b2cc02286f8f39b8c604bcf7c0b824974ac98fa54fab0c13d99?apiKey=42bb954c825745999302100cb42c8fd0&",
-            }}
-            style={styles.image2}
-          /> */}
-          <View style={styles.view7}>
-            <Text>Dr. Emilia </Text>
-          </View>
-          <View style={styles.view8}>
-            <Text>Stanford University</Text>
-          </View>
-          <View style={styles.view8}>
-            <Text>Palo Alto, CA</Text>
-          </View>
+         
+         <ProfileHeader />
           <View style={styles.view10}>
             <View style={styles.view11}>
               <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("RequestConst")} >
@@ -60,78 +109,29 @@ const DoctorProfile = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.view15}>
-            <Text>About</Text>
-          </View>
-          <View style={styles.view16}>
-            <Text>
-              I'm a psychologist and professor at Stanford University. I've been
-              studying stress for over 20 years. My research has shown that
-              stress can actually be good for you, if you know how to manage it.
-            </Text>
-          </View>
-          <View style={styles.view17}>
-            <Text>Posts</Text>
-          </View>
+          <View style={styles.container}>
+      
+      {/* <ActionButton 
+        title="Request Consultation" 
+        buttonStyle={styles.requestConsultationButton} 
+        textStyle={styles.buttonTextWhite} 
+      />
+      <ActionButton 
+        title="Send Query Anonymously" 
+        buttonStyle={styles.sendQueryButton} 
+        textStyle={styles.buttonTextWhite} 
+      /> */}
+      <Text style={styles.sectionTitle}>About</Text>
+      <Text style={styles.sectionContent}>
+        I'm a psychologist and professor at Stanford University. I've been studying stress for over 20 years. My research has shown that stress can actually be good for you, if you know how to manage it.
+      </Text>
+      <Text style={styles.sectionTitle}>Posts</Text>
+      {posts.map((post, index) => (
+        <Post key={index} title={post.title} subtitle={post.subtitle} imageUrl={post.imageUrl} />
+      ))}
+    </View>
+      
         </View>
-        <View style={styles.view18}>
-          <View style={styles.view19}>
-            <View style={styles.view20}>
-              <View>
-                <Text style={styles.view21}>The secret to managing stress</Text>
-              </View>
-              <View style={styles.view22}>
-                <Text>Mental Health · 3d ago · #StressRelief</Text>
-              </View>
-            </View>
-            {/* <Image
-              
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/319dc1e48bea128e89302e66ad0758266213944e12c0e857475ad66aaedbaf5d?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image3}
-            /> */}
-          </View>
-        </View>
-        <View style={styles.view23}>
-          <View style={styles.view24}>
-            <View style={styles.view25}>
-              <View>
-                <Text  style={styles.view21}>How to overcome anxiety</Text>
-              </View>
-              <View style={styles.view22}>
-                <Text>Mental Health · 5d ago · #Anxiety</Text>
-              </View>
-            </View>
-            {/* <Image
-              
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/0ebbe8c7a5a2c4da90d57cf7a37af6a3fe743679e23b26be825512fec8f6fada?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image4}
-            /> */}
-          </View>
-        </View>
-        <View style={styles.view23}>
-          <View style={styles.view24}>
-            <View style={styles.view25}>
-              <View>
-                <Text  style={styles.view21}>What is burnout?</Text>
-              </View>
-              <View style={styles.view22}>
-                <Text>Mental Health · 8d ago · #Burnout</Text>
-              </View>
-            </View>
-            {/* <Image
-              
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/8d5614b44a9fae83ec40b6b23689ceba6f77ada07188569aca356b634e75ae59?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image5}
-            /> */}
-          </View>
-        </View>
-        <View style={styles.view33} />
       </View>
     </View>
     </ScrollView>
@@ -203,9 +203,11 @@ const styles = StyleSheet.create({
   },
   image2: {
     position: "relative",
-    width: 128,
-    maxWidth: "100%",
+    width: 72,
+    marginLeft: "10%",
+    height: 72,
     aspectRatio: 1,
+    borderRadius: 12,
   },
   view7: {
     color: "#0D141C",
@@ -355,11 +357,44 @@ const styles = StyleSheet.create({
  
   image4: {
     position: "relative",
-    width: 114,
-    maxWidth: "100%",
-    aspectRatio: "1.79",
+    width: 72,
+    marginLeft: "70%",
+    height: 72,
+    aspectRatio: 1,
+    borderRadius: 12,
   },
   view33: { backgroundColor: "#F7FAFC", minHeight: 20, width: "100%" },
+  container: { alignItems: "stretch", backgroundColor: "#FFF", display: "flex", flexDirection: "column", justifyContent: "center", padding: 16 },
+  profileHeaderContainer: { flexDirection: "row", alignItems: "center", marginBottom: 16 },
+  profileImage: { width: 100, height: 100, borderRadius: 50, marginRight: 16 },
+  profileInfo: { flex: 1 },
+  profileName: { fontWeight: "bold", fontSize: 20, marginBottom: 4 },
+  profileUniversity: { color: "#666", marginBottom: 2 },
+  profileLocation: { color: "#666" },
+  buttonContainer: { padding: 12, borderRadius: 8, alignItems: "center", marginBottom: 16 },
+  requestConsultationButton: { color: "#1A8AE5" },
+  sendQueryButton: { backgroundColor: "#4CAF50" },
+  buttonText: { fontSize: 16 },
+  buttonTextWhite: { color: "#FFFFFF" },
+  sectionTitle: { fontWeight: "bold", fontSize: 18, marginTop: 24, marginBottom: 16 },
+  sectionContent: { fontSize: 14, color: "#666", marginBottom: 16 },
+  postContainer: { marginBottom: 16 },
+  postTitle: { fontWeight: "bold", fontSize: 16 },
+  postSubtitle: { fontSize: 14, color: "#999" },
+  postImage: {   height: 90,
+    width: 90,
+    aspectRatio: 1.33,
+ marginRight:23, backgroundColor:"green" ,borderRadius:8, },
+  articleContainer: {    marginRight:10,  display: "flex", paddingBottom: 16, flexDirection:"row"},
+  headerContainer: {
+    alignItems: "stretch",
+    display: "flex",
+    flexGrow: 1,
+    flexDirection: "column",
+    paddingEnd: 12,
+    paddingBottom: 21,
+  },
+
 });
 
 

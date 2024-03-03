@@ -4,30 +4,32 @@ import * as React from "react";
       ScrollView,
       View,
       StyleSheet,
+      TouchableOpacity,
       Image,
       Text,     
     } from "react-native";
+    import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+    import {RootStackParamList} from '../type';
+   import {  useNavigation } from '@react-navigation/native';
+     import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const ThankForStory = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
         <View style={styles.view1}>
           <View style={styles.view2}>
             <View style={styles.view3}>
-              {/* <Image
+            <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
+            </View>
+            <View style={styles.view4}>
+              <Image
                 source={{
                   uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/6d78d64acc8a37e683ea32482205de8c727f48ed17dcd5b2d28110133d140853?apiKey=42bb954c825745999302100cb42c8fd0&",
                 }}
                 style={styles.image1}
-              /> */}
-            </View>
-            <View style={styles.view4}>
-              {/* <Image
-                resizeMode="auto"
-                source={{
-                  uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/a0ed62eb192a3dd490039b041c834973ed41a3ae54bbb8ae22b0264d16bd9071?apiKey=42bb954c825745999302100cb42c8fd0&",
-                }}
-                style={styles.image2}
-              /> */}
+              />
             </View>
             <View style={styles.view5}>
               <Text>Thank you for sharing your journey</Text>

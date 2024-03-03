@@ -9,35 +9,35 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign'
+
 const StorySharing = () => {
   const [value, onChangeText] =React.useState("");
- // const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+ const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView>
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
           <View style={styles.view4}>
-            {/* <Image
-              resizeMode="auto"
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f0e34ffdba38061f3b26d2a43bae1e648d07cc208537a86428cafb3c4ded1a33?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image1}
-            /> */}
+          <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
             <View style={styles.view5}>
               <Text>Create a story</Text>
             </View>
           </View>
         </View>
         <View style={styles.view6}>
-          {/* <Image
-            resizeMode="auto"
+        <Image
             source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/4ab555df0b2e44c85e54dd36aaf74b7cf724cc212ddabc4b782c612d0343d903?apiKey=42bb954c825745999302100cb42c8fd0&",
+              uri: "../img1.png",
             }}
             style={styles.image2}
-          /> */}
+          />
           {/* <View style={styles.view7}> */}
           <TextInput
         editable
@@ -83,11 +83,15 @@ const StorySharing = () => {
             </View>
           </View>
         </View>
-        <View style={styles.view27}>
+        <TouchableOpacity style={styles.postButton}>
+        <Text style={styles.postButtonText}>Post story</Text>
+      </TouchableOpacity>
+
+        {/* <View style={styles.view27}>
           <TouchableOpacity style={styles.view28}>
             <Text>Post story</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={styles.view29} />
       </View>
     </View>
@@ -276,6 +280,19 @@ const styles = StyleSheet.create({
     minHeight: 20,
     marginTop: 12,
     width: "100%",
+  },
+  postButton: {
+    marginTop: 12,
+    backgroundColor: "#421AE5",
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+  },
+  postButtonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "700",
   },
   progressBarSection: {
     marginTop: 12,

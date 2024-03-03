@@ -4,12 +4,15 @@ import SearchPage from '../SearchPage';
 import Stories from '../Stories/Stories';
 import StorySharing from '../Stories/StorySharing';
 import ThankForStory from '../Stories/ThankForStory';
+import ConsultHomePage from '../consultation/ConsultHomePage';
 import BipolarStory from '../Stories/BipolarStory';
+import ArticleScreen from '../consultation/Blog2';
 import DoctorProfile from '../Profiles/DoctorProfile';
 import MsgRequest from '../consultation/MsgRequest';
 import RequestConst from '../consultation/RequestConst';
 import RequestSent from '../consultation/RequestSent';
 import { BottomTabsNavigation } from './BottomTabNavigator';
+import HomePage from '../HomePage';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -20,19 +23,24 @@ const RootStack = createNativeStackNavigator();
 export const RootNavigator: React.FC = () => {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen
+        <RootStack.Screen
         name="BottomTabsNavigation"
         component={BottomTabsNavigation}
         options={{ headerShown: false }}
       />
       <RootStack.Screen
         name="HomePage"
-        component={SearchPage}
+        component={HomePage}
         options={{ headerShown: false }}
       />
         <RootStack.Screen
         name="Stories"
         component={Stories}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="ConsultHomePage"
+        component={ConsultHomePage}
         options={{ headerShown: false }}
       />
        <RootStack.Screen
@@ -43,6 +51,11 @@ export const RootNavigator: React.FC = () => {
       <RootStack.Screen
         name="ThankForStory"
         component={ThankForStory}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="ArticleScreen"
+        component={ArticleScreen}
         options={{ headerShown: false }}
       />
       <RootStack.Screen
@@ -65,6 +78,7 @@ export const RootNavigator: React.FC = () => {
         component={RequestSent}
         options={{ headerShown: false }}
       />
+    
       {/* <RootStack.Screen
         name="Drawer"
         component={DrawerNavigatorNavigation}

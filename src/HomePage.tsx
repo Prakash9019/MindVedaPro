@@ -19,25 +19,25 @@ const HomePage = () => {
       <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
-          <Image   
+          {/* <Image   
             source={{
               uri: `https://cdn.builder.io/api/v1/image/assets/TEMP/2fe6238cae16bee719b5431619bced28b7eb02e6a193a55920a1961936296431?apiKey=42bb954c825745999302100cb42c8fd0&`,
             }}
             style={styles.image1 as ImageStyle}
-          />
+          /> */}
           <View style={styles.view4}>
             <Text>Search</Text>
           </View>
         </View>
       </View>
       <View style={styles.view5}>
-        <Image
+        {/* <Image
            
           source={{
             uri: `https://cdn.builder.io/api/v1/image/assets/TEMP/fa2c6a261a92cb26dc7384595f18b312e18bb1bd2ee58852d1bb8b7e19d76c17?apiKey=42bb954c825745999302100cb42c8fd0&`,
           }}
           
-        />
+        /> */}
         <View style={styles.view6}>
           <TextInput>Search for mental health support</TextInput>
         </View>
@@ -89,13 +89,13 @@ const HomePage = () => {
             <Text>Bipolar Expert</Text>
           </View>
         </View>
-        <Image
+        {/* <Image
          style={styles.image4 as ImageStyle}
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/04d62e7f677bf95b5626b043e264a3f528d4dbbcdcdb0b277bd843d231a7d16c?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           
-        />
+        /> */}
       </View>
       <View style={styles.view21}>
         <View style={styles.view22}>
@@ -108,13 +108,13 @@ const HomePage = () => {
             </Text>
           </View>
         </View>
-        <Image
+        {/* <Image
            
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f9f07632e8f3b77342fa34c60d2accccffc814f54aefda12918566addc4f920e?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           style={styles.image5 as ImageStyle}
-        />
+        /> */}
       </View>
       <View style={styles.view25}>
         <Text>Trending</Text>
@@ -128,13 +128,13 @@ const HomePage = () => {
             <Text>Explore the benefits of CBT</Text>
           </View>
         </View>
-        <Image
+        {/* <Image
            
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/497bd5cfba3b3a21acb8b0057a9ea526d3967a5d7b3a78735f7420ef2060ee30?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           style={styles.image6 as ImageStyle}
-        />
+        /> */}
       </View>
       <View style={styles.view30}>
         <View style={styles.view31}>
@@ -145,13 +145,13 @@ const HomePage = () => {
             <Text>Find peace in the present moment</Text>
           </View>
         </View>
-        <Image
+        {/* <Image
            
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/b46fb8911c1dbad54792735ca93ede1ca29be805da693fe2e63eece881410cae?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           style={styles.image7 as ImageStyle}
-        />
+        /> */}
       </View>
       <View style={styles.view34}>
         <View style={styles.view35}>
@@ -162,13 +162,13 @@ const HomePage = () => {
             <Text>Simple tips for self care</Text>
           </View>
         </View>
-        <Image
+        {/* <Image
            
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/6410c444c4ede83897912036c3165c62fb2a05ec98a625ce8d3e2a6af4711911?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           style={styles.image8 as ImageStyle}
-        />
+        /> */}
       </View>
       <View style={styles.view38}>
         <View style={styles.view39}>
@@ -180,13 +180,13 @@ const HomePage = () => {
             <Text>Connect with others with similar experiences</Text>
           </View>
         </View>
-        <Image
+        {/* <Image
            
           source={{
             uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/8570eb378adfb42eb3dc7a9878b8d2f0ea34d8c5a0a7c2bb04ca59910b059c25?apiKey=42bb954c825745999302100cb42c8fd0&",
           }}
           style={styles.image9 as ImageStyle}
-        />
+        /> */}
       </View>
       </View>
     </View>

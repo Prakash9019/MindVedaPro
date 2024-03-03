@@ -9,18 +9,21 @@ import {
     Text,
   } from "react-native";
 import React from 'react'
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const MsgRequest = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const [value, onChangeText] = React.useState('');
   return (
         <View style={styles.view1}>
           <View style={styles.view2}>
             <View style={styles.view3}>
-              <Image
-                source={{
-                  uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/80617962007fab6f3c0c3e48e476a9636915700ad513eb44ef095fd4632f6f9c?apiKey=42bb954c825745999302100cb42c8fd0&",
-                }}
-                style={styles.image1}
-              />
+            <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
             </View>
             <View style={styles.view4}>
               <View>
@@ -29,10 +32,12 @@ const MsgRequest = () => {
               <View style={styles.view6}>
                 <Text>Your message</Text>
               </View>
-              <View style={styles.view7}>
-              <TextInput style={{marginRight:12,}} placeholder="What are the main reasons you're reaching 
-               out to this expert for?" />
-              </View>
+              {/* <View style={styles.view7}> */}
+              <TextInput editable multiline={true} numberOfLines={10} onChangeText={text => onChangeText(text)} value={value}
+        placeholder="What are the main reasons you're reaching 
+        out to this expert for?" style={styles.view7}
+      />
+              {/* </View> */}
               <View style={styles.view8}>
               {/* onPress={()=> navigation.navigate("Stories")} */}
               <TouchableOpacity style={styles.view9}  >

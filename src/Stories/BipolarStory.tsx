@@ -4,23 +4,25 @@ import {
   ScrollView,
   View,
   StyleSheet,
+  TouchableOpacity,
   Image,
   Text,
 } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const BipolarStory = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
           <View style={styles.view4}>
-            {/* <Image
-              resizeMode="auto"
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/59fc2b66a76306731c8224630caf8ffbd716761ecdba7b2c8b927bf12ea1e114?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image1}
-            /> */}
+          <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
             <View>
               <Text  style={styles.view5}>Stories</Text>
             </View>

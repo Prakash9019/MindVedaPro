@@ -8,10 +8,11 @@ import * as React from "react";
       Text,
       TouchableOpacity,
     } from "react-native";
- import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
- import {  useNavigation } from '@react-navigation/native';
-import { Button } from "react-native-elements";
+import {  useNavigation } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign'
+
 const Stories = () => {
   //const navigation=useNavigation();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -22,16 +23,14 @@ const Stories = () => {
           <View style={styles.view2}>
             <View style={styles.view3}>
               <View style={styles.view4}>
-                {/* <Image
-                  resizeMode="auto"
-                  source={{
-                    uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/d329b27758ae0e33459e254879211a33b283ce1be9a87f4b58604852c40b2e58?apiKey=42bb954c825745999302100cb42c8fd0&",
-                  }}
-                  style={styles.image1}
-                /> */}
+              <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
                 <View>
                   <Text  style={styles.view5}> Stories</Text>
                 </View>
+            <AntDesign style={styles.image2} size={25} name="search1"/>
+
                 {/* <Image
                   resizeMode="auto"
                   source={{
@@ -69,13 +68,12 @@ const Stories = () => {
                     <Text style={styles.view19}>How I gained confidence and overcame anxiety</Text>
                   </View>
                 </View>
-                {/* <Image
-                  resizeMode="auto"
-                  source={{
-                    uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f6c518907f171a0554423d49908dc2d9850f7095ca714a468e7c7768ff799c4a?apiKey=42bb954c825745999302100cb42c8fd0&",
-                  }}
+                   <Image
+                    source={{
+                         uri: "../img1.png",
+                         }}
                   style={styles.image3}
-                /> */}
+                />
               </View>
             </View>
             <View style={styles.view16}>
@@ -93,13 +91,12 @@ const Stories = () => {
                     </Text>
                   </View>
                 </View>
-                {/* <Image
-                  resizeMode="auto"
-                  source={{
-                    uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/755836f84d7656773bdf5e94714c3dc7fa795beb606e61222f406509aadc9c9e?apiKey=42bb954c825745999302100cb42c8fd0&",
-                  }}
-                  style={styles.image7}
-                /> */}
+                <Image
+            source={{
+              uri: "../img1.png",
+            }}
+                  style={styles.image3}
+                />
               </View>
             </View>
             <View style={styles.view46}>
@@ -135,6 +132,14 @@ const Stories = () => {
         color: "#4F7596",
         marginHorizontal: 0,
     marginVertical: "auto",
+      },
+      image3: {
+        position: "relative",
+    width: 72,
+    marginLeft: "70%",
+    height: 72,
+    aspectRatio: 1,
+    borderRadius: 12,
       },
       view2: {
         alignItems: "stretch",

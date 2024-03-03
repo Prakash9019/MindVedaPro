@@ -9,6 +9,8 @@ import Stories from '../Stories/Stories';
 import DoctorProfile from '../Profiles/DoctorProfile';
 import SearchPage from '../SearchPage';
 import RequestConst from '../consultation/RequestConst';
+import ConsultHomePage from '../consultation/ConsultHomePage';
+import ProfileScreen from "../consultation/blog3"
 import MsgRequest from '../consultation/MsgRequest';
 import RequestSent from '../consultation/RequestSent';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -26,8 +28,6 @@ export const BottomTabsNavigation: React.FC = () => {
         tabBarActiveTintColor: 'red',
         tabBarLabelStyle: {
           fontSize: 14,
-          
-          
         },
         tabBarShowLabel: true,
         headerStyle: {
@@ -39,7 +39,7 @@ export const BottomTabsNavigation: React.FC = () => {
     >
       <BottomTabs.Screen
 
-        name="Home" component={HomePage}
+        name="Home" component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <AntDesign size={25} name="home" color={color}/>
@@ -47,7 +47,7 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="Exprets" component={DoctorProfile}
+        name="Exprets" component={ConsultHomePage}
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome6 name='user-graduate' size={25} color={color} />       
@@ -71,7 +71,7 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="Profile" component={RequestSent}
+        name="Profile" component={DoctorProfile}
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome5 name="user-circle" size={28} color={color} />

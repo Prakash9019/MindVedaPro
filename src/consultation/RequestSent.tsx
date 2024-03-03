@@ -11,6 +11,7 @@ import {
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
  import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const RequestSent = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -18,12 +19,9 @@ const RequestSent = () => {
     <View style={styles.view1}>
       <View style={styles.view2}>
         <View style={styles.view3}>
-          <Image
-            source={{
-              uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/07dd90382204c49c44274eb52abd1d50f1ab47983728f3eebfddd4babd899220?apiKey=42bb954c825745999302100cb42c8fd0&",
-            }}
-            style={styles.image1}
-          />
+        <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
         </View>
         <View style={styles.view4}>
           <View style={styles.view5}>
