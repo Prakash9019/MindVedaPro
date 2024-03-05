@@ -20,6 +20,16 @@ export type RootStackParamList = {
     ArticleScreen: undefined;
     Stories: undefined;
     RequestSent: undefined;
+    NGOApp :undefined;
+    NGOs :undefined;
+    SupportGroupApp :undefined;
+    CommunityInvitation :undefined;
+    SocialShareComponent :undefined;
+    Test :undefined;
+    CrisisSupportApp:undefined;
+    SupportOptions :undefined;
+    MentalWellnessApp:undefined;
+    PostOfDay:undefined;
     ConsultHomePage:undefined;
     DoctorProfile: undefined;
     // details: {id: string, name: string, description: string,images: string[],  price: string;};

@@ -12,7 +12,7 @@ import MsgRequest from '../consultation/MsgRequest';
 import RequestConst from '../consultation/RequestConst';
 import RequestSent from '../consultation/RequestSent';
 import { BottomTabsNavigation } from './BottomTabNavigator';
-import HomePage from '../HomePage';
+import HomePage from '../Home/HomePage';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';

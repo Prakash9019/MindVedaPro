@@ -28,7 +28,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {RootNavigator} from './src/navigator/RootNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import HomePage from './src/HomePage';
+import HomePage from './src/Home/HomePage';
 const Stack = createNativeStackNavigator();
 
 type SectionProps = PropsWithChildren<{
