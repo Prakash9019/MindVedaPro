@@ -664,7 +664,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from 'E:/MindVeda2/src/type';
+import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
