@@ -6,6 +6,7 @@ import StorySharing from '../Stories/StorySharing';
 import ThankForStory from '../Stories/ThankForStory';
 import ConsultHomePage from '../consultation/ConsultHomePage';
 import BipolarStory from '../Stories/BipolarStory';
+import PostOfDay from '../Home/PostOfDay';
 import ArticleScreen from '../consultation/Blog2';
 import DoctorProfile from '../Profiles/DoctorProfile';
 import MsgRequest from '../consultation/MsgRequest';
@@ -13,6 +14,11 @@ import RequestConst from '../consultation/RequestConst';
 import RequestSent from '../consultation/RequestSent';
 import { BottomTabsNavigation } from './BottomTabNavigator';
 import HomePage from '../Home/HomePage';
+import Test from '../Home/MindTest/test';
+import SupportOptions from '../Home/Support/EmergencySupport';
+import SupportGroupApp1 from '../Community/Disorders/Bipolar';
+import NGOs from '../Community/Disorders/Ngos';
+import NGOApp from '../Community/Disorders/NGO';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -78,6 +84,38 @@ export const RootNavigator: React.FC = () => {
         component={RequestSent}
         options={{ headerShown: false }}
       />
+       <RootStack.Screen
+        name="PostOfDay"
+        component={PostOfDay}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="SupportOptions"
+        component={SupportOptions}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="Test"
+        component={Test}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="SupportGroupApp1"
+        component={SupportGroupApp1}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="NGOs"
+        component={NGOs}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="NGOApp"
+        component={NGOApp}
+        options={{ headerShown: false }}
+      />
+      
+
     
       {/* <RootStack.Screen
         name="Drawer"

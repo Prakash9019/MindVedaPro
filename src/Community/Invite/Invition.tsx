@@ -33,6 +33,7 @@ const SectionBody: React.FC<SectionProps> = ({ bodyText }) => (
 );
 
 const CommunityInvitation = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.mainContainer}>
       <CommunityHeader imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/8eea2d82d4daee5a154755d9a1fa5fd30cb1f87ec616dcfc920dab5fb9610bc6" />
@@ -55,8 +56,8 @@ const CommunityInvitation = () => {
         <SectionBody bodyText="• Learn from others' experiences and insights" />
         <SectionBody bodyText="• Access exclusive resources and events" />
       </View>
-      <TouchableOpacity style={styles.shareLinkContainer}>
-        <Text style={styles.shareLinkText}>Share Link</Text>
+      <TouchableOpacity style={styles.shareLinkContainer} onPress={()=>{navigation.navigate("SocialShareComponent")}}>
+        <Text style={styles.shareLinkText} >Share Link</Text>
       </TouchableOpacity>
       <View style={styles.footerSpace} />
     </View>

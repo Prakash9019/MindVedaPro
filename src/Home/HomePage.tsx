@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -18,6 +18,15 @@ interface MenuItemProps {
   label: string;
 }
 
+interface HeaderIconsProps {
+  src: string;
+  style: { [key: string]: any };
+}
+
+const HeaderIcons : React.FC<HeaderIconsProps> = ({ src, style }) => (
+  <Image source={{ uri: src }} style={style} />
+);
+
 const MenuItem: React.FC<MenuItemProps> = ({ imageUri, label }) => (
   <TouchableOpacity style={styles.menuItem}>
     <HeaderImage source={imageUri} style={styles.menuImage} />
@@ -27,6 +36,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ imageUri, label }) => (
 
 // Main Component
 const MentalWellnessApp = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const menuItems = [
     {
       imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/7a071934d6a94b0b01a5fd8346d14c1203e4b17b0ce301900a4ddd40c0b285ac?apiKey=42bb954c825745999302100cb42c8fd0&",
@@ -51,6 +61,7 @@ const MentalWellnessApp = () => {
   ];
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.header}>
         <HeaderImage
@@ -70,7 +81,27 @@ const MentalWellnessApp = () => {
             <Text style={styles.messageSubtitle}>You're stronger than you think</Text>
           </View>
         </View>
-
+        <Text style={styles.emergencyTitle}>Are you in crisis?</Text>
+      <Text style={styles.emergencyDescription}>If you or someone you know is in a crisis consider reaching out immediately.</Text>
+      <TouchableOpacity style={styles.emergencySupport} onPress={()=>{navigation.navigate("SupportOptions")}}>
+        <Text>Emergency support</Text>
+      </TouchableOpacity>
+      <View style={styles.testSection}>
+        <Text style={styles.testTitle}>Can't apprehend your actions?</Text>
+        <Text style={styles.testDescription}>Take a free mental health test</Text>
+        <TouchableOpacity style={styles.startTest} onPress={()=>{navigation.navigate("Test")}} >
+          <Text>Start Test</Text>
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.sectionTitle}>Post of the Day</Text>
+      <TouchableOpacity onPress={()=>{navigation.navigate("PostOfDay")}}>
+      <View style={styles.postSection}>
+        <Text>Emotional Support</Text>
+        <Text>How to overcome anxiety?</Text>
+        <Text>Posted by Dr. Emilia · Stress Specialist</Text>
+        <HeaderIcons src="https://cdn.builder.io/api/v1/image/assets%2FTEMP%2Fa5110698b89b90823fa03fe28a54d57ff3f76b7043716d58261cc8a7fc1e036a?apiKey=42bb954c825745999302100cb42c8fd0&" style={styles.postImage} />
+      </View>
+      </TouchableOpacity>
         <View style={styles.menu}>
           {menuItems.map((item, index) => (
             <MenuItem key={index} imageUri={item.imageUri} label={item.label} />
@@ -78,6 +109,7 @@ const MentalWellnessApp = () => {
         </View>
       </View>
     </View>
+    </ScrollView>
   );
 };
 
@@ -85,6 +117,54 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFF",
+  },
+  emergencyTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginVertical: 16,
+  },
+  emergencyDescription: {
+    fontSize: 16,
+    marginBottom: 16,
+  },
+  emergencySupport: {
+    backgroundColor: '#A11AE5',
+    borderRadius: 20,
+    padding: 10,
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  testSection: {
+    marginBottom: 16,
+  },
+  testTitle: {
+    fontSize: 16,
+    fontWeight: '500',
+    marginBottom: 4,
+  },
+  testDescription: {
+    fontSize: 14,
+    color: '#7D6387',
+    marginBottom: 16,
+  },
+  startTest: {
+    backgroundColor: '#A11AE5',
+    borderRadius: 16,
+    padding: 18,
+    alignItems: 'center',
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+    fontSize: 22,
+    marginBottom: 16,
+  },
+  postSection: {
+    marginBottom: 16,
+  },
+  postImage: {
+    width: 114,
+    height: 114,
+    borderRadius: 8,
   },
   header: {
     padding: 20,

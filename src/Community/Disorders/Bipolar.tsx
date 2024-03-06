@@ -53,7 +53,7 @@ const FooterNavigation: React.FC<FooterNavigationProps> = ({ icons }) => (
   </View>
 );
 
-const SupportGroupApp: React.FC = () => {
+const SupportGroupApp1: React.FC = () => {
   const iconsData: Icon[] = [
     { name: "Home", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/c1358be9110a84119137e645de2b983f0920d67354b83c477f6b7d49527d00f6?apiKey=42bb954c825745999302100cb42c8fd0&" },
     { name: "Experts", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/83bfaccafd2807e055ad3466f40d63648f5b84966530fe614ed17a147a7ea1b7?apiKey=42bb954c825745999302100cb42c8fd0&" },
@@ -61,13 +61,16 @@ const SupportGroupApp: React.FC = () => {
     { name: "Stories", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/0192e72bafcb15d5c653f3cffa32147bf86153bf435c91a07259ec278618fb17?apiKey=42bb954c825745999302100cb42c8fd0&" },
     { name: "Profile", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/23631277636ece196b6ba9014dae0f6901f80bfe6116a3f1d74d13d2bdaffb88?apiKey=42bb954c825745999302100cb42c8fd0&" },
   ];
-
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView style={styles.container}>
       <GroupHeader title={{ name: "Bipolar Support Group", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" />
       <SectionButton title="Invite" />
       <SectionButton title="Consult with Experts" />
-      <SectionButton title="NGOs Working on Bipolar" />
+
+      <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+       <Text style={styles.sectionButtonText}>NGOs Working on Bipolar</Text>
+        </TouchableOpacity>
       <SectionButton title="Bipolar Chat Rooms" />
       <SectionButton title="Happy Stories of People with Bipolar" />
       <SectionButton title="Resources on Bipolar" />
@@ -136,4 +139,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SupportGroupApp;
+export default SupportGroupApp1;

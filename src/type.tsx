@@ -30,6 +30,8 @@ export type RootStackParamList = {
     SupportOptions :undefined;
     MentalWellnessApp:undefined;
     PostOfDay:undefined;
+    Ngos:undefined;
+    CallaCenter:undefined;
     ConsultHomePage:undefined;
     DoctorProfile: undefined;
     // details: {id: string, name: string, description: string,images: string[],  price: string;};

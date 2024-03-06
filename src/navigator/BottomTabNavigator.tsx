@@ -7,11 +7,13 @@ import { MaterialIcon } from '../Icons';
 import HomePage from '../Home/HomePage';
 import Stories from '../Stories/Stories';
 import DoctorProfile from '../Profiles/DoctorProfile';
+import MentalWellnessApp from "../Home/HomePage"
 import SearchPage from '../SearchPage';
 import RequestConst from '../consultation/RequestConst';
 import ConsultHomePage from '../consultation/ConsultHomePage';
 import ProfileScreen from "../consultation/blog3"
 import MsgRequest from '../consultation/MsgRequest';
+import SupportGroupApp1 from '../Community/Disorders/Bipolar';
 import RequestSent from '../consultation/RequestSent';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
@@ -39,7 +41,7 @@ export const BottomTabsNavigation: React.FC = () => {
     >
       <BottomTabs.Screen
 
-        name="Home" component={ProfileScreen}
+        name="Home" component={MentalWellnessApp}
         options={{
           tabBarIcon: ({ color, size }) => (
             <AntDesign size={25} name="home" color={color}/>
@@ -55,7 +57,7 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="Community" component={MsgRequest}
+        name="Community" component={SupportGroupApp1}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="groups" color={color} size={35} />

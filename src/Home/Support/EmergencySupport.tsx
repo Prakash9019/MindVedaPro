@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from 'E:/MindVeda2/src/type';
 import {  useNavigation } from '@react-navigation/native';
@@ -32,7 +32,10 @@ interface SectionItemProps {
   description: string;
 }
 
-const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) => (
+const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  return(
+  <TouchableOpacity onPress={()=>{navigation.navigate("CallaCenter")}}>
   <View style={styles.sectionContainer}>
     <View style={styles.textContainer}>
       <Text style={styles.title}>{title}</Text>
@@ -40,9 +43,11 @@ const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) 
     </View>
     <Image source={{ uri: imageUrl }} style={styles.sectionImage} />
   </View>
-);
+  </TouchableOpacity>
+)};
 
 const SupportOptions = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>

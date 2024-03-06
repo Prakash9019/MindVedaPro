@@ -40,7 +40,7 @@ const CrisisSupportApp = () => {
     },
     // Add similar objects for each help line
   ];
-
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
       {helpLines.map((line, index) => (
