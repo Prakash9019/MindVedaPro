@@ -32,6 +32,7 @@ interface SectionItemProps {
   description: string;
 }
 const handlePress = (title) => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   // Implement navigation logic based on the NGO name
   switch (title) {
     case "callCrisisCenter":
