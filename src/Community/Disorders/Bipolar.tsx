@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, ImageSourcePropType } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from 'E:/MindVeda2/src/type';
+import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
@@ -64,6 +64,9 @@ const SupportGroupApp1: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       <GroupHeader title={{ name: "Bipolar Support Group", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" />
       <SectionButton title="Invite" />
       <SectionButton title="Consult with Experts" />

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from 'E:/MindVeda2/src/type';
+import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
@@ -31,11 +31,28 @@ interface SectionItemProps {
   title: string;
   description: string;
 }
+const handlePress = (title) => {
+  // Implement navigation logic based on the NGO name
+  switch (title) {
+    case "callCrisisCenter":
+      navigation.navigate("CrisisSupportApp");
+      break;
+    case "chatWithVolunteer":
+      navigation.navigate("CrisisSupportApp");
+      break;
+    case "reachOutToFriend":
+      navigation.navigate("CrisisSupportApp");
+      break;
+    // Add more cases as needed for other NGOs
+    default:
+      // Handle default case or navigate to a generic page
+      break;
+  }
+};
 
-const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  return(
-  <TouchableOpacity onPress={()=>{navigation.navigate("CallaCenter")}}>
+
+const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) => (
+  <TouchableOpacity onPress={handlePress}>
   <View style={styles.sectionContainer}>
     <View style={styles.textContainer}>
       <Text style={styles.title}>{title}</Text>
@@ -44,12 +61,15 @@ const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) 
     <Image source={{ uri: imageUrl }} style={styles.sectionImage} />
   </View>
   </TouchableOpacity>
-)};
+);
 
 const SupportOptions = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       <View style={styles.headerContainer}>
         <Image 
        

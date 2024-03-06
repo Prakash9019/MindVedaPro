@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from 'E:/MindVeda2/src/type';
+import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
@@ -38,6 +38,9 @@ const NgoItem = ({ ngo }: { ngo: NGOInfo }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
    return (
   <View style={styles.ngoContainer}>
+    <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
     <Image resizeMode="cover" source={{ uri: ngo.imageUrl }} style={styles.ngoImage} />
     <View style={styles.ngoTextContainer}>
       <Text style={styles.ngoName}>{ngo.name}</Text>

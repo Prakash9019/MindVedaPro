@@ -84,41 +84,9 @@ export const RootNavigator: React.FC = () => {
         component={RequestSent}
         options={{ headerShown: false }}
       />
-       <RootStack.Screen
-        name="PostOfDay"
-        component={PostOfDay}
-        options={{ headerShown: false }}
-      />
-       <RootStack.Screen
-        name="SupportOptions"
-        component={SupportOptions}
-        options={{ headerShown: false }}
-      />
-       <RootStack.Screen
-        name="Test"
-        component={Test}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="SupportGroupApp1"
-        component={SupportGroupApp1}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="NGOs"
-        component={NGOs}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="NGOApp"
-        component={NGOApp}
-        options={{ headerShown: false }}
-      />
-      
-
     
       {/* <RootStack.Screen
-        name="Drawer"
+        name="Drawer" CrisisSupportApp
         component={DrawerNavigatorNavigation}
         options={{ headerShown: false }}
       />

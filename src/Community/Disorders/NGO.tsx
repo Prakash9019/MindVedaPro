@@ -33,6 +33,9 @@ const NGOInfoSection: React.FC<NGOInfoSectionProps> = ({ title, subtitle, imageU
 const NGOApp: React.FC = () => (
   <View style={styles.appContainer}>
     <View style={styles.contentContainer}>
+    <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       <View style={styles.headerContainer}>
         <Image
           resizeMode="contain"
