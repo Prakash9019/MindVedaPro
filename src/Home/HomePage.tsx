@@ -31,6 +31,7 @@ const MentalWellnessApp = () => {
 
   return (
     <View style={styles.container}>
+      
       <TouchableOpacity >
       <View style={styles.header}>
         <HeaderImage

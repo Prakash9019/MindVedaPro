@@ -66,6 +66,9 @@ const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) 
 const SupportOptions = () => {
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       <View style={styles.headerContainer}>
         <Image 
        

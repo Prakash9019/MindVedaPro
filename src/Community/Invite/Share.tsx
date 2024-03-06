@@ -717,6 +717,9 @@ const SocialShareComponent = () => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       {shareOptions.map((option, index) => (
         <ShareOption key={index} platform={option.platform} details={option.details} />
       ))}

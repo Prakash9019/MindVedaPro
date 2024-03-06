@@ -43,6 +43,9 @@ const CrisisSupportApp = () => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       {helpLines.map((line, index) => (
         <HelpLineItem
           key={index}

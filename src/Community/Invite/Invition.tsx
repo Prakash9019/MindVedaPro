@@ -35,6 +35,9 @@ const SectionBody: React.FC<SectionProps> = ({ bodyText }) => (
 const CommunityInvitation = () => {
   return (
     <View style={styles.mainContainer}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       <CommunityHeader imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/8eea2d82d4daee5a154755d9a1fa5fd30cb1f87ec616dcfc920dab5fb9610bc6" />
       <View style={styles.inviteContainer}>
         <Text>Invite to join</Text>

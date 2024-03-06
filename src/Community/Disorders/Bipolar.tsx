@@ -64,6 +64,9 @@ const SupportGroupApp: React.FC = () => {
 
   return (
     <ScrollView style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
       <GroupHeader title={{ name: "Bipolar Support Group", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" />
       <SectionButton title="Invite" />
       <SectionButton title="Consult with Experts" />
