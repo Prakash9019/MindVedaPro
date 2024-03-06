@@ -31,8 +31,28 @@ interface SectionItemProps {
   title: string;
   description: string;
 }
+const handlePress = (title) => {
+  // Implement navigation logic based on the NGO name
+  switch (title) {
+    case "callCrisisCenter":
+      navigation.navigate("CrisisSupportApp");
+      break;
+    case "chatWithVolunteer":
+      navigation.navigate("CrisisSupportApp");
+      break;
+    case "reachOutToFriend":
+      navigation.navigate("CrisisSupportApp");
+      break;
+    // Add more cases as needed for other NGOs
+    default:
+      // Handle default case or navigate to a generic page
+      break;
+  }
+};
+
 
 const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) => (
+  <TouchableOpacity onPress={handlePress}>
   <View style={styles.sectionContainer}>
     <View style={styles.textContainer}>
       <Text style={styles.title}>{title}</Text>
@@ -40,6 +60,7 @@ const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) 
     </View>
     <Image source={{ uri: imageUrl }} style={styles.sectionImage} />
   </View>
+  </TouchableOpacity>
 );
 
 const SupportOptions = () => {

@@ -52,13 +52,14 @@ const MentalWellnessApp = () => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity >
       <View style={styles.header}>
         <HeaderImage
           source="https://cdn.builder.io/api/v1/image/assets/TEMP/20c430cd24c554602ac7482620760b96c5976058992dd12c4f9fbe36daa29d22?apiKey=42bb954c825745999302100cb42c8fd0&"
           style={styles.headerLogo}
         />
       </View>
-
+      </TouchableOpacity>
       <View style={styles.body}>
         <View style={styles.messageCard}>
           <HeaderImage
