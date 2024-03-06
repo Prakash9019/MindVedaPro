@@ -27,28 +27,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ imageUri, label }) => (
 
 // Main Component
 const MentalWellnessApp = () => {
-  const menuItems = [
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/7a071934d6a94b0b01a5fd8346d14c1203e4b17b0ce301900a4ddd40c0b285ac?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Home",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/981b4e8f639e98d37484cdf97da86bda98d84221f5250d2b3e33a17186e34e42?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Experts",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/554ac6fe3880e8235c12a317f194d879640a1b98def94a05eebc1118108ac470?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Community",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a7565389c0295909c1005b7fb69ee144fb127040de5891d001584f7c90962fc?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Stories",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/eadd5e45221bfcadd52bd1f410be6c47c9c570cda7e807c731ff5f5cdbed20f2?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Profile",
-    },
-  ];
+  
 
   return (
     <View style={styles.container}>
@@ -72,11 +51,7 @@ const MentalWellnessApp = () => {
           </View>
         </View>
 
-        <View style={styles.menu}>
-          {menuItems.map((item, index) => (
-            <MenuItem key={index} imageUri={item.imageUri} label={item.label} />
-          ))}
-        </View>
+        
       </View>
     </View>
   );
