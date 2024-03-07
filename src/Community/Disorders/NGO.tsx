@@ -1,5 +1,9 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../type';
+import {  useNavigation } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 interface ActionButtonProps {
   title: string;
@@ -30,7 +34,10 @@ const NGOInfoSection: React.FC<NGOInfoSectionProps> = ({ title, subtitle, imageU
   </View>
 );
 
-const NGOApp: React.FC = () => (
+const NGOApp = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  return (
+  
   <View style={styles.appContainer}>
     <View style={styles.contentContainer}>
     <TouchableOpacity onPress={() => navigation.goBack()} >
@@ -67,7 +74,7 @@ const NGOApp: React.FC = () => (
       <ActionButton title="Find Support" backgroundColor="#F0F2F5" textColor="#000000" onPress={() => {}} />
     </View>
   </View>
-);
+)};
 
 const styles = StyleSheet.create({
   appContainer: {

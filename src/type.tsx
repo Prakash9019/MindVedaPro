@@ -13,7 +13,6 @@ export type BottomTabParamList = {
 
 export type RootStackParamList = {
     BottomTabs: NavigatorScreenParams<BottomTabParamList>;
-    CrisisSupportApp:undefined;
     StorySharing :undefined;
     ThankForStory: undefined;
     RequestConst: undefined;

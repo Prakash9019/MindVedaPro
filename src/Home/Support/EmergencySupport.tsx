@@ -31,7 +31,7 @@ interface SectionItemProps {
   title: string;
   description: string;
 }
-const handlePress = (title) => {
+const handlePress = (title: string) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   // Implement navigation logic based on the NGO name
   switch (title) {
@@ -45,15 +45,12 @@ const handlePress = (title) => {
       navigation.navigate("CrisisSupportApp");
       break;
     // Add more cases as needed for other NGOs
-    default:
-      // Handle default case or navigate to a generic page
-      break;
   }
 };
 
 
 const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) => (
-  <TouchableOpacity onPress={handlePress}>
+  <TouchableOpacity onPress={()=>{handlePress(title)}}>
   <View style={styles.sectionContainer}>
     <View style={styles.textContainer}>
       <Text style={styles.title}>{title}</Text>

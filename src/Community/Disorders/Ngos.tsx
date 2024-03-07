@@ -37,24 +37,28 @@ const ngoData: NGOInfo[] = [
 const NgoItem = ({ ngo }: { ngo: NGOInfo }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
    return (
+    <View>
+   
   <View style={styles.ngoContainer}>
-    <TouchableOpacity onPress={() => navigation.goBack()} >
-            <AntDesign size={25} name="arrowleft"/>
-          </TouchableOpacity>
     <Image resizeMode="cover" source={{ uri: ngo.imageUrl }} style={styles.ngoImage} />
     <View style={styles.ngoTextContainer}>
       <Text style={styles.ngoName}>{ngo.name}</Text>
       <Text style={styles.ngoDescription}>{ngo.description}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate("NGOApp")} style={styles.visitButton}>
+      <TouchableOpacity onPress={() => navigation.navigate({ngo.name})} style={styles.visitButton}>
         <Text style={styles.visitButtonText}>Visit Website</Text>
       </TouchableOpacity>
     </View>
   </View>
+  </View>
 )};
 
 const NGOs: React.FC = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
+       <TouchableOpacity onPress={() => navigation.goBack()} >
+    <AntDesign size={25} name="arrowleft"/>
+  </TouchableOpacity>
       {ngoData.map((ngo, index) => (
         <NgoItem key={index} ngo={ngo} />
       ))}

@@ -662,7 +662,7 @@
 // });
 
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -698,6 +698,7 @@ const ShareButton = () => (
 );
 
 const SocialShareComponent = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const shareOptions = [
     {
       platform: 'Facebook',

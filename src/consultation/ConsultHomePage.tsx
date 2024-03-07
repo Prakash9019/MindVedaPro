@@ -8,6 +8,7 @@ import {
   Image,
   Text,
   SafeAreaView,
+  ImageBackground,
   TextInput,
 } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -61,23 +62,25 @@ const ConsultHomePage = () => {
             </View>
           </View>
         </View>
-        <Image
-          resizeMode="cover"
-          // fitContent={true}
-          source={{
-            uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/f078080d01d8acbc0ecba8e717b4c2c6e1cb7a9dd4c64e1f5c4b820d5d3d451d?apiKey=42bb954c825745999302100cb42c8fd0&",
-          }}
-          style={styles.image2}
-        />
-          <View style={styles.view6}>
-            <Text>Expert advice, whenever you need it</Text>
+        <ImageBackground
+        resizeMode="cover"
+        source={{
+          uri: 'https://cdn.builder.io/api/v1/image/assets/TEMP/f078080d01d8acbc0ecba8e717b4c2c6e1cb7a9dd4c64e1f5c4b820d5d3d451d',
+        }}
+        style={styles.backgroundImage}
+      >
+        <View style={styles.contentContainer}>
+          <View style={styles.headlineContainer}>
+            <Text style={styles.headlineText}>Expert advice, whenever you need it</Text>
           </View>
-          <View style={styles.view7}>
-            <Text>
-              Get advice from licensed therapists and counselors. Start your
-              journey to a happier and healthier life.
+          <View style={styles.subtextContainer}>
+            <Text style={styles.subtext}>
+              Get advice from licensed therapists and counselors. Start your journey to a happier and
+              healthier life.
             </Text>
           </View>
+        </View>
+      </ImageBackground>
         {/* </Image> */}
         <View style={styles.view8}>
           {/* <View style={styles.view9}> */}
@@ -146,6 +149,38 @@ const ConsultHomePage = () => {
 export default ConsultHomePage;
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  contentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 50,
+  },
+  headlineContainer: {
+    marginTop: 87,
+  },
+  headlineText: {
+    fontFamily: 'Epilogue',
+    fontWeight: '700',
+    fontSize: 36,
+    textTransform: 'uppercase',
+    color: '#FFFFFF',
+    textAlign: 'center',
+  },
+  subtextContainer: {
+    marginTop: 20,
+    marginVertical: 98,
+  },
+  subtext: {
+    fontFamily: 'Epilogue',
+    fontWeight: '400',
+    fontSize: 14,
+    lineHeight: 21, // approximately 150% of the fontSize
+    color: '#FFFFFF',
+    textAlign: 'center',
+  },
   view1: {
     alignItems: "flex-start",
     backgroundColor: "blue",
