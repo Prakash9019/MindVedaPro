@@ -19,6 +19,7 @@ import SupportOptions from '../Home/Support/EmergencySupport';
 import SupportGroupApp1 from '../Community/Disorders/Bipolar';
 import NGOs from '../Community/Disorders/Ngos';
 import NGOApp from '../Community/Disorders/NGO';
+import CommunityInvitation from '../Community/Invite/Invition';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -114,10 +115,14 @@ export const RootNavigator: React.FC = () => {
         component={NGOApp}
         options={{ headerShown: false }}
       />
-
+        <RootStack.Screen
+        name="CommunityInvitation"
+        component={CommunityInvitation}
+        options={{ headerShown: false }}
+      />
     
       {/* <RootStack.Screen
-        name="Drawer" CrisisSupportApp
+        name="Drawer" CrisisSupportApp TouchableOpacity CommunityInvitation
         component={DrawerNavigatorNavigation}
         options={{ headerShown: false }}
       />
