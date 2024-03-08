@@ -331,7 +331,11 @@
 // });
 
 import React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView ,TextInput } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+import {  useNavigation } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const StoryHeader = () => (
   <View style={styles.headerContainer}>
@@ -356,12 +360,15 @@ const StorySection: React.FC<StoryInputSectionProps> = ({ title }) => (
   <View style={styles.storyInputSectionContainer}>
     <View style={styles.storyInputIndicatorContainer}>
       <View style={styles.storyInputIndicator} />
+      <View style={{display:"flex" , flexDirection:"row"}}>
       <View style={styles.storyInputIndicatorActive} />
+      <View style={styles.storyInputTitleContainer}>
+         <Text>{title}</Text>
+         </View>
+      </View>
       <View style={styles.storyInputIndicator} />
     </View>
-    <View style={styles.storyInputTitleContainer}>
-     <Text>{title}</Text>
-    </View>
+    
   </View>
 );
 
@@ -374,8 +381,21 @@ const StoryFooter = () => (
 );
 
 const StoryCreationScreen = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const [value, onChangeText] =React.useState("");
   return (
+    <ScrollView>
     <View style={styles.screenContainer}>
+         {/* <View style={styles.view3}> */}
+            <View style={styles.view4}>
+          <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
+          <View style={styles.view5}>
+          <Text style={styles.groupHeaderTitle}>Stories</Text>
+           </View>
+          </View>
+        {/* </View> */}
       <StoryHeader />
       <View style={styles.storyContent}>
         <View style={styles.storyQuestionContainer}>
@@ -387,7 +407,14 @@ const StoryCreationScreen = () => {
             style={styles.storyQuestionImage}
           />
           <View style={styles.storyQuestionTextContainer}>
-            <Text>What's your story?</Text>
+          <TextInput
+        editable
+        multiline={true}
+        numberOfLines={10}
+        onChangeText={text => onChangeText(text)}
+        value={value}
+        placeholder="What's your story?" style={styles.view7}
+      />
           </View>
         </View>
         {["When did you start to feel better?", "How would you describe the recovery process?", "What are some tips you'd like to share?"].map((title, index) => (
@@ -397,10 +424,36 @@ const StoryCreationScreen = () => {
       <StoryFooter />
       <View style={styles.spacer} />
     </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  view7: {
+        // fontFeatureSettings: "'dlig' on",
+        fontFamily: "Inter, sans-serif",
+        marginTop: 368,
+      },
+  view4: {
+    alignItems: "stretch",
+    display: "flex",
+    flexDirection:"row",
+    gap: 5,
+    marginLeft:9,
+    paddingBottom: 12,
+    paddingTop:12,
+  },
+  view5: {
+    marginLeft:70,
+    fontFamily: "Inter, sans-serif",
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  groupHeaderTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+  },
   screenContainer: {
     alignItems: "stretch",
     backgroundColor: "#FFF",
@@ -469,6 +522,7 @@ const styles = StyleSheet.create({
   storyInputSectionContainer: {
     alignItems: "stretch",
     display: "flex",
+    marginLeft:12,
     marginTop: 12,
     gap: 8,
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -64,6 +64,7 @@ const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) 
 const SupportOptions = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
+    <ScrollView>
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
@@ -93,9 +94,11 @@ const SupportOptions = () => {
           <Image source={{ uri: section.imageUrl }} style={styles.sectionImage} />
         </View>
         </TouchableOpacity>
+        
         // <Section key={section.key} title={section.title} description={section.description} imageUrl={section.imageUrl} />
       ))}
     </View>
+    </ScrollView>
   );
 };
 

@@ -19,15 +19,14 @@ const Stories = () => {
 
   return (
     <ScrollView>
-        <View style={styles.view1}>
-          <View style={styles.view2}>
+        
             <View style={styles.view3}>
             <View style={styles.view4}>
           <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
           <View style={styles.view5}>
-          <Text style={styles.groupHeaderTitle}>Bipolar Support Group</Text>
+          <Text style={styles.groupHeaderTitle}>Stories</Text>
           <AntDesign style={styles.image2} size={25} name="search1"/>
            </View>
           </View>
@@ -60,20 +59,18 @@ const Stories = () => {
             <View style={styles.view16}>
               <View style={styles.view17}>
                 <View style={styles.view18}>
-                  <View>
                     <Text style={styles.view19}>Mental Health</Text>
-                  </View>                
                     <Text style={styles.view20}>Neeraj Chopra</Text>
-                  <View >
-                    <Text style={styles.view19}>How I gained confidence and overcame anxiety</Text>
-                  </View>
+                    <Text style={styles.view19}>How I gained confidence and overcame anxiety</Text>                
                 </View>
+                {/* <View style={{backgroundColor:"blue", width: 72,
+    marginLeft: "55%",
+    height: 72,}}> */}
                    <Image
-                    source={{
-                         uri: "../n1.png",
-                         }}
+                    source={require("../n1.jpg")}
                   style={styles.image3}
                 />
+                {/* </View> */}
               </View>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate("BipolarStory")} >
@@ -85,9 +82,7 @@ const Stories = () => {
                     <Text style={styles.view19}>Riding the waves: My experience with bipolar disorder</Text>
                 </View>
                 <Image
-            source={{
-              uri: "../img1.jpg",
-            }}
+                    source={require("../n1.jpg")}
                   style={styles.image3}
                 />
               </View>
@@ -106,8 +101,7 @@ const Stories = () => {
               {/* </View> */}
             </View>
           
-          </View>
-        </View>
+          
         </ScrollView>
       );
     }
@@ -128,6 +122,7 @@ const Stories = () => {
         marginLeft:70,
         fontFamily: "Inter, sans-serif",
         display: "flex",
+        flexDirection:"row",
         justifyContent:"center",
         alignItems:"center",
       },
@@ -148,11 +143,12 @@ const Stories = () => {
     marginVertical: "auto",
       },
       image3: {
-        position: "relative",
+        // position: "relative",
+        backgroundColor:"grey",
     width: 72,
-    marginLeft: "70%",
+    marginRight: "70%",
     height: 72,
-    aspectRatio: 1,
+    // aspectRatio: 1,
     borderRadius: 12,
       },
       view2: {
@@ -261,17 +257,19 @@ const Stories = () => {
       view17: {
         justifyContent: "space-between",
         alignItems: "stretch",
+       // backgroundColor:"grey",
         display: "flex",
+         flexDirection:"row",
         gap: 16,
       },
       view18: {
-        alignItems: "stretch",
+        // alignItems: "stretch",      
         display: "flex",
         flexGrow: 1,
-        flexBasis: "0%",
+        // flexBasis: "0%",
         flexDirection: "column",
-        paddingBottom:21,
-        paddingRight:26,
+        paddingEnd: 12,
+          paddingBottom: 21,
       },
       view19: {
         // fontFeatureSettings: "'dlig' on",
