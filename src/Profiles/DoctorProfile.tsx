@@ -89,9 +89,9 @@ const DoctorProfile = () => {
           <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-            <View style={styles.view5}>
-              <Text>Profile</Text>
-            </View>
+          <View style={styles.view5}>
+              <Text style={{fontSize:16,fontWeight:"600"}}>Profile</Text>
+           </View>
           </View>
         </View>
         <View style={styles.view6}>
@@ -173,22 +173,22 @@ const styles = StyleSheet.create({
     paddingRight: 16,
     paddingBottom: 8,
     paddingLeft: 16,
-  },
+  }, 
+  image1: { position: "relative", width: 24, aspectRatio: 1 },
   view4: {
-    justifyContent: "space-between",
     alignItems: "stretch",
     display: "flex",
-    gap: 20,
+    flexDirection:"row",
+    gap: 5,
     paddingBottom: 12,
     paddingTop:12,
   },
-  image1: { position: "relative", width: 24, aspectRatio: 1 },
   view5: {
-    
+    marginLeft:118,
     fontFamily: "Inter, sans-serif",
-    flexGrow: 1,
-    flexShrink: 1,
-    flexBasis: "auto",
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
   },
   view6: {
     display: "flex",

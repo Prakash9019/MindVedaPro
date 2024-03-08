@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, ImageSourcePropType } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, ImageSourcePropType,ImageBackground } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -15,7 +15,7 @@ interface GroupHeaderProps {
 
 const GroupHeader: React.FC<GroupHeaderProps> = ({ title, memberCount }) => (
   <View style={styles.groupHeader}>
-    <Image resizeMode="cover" source={{ uri: title.imageUri }} style={styles.groupHeaderImage} />
+    {/* <Image resizeMode="cover" source={{ uri: title.imageUri }} style={styles.groupHeaderImage} /> */}
     <View style={styles.groupHeaderDetails}>
       <Text style={styles.groupHeaderTitle}>{title.name}</Text>
       <Text style={styles.groupHeaderMembers}>{`${memberCount} Members`}</Text>
@@ -42,35 +42,38 @@ interface FooterNavigationProps {
   icons: Icon[];
 }
 
-const FooterNavigation: React.FC<FooterNavigationProps> = ({ icons }) => (
-  <View style={styles.footerNavigation}>
-    {icons.map((icon, index) => (
-      <View key={index} style={styles.footerNavigationItem}>
-        <Image resizeMode="cover" source={{ uri: icon.imageUri }} style={styles.footerNavigationImage} />
-        <Text style={styles.footerNavigationText}>{icon.name}</Text>
-      </View>
-    ))}
-  </View>
-);
+
 
 const SupportGroupApp1: React.FC = () => {
-  const iconsData: Icon[] = [
-    { name: "Home", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/c1358be9110a84119137e645de2b983f0920d67354b83c477f6b7d49527d00f6?apiKey=42bb954c825745999302100cb42c8fd0&" },
-    { name: "Experts", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/83bfaccafd2807e055ad3466f40d63648f5b84966530fe614ed17a147a7ea1b7?apiKey=42bb954c825745999302100cb42c8fd0&" },
-    { name: "Community", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/8cfdbd8ae78df2ec2b2ec0ed094a06b26f3bd768022bd4318a0e7b9d3af91e65?apiKey=42bb954c825745999302100cb42c8fd0&" },
-    { name: "Stories", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/0192e72bafcb15d5c653f3cffa32147bf86153bf435c91a07259ec278618fb17?apiKey=42bb954c825745999302100cb42c8fd0&" },
-    { name: "Profile", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/23631277636ece196b6ba9014dae0f6901f80bfe6116a3f1d74d13d2bdaffb88?apiKey=42bb954c825745999302100cb42c8fd0&" },
-  ];
+  
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView style={styles.container}>
       <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-      <GroupHeader title={{ name: "Bipolar Support Group", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" />
+          <View style={styles.groupHeader}>
+    {/* <Image resizeMode="cover" source={{ uri: title.imageUri }} style={styles.groupHeaderImage} /> */}
+    <View style={styles.groupHeaderDetails}>
+      <Text style={styles.groupHeaderTitle}>Bipolar Support Group</Text>
+      <Text style={styles.groupHeaderMembers}>2.1k Members</Text>
+    </View>
+  </View>
+      {/* <GroupHeader title={{ name: "", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" /> */}
+      
       <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
-      <SectionButton title="Invite" />
+       <Text style={styles.sectionButtonText}>Invite</Text>
       </TouchableOpacity>
+      <ImageBackground source={{ uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} resizeMode="cover" style={styles.cardContainer}>
+      <View style={styles.cardContent}>
+        <Text style={styles.title}>Bipolar Support Group</Text>
+        <Text style={styles.description}>Community for those affected by Bipolar Disorder. Join to connect
+            with others, share experiences, and find support.</Text>
+        <TouchableOpacity style={styles.readMoreBtn}>
+          <Text style={styles.readMoreText}>Read More</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
       <SectionButton title="Consult with Experts" />
 
       <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
@@ -85,6 +88,49 @@ const SupportGroupApp1: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    overflow: 'hidden',
+    display: 'flex',
+    aspectRatio: 0.96,
+    width: '100%',
+    paddingTop: 80,
+    flexDirection: 'column',
+  },
+  cardContent: {
+    justifyContent: 'space-between',
+    marginTop: 52,
+    padding: 16,
+  },
+ title: {
+    fontWeight: '700',
+    fontSize: 24,
+    fontFamily: 'Epilogue, sans-serif',
+    color: '#FFF',
+  },
+  description: {
+    marginTop: 34,
+    fontFamily: 'Epilogue, sans-serif',
+    fontWeight: '500',
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#FFF',
+  },
+  readMoreBtn: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    backgroundColor: '#1A8AE5',
+ alignSelf: 'flex-end',
+    marginTop: 168,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+  },
+  readMoreText: {
+    color: '#F7FAFC',
+    fontWeight: '700',
+    fontSize: 14,
+    letterSpacing: 0.21,
+  },
   container: {
     flex: 1,
     backgroundColor: "#FFF",
@@ -145,3 +191,4 @@ const styles = StyleSheet.create({
 });
 
 export default SupportGroupApp1;
+

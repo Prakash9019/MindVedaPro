@@ -30,13 +30,14 @@ const RequestConst = () => {
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
         </View>
-        <View style={styles.view4}>
-          <View >
+        <View >
             <Text style={styles.view5} >Request a Consultation</Text>
           </View>
+        <View style={styles.view4}>
+         
           <View style={styles.view6}>
-          <TouchableOpacity onPress={() => setOpen(true)} ><Text>Select date and time</Text></TouchableOpacity>
-              <Foundation size={25} name="calendar"/>
+          <TouchableOpacity onPress={() => setOpen(true)}><Text>Select date and time</Text></TouchableOpacity>
+              <Foundation size={30} name="calendar"/>
               {/* <DatePicker  mode="datetime"/> */}
               <DatePicker
         modal
@@ -64,10 +65,11 @@ const RequestConst = () => {
           <View style={styles.view9}>
          
           <TextInput editable multiline={true} numberOfLines={2} onChangeText={text => onChangeText(text)} value={value}
-        placeholder="Video call, in-person, no preference" 
+        placeholder="Video call, in-person, no preference"   
       />  
+       <Foundation size={30} name="comment-video" style={{padding:12,paddingRight:1,}}/>
         </View>
-            <Foundation size={25} name="comment-video"/>
+           
           <View style={styles.view8}>
             <Text>Additional notes</Text>
           </View>
@@ -83,7 +85,7 @@ const RequestConst = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.view17} />
+ 
       </View>
     </View>
     </ScrollView>
@@ -135,7 +137,7 @@ const styles = StyleSheet.create({
     paddingVertical: "auto",
   },
   view5: {
-
+   marginLeft:23,
     fontFamily: 'Inter, sans-serif',
     fontWeight: '700',
     fontSize: 22,
@@ -148,13 +150,14 @@ const styles = StyleSheet.create({
     borderColor: '#DBDEE5',
     borderStyle: 'solid',
     backgroundColor: "#FFF",
-    display: "flex",
     marginTop: 24,
     marginLeft: 10,
     marginRight: 12,
     gap: 20,
     color: "#637087",
     paddingVertical: 16,
+    display: "flex",
+    flexDirection: "row",
     paddingHorizontal: 15,
   },
 
@@ -178,6 +181,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 12,
     color: "blue",
+    display:"flex",
+    flexDirection:"row",
     // paddingTop: 15,
     paddingRight: 15,
     // paddingLeft: 15,
@@ -193,7 +198,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: "#1A5CE5",
     display: "flex",
-    marginTop: 24,
+    marginTop: 100,
+    marginBottom:50,
     marginLeft: 100,
     marginRight: 100,
     color: "#FFF",

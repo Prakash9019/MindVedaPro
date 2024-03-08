@@ -20,6 +20,12 @@ import SupportGroupApp1 from '../Community/Disorders/Bipolar';
 import NGOs from '../Community/Disorders/Ngos';
 import NGOApp from '../Community/Disorders/NGO';
 import CommunityInvitation from '../Community/Invite/Invition';
+import MindfulApp from '../Home/MindTest/StartAss';
+import EmotionalCheckIn from '../Home/MindTest/Page2';
+import SurveyScreen from '../Home/MindTest/Page1';
+import ProfilePage from '../Profiles/Profile';
+import CrisisSupportApp from '../Home/Support/CallaCenter';
+import SocialShareComponent from '../Community/Invite/Share';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -120,9 +126,38 @@ export const RootNavigator: React.FC = () => {
         component={CommunityInvitation}
         options={{ headerShown: false }}
       />
-    
-      {/* <RootStack.Screen
-        name="Drawer" CrisisSupportApp TouchableOpacity CommunityInvitation
+       <RootStack.Screen
+        name="MindfulApp"
+        component={MindfulApp}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="EmotionalCheckIn"
+        component={EmotionalCheckIn}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="SurveyScreen"
+        component={SurveyScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="ProfilePage"
+        component={ProfilePage}
+        options={{ headerShown: false }}
+      />
+         <RootStack.Screen
+        name="CrisisSupportApp"
+        component={CrisisSupportApp}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="SocialShareComponent"
+        component={SocialShareComponent}
+        options={{ headerShown: false }}
+      />
+      {/* <RootStack.Screen 
+        name="Drawer" ProfilePage CrisisSupportApp SocialShareComponent
         component={DrawerNavigatorNavigation}
         options={{ headerShown: false }}
       />

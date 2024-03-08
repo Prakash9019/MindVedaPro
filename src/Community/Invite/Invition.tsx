@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -35,13 +35,15 @@ const SectionBody: React.FC<SectionProps> = ({ bodyText }) => (
 const CommunityInvitation = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
+    <ScrollView>
     <View style={styles.mainContainer}>
+    <View style={styles.headerContainer}>
       <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-      <CommunityHeader imageUrl="https://cdn.builder.io/api/v1/image/assets/TEMP/8eea2d82d4daee5a154755d9a1fa5fd30cb1f87ec616dcfc920dab5fb9610bc6" />
-      <View style={styles.inviteContainer}>
+     <View style={styles.inviteContainer}>
         <Text>Invite to join</Text>
+      </View>
       </View>
       <View style={styles.welcomeContainer}>
         <SectionTitle title="Welcome to Our Bipolar Disorder Community Group" />
@@ -64,6 +66,7 @@ const CommunityInvitation = () => {
       </TouchableOpacity>
       <View style={styles.footerSpace} />
     </View>
+    </ScrollView>
   );
 };
 
@@ -112,6 +115,7 @@ const styles = StyleSheet.create({
     marginTop: 43,
   },
   sectionTitleText: {
+    fontSize: 22,
     fontWeight: 'bold',
   },
   sectionBodyContainer: {
@@ -152,6 +156,7 @@ const styles = StyleSheet.create({
   },
   shareLinkText: {
     color: '#FFF',
+    fontSize: 22,
     fontWeight: '700',
   },
   footerSpace: {

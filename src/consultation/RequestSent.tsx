@@ -24,9 +24,9 @@ const RequestSent = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.view4}>
-          <View style={styles.view5}>
-            <Text>Request Sent</Text>
-          </View>
+         
+            <Text style={styles.view5}>Request Sent</Text>
+       
           <View style={styles.view6}>
             <Text>
               Your request for a consultation with Dr. Emilia Clarke has been
@@ -35,7 +35,7 @@ const RequestSent = () => {
             </Text>
           </View>
           <View style={styles.view7}>
-          <TouchableOpacity style={styles.view8} onPress={()=> navigation.navigate("Stories")} >
+          <TouchableOpacity style={styles.view8} onPress={()=> navigation.navigate("DoctorProfile")} >
               <Text style={{color:"white"}}>Back to Profile</Text>
             </TouchableOpacity>
           </View>
@@ -93,15 +93,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   view5: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "400",
-    marginTop: 22,
-  },
+    marginLeft:20,
+     fontFamily: 'Inter, sans-serif',
+     fontWeight: '700',
+     fontSize: 22,
+   },
   view6: {
     // fontFeatureSettings: "'dlig' on",
     fontFamily: "Inter, sans-serif",
-    fontWeight: "400",
+    fontWeight: "900",
+
     marginTop: 16,
   },
   view7: {

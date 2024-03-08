@@ -37,34 +37,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ imageUri, label }) => (
 // Main Component
 const MentalWellnessApp = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const menuItems = [
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/7a071934d6a94b0b01a5fd8346d14c1203e4b17b0ce301900a4ddd40c0b285ac?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Home",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/981b4e8f639e98d37484cdf97da86bda98d84221f5250d2b3e33a17186e34e42?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Experts",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/554ac6fe3880e8235c12a317f194d879640a1b98def94a05eebc1118108ac470?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Community",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a7565389c0295909c1005b7fb69ee144fb127040de5891d001584f7c90962fc?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Stories",
-    },
-    {
-      imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/eadd5e45221bfcadd52bd1f410be6c47c9c570cda7e807c731ff5f5cdbed20f2?apiKey=42bb954c825745999302100cb42c8fd0&",
-      label: "Profile",
-    },
-  ];
-
+ 
   return (
     <ScrollView>
     <View style={styles.container}>
       
-      <TouchableOpacity >
+      <TouchableOpacity onPress={()=>{navigation.navigate("ProfilePage")}} >
       <View style={styles.header}>
         <HeaderImage
           source="https://cdn.builder.io/api/v1/image/assets/TEMP/20c430cd24c554602ac7482620760b96c5976058992dd12c4f9fbe36daa29d22?apiKey=42bb954c825745999302100cb42c8fd0&"
@@ -86,29 +64,26 @@ const MentalWellnessApp = () => {
         <Text style={styles.emergencyTitle}>Are you in crisis?</Text>
       <Text style={styles.emergencyDescription}>If you or someone you know is in a crisis consider reaching out immediately.</Text>
       <TouchableOpacity style={styles.emergencySupport} onPress={()=>{navigation.navigate("SupportOptions")}}>
-        <Text>Emergency support</Text>
+        <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Emergency support</Text>
       </TouchableOpacity>
       <View style={styles.testSection}>
         <Text style={styles.testTitle}>Can't apprehend your actions?</Text>
         <Text style={styles.testDescription}>Take a free mental health test</Text>
-        <TouchableOpacity style={styles.startTest} onPress={()=>{navigation.navigate("Test")}} >
-          <Text>Start Test</Text>
+        <TouchableOpacity style={styles.startTest} onPress={()=>{navigation.navigate("MindfulApp")}} >
+          <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Start Test</Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.sectionTitle}>Post of the Day</Text>
-      <TouchableOpacity onPress={()=>{navigation.navigate("PostOfDay")}}>
+      <TouchableOpacity onPress={()=>{navigation.navigate("ArticleScreen")}}>
       <View style={styles.postSection}>
+        <View>
         <Text>Emotional Support</Text>
         <Text>How to overcome anxiety?</Text>
         <Text>Posted by Dr. Emilia · Stress Specialist</Text>
+        </View>
         <HeaderIcons src="https://cdn.builder.io/api/v1/image/assets%2FTEMP%2Fa5110698b89b90823fa03fe28a54d57ff3f76b7043716d58261cc8a7fc1e036a?apiKey=42bb954c825745999302100cb42c8fd0&" style={styles.postImage} />
       </View>
       </TouchableOpacity>
-        <View style={styles.menu}>
-          {menuItems.map((item, index) => (
-            <MenuItem key={index} imageUri={item.imageUri} label={item.label} />
-          ))}
-        </View>
       </View>
     </View>
     </ScrollView>
@@ -132,6 +107,8 @@ const styles = StyleSheet.create({
   emergencySupport: {
     backgroundColor: '#A11AE5',
     borderRadius: 20,
+    marginLeft:36,
+    marginRight:36,
     padding: 10,
     alignItems: 'center',
     marginBottom: 16,
@@ -152,6 +129,8 @@ const styles = StyleSheet.create({
   startTest: {
     backgroundColor: '#A11AE5',
     borderRadius: 16,
+    marginRight:36,
+    marginLeft:36,
     padding: 18,
     alignItems: 'center',
   },
@@ -161,11 +140,15 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   postSection: {
+    paddingTop :8,
+    display:"flex",
+    flexDirection: "row",
     marginBottom: 16,
   },
   postImage: {
-    width: 114,
-    height: 114,
+    // display:"flex",
+    width: 90,
+    height: 90,
     borderRadius: 8,
   },
   header: {

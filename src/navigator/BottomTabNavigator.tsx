@@ -19,6 +19,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import ProfilePage from '../Profiles/Profile';
 const BottomTabs = createBottomTabNavigator();
 
 export const BottomTabsNavigation: React.FC = () => {
@@ -73,7 +74,7 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="Profile" component={DoctorProfile}
+        name="Profile" component={ProfilePage}
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome5 name="user-circle" size={28} color={color} />

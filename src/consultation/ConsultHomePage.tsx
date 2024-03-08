@@ -58,7 +58,7 @@ const ConsultHomePage = () => {
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
             <View style={styles.view5}>
-              <Text>Consult with Experts</Text>
+              <Text style={{fontSize:16,fontWeight:"600"}}>Consult with Experts</Text>
             </View>
           </View>
         </View>
@@ -94,13 +94,9 @@ const ConsultHomePage = () => {
             {/* <View style={styles.view10}> */}
             <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by expertise or condition" style={styles.view9}
       />
-            {/* </View> */}
-          {/* </View> */}
-          <View style={styles.view11}>
-            <Text>Top experts</Text>
+           
+            <Text style={styles.view11}>Top experts</Text>
           </View>
-        </View>
-        {/* onPress={()=> navigation.navigate("StorySharing")} */}
         <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("DoctorProfile")}>
         {specialists.map((specialist) => (
         <SpecialistCard
@@ -133,12 +129,9 @@ const ConsultHomePage = () => {
             </View>
           </View>
         </View> */}
-     
-        <View style={styles.view32}>
-          <View style={styles.view33}>
-            <Text>Consult with Experts</Text>
-          </View>
-        </View>
+      <TouchableOpacity style={styles.postButton}>
+        <Text style={styles.postButtonText}>Consult with Experts</Text>
+      </TouchableOpacity>
       
       </View>
     </View>
@@ -150,7 +143,12 @@ export default ConsultHomePage;
 
 const styles = StyleSheet.create({
   backgroundImage: {
-    flex: 1,
+    // flex: 1,
+    marginLeft:9,
+    borderRadius:20,
+    marginRight:9,
+    width:350,
+    height:500,
     justifyContent: 'center',
   },
   contentContainer: {
@@ -211,19 +209,22 @@ const styles = StyleSheet.create({
     color: "#0D171C",
     fontWeight: "700",
  //   whiteSpace: "nowrap",
-  },
+  },  image1: { position: "relative", width: 24, aspectRatio: 1 },
   view4: {
-    alignItems: "flex-start",
+    alignItems: "stretch",
     display: "flex",
-    width: "100%",
-    flexDirection: "column",
-  //1  //1 padding: "28px 80px 8px 16px",
+    flexDirection:"row",
+    gap: 5,
+    marginLeft:10,
+    paddingBottom: 12,
+    paddingTop:12,
   },
-  image1: { position: "relative", width: 24, aspectRatio: 1 },
   view5: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 20,
+    marginLeft:88,
+    fontFamily: "Inter, sans-serif",
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
   },
   image2: {
     marginTop: 10,
@@ -281,6 +282,8 @@ const styles = StyleSheet.create({
     color: "#0D171C",
     // fontFeatureSettings: "'dlig' on",
     marginTop: 28,
+    marginLeft:8,
+    fontSize:16,
   //1    font: "700 18px Epilogue, sans-serif ",
   },
   view12: {
@@ -326,138 +329,23 @@ const styles = StyleSheet.create({
     marginTop: 4,
   //1    font: "400 14px/21px Epilogue, sans-serif ",
   },
-  view32: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 12,
-    backgroundColor: "#1CABE3",
-    alignSelf: "center",
-    display: "flex",
-    marginTop: 52,
-    width: "100%",
-    maxWidth: 358,
-    fontSize: 16,
-    color: "#0D171C",
-    fontWeight: "700",
-    letterSpacing: 0.24,
-    //1 padding: "12px 60px",
-  },
-  view33: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    alignItems: "stretch",
-    backgroundColor: "#1CABE3",
-    justifyContent: "center",
-  },
-  view34: {
-    backgroundColor: "#F7FAFA",
-    minHeight: 20,
+  postButton: {
     marginTop: 12,
-    width: "100%",
+    // marginLeft: 8,
+    // marginRight: 8,
+    backgroundColor: "#421AE5",
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+
+    paddingVertical: 12,
   },
-  view35: {
-    display: "flex",
-    fontSize: 12,
-    color: "#706387",
-    fontWeight: "500",
-    textAlign: "center",
-    letterSpacing: 0.18,
-    //1 padding: "0 20px",
-  },
-  view36: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    //1 padding: "2px 16px",
-  },
-  image8: {
-    alignSelf: "center",
-    position: "relative",
-    width: 36,
-    aspectRatio: "1.49",
-  },
-  view37: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view38: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    //1 padding: "2px 13px",
-  },
-  image9: {
-    alignSelf: "center",
-    position: "relative",
-    width: 24,
-    aspectRatio: 1,
-  },
-  view39: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view40: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    //1 padding: "2px 4px",
-  },
-  image10: {
-    alignSelf: "center",
-    position: "relative",
-    width: 24,
-    aspectRatio: 1,
-  },
-  view41: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view42: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    //1 padding: "2px 15px",
-  },
-  image11: {
-    alignSelf: "center",
-    position: "relative",
-    width: 24,
-    aspectRatio: 1,
-  },
-  view43: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
-  },
-  view44: {
-    alignItems: "stretch",
-    display: "flex",
-    flexGrow: 1,
-    flexBasis: "0%",
-    flexDirection: "column",
-    //1 padding: "2px 17px",
-  },
-  image12: {
-    alignSelf: "center",
-    position: "relative",
-    width: 41,
-    aspectRatio: "1.69",
-  },
-  view45: {
-    // fontFeatureSettings: "'dlig' on",
-    fontFamily: "Epilogue, sans-serif",
-    marginTop: 8,
+  postButtonText: {
+    paddingRight:12,
+    paddingLeft:12,
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "700",
   },
   cardContainer: {
     backgroundColor: "#F7FAFA",

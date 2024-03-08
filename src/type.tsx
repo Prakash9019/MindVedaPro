@@ -16,9 +16,13 @@ export type RootStackParamList = {
     StorySharing :undefined;
     ThankForStory: undefined;
     RequestConst: undefined;
+    ProfilePage:undefined;
     MsgRequest: undefined;
     ArticleScreen: undefined;
     Stories: undefined;
+    MindfulApp:undefined;
+    EmotionalCheckIn :undefined;
+    SurveyScreen:undefined;
     RequestSent: undefined;
     NGOApp :undefined;
     NGOs :undefined;

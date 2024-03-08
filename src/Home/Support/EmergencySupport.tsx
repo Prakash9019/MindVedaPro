@@ -84,7 +84,16 @@ const SupportOptions = () => {
       <Text style={styles.mainTitle}>We are here for you</Text>
       <Text style={styles.mainDescription}>If you're feeling distressed, we can help. You're not alone.</Text>
       {informationSections.map(section => (
-        <Section key={section.key} title={section.title} description={section.description} imageUrl={section.imageUrl} />
+        <TouchableOpacity onPress={()=>{navigation.navigate("CrisisSupportApp")}}>
+        <View style={styles.sectionContainer}>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>{section.title}</Text>
+            <Text style={styles.description}>{section.description}</Text>
+          </View>
+          <Image source={{ uri: section.imageUrl }} style={styles.sectionImage} />
+        </View>
+        </TouchableOpacity>
+        // <Section key={section.key} title={section.title} description={section.description} imageUrl={section.imageUrl} />
       ))}
     </View>
   );
