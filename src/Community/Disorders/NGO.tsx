@@ -40,21 +40,15 @@ const NGOApp = () => {
   
   <View style={styles.appContainer}>
     <View style={styles.contentContainer}>
-    <TouchableOpacity onPress={() => navigation.goBack()} >
+    <View style={styles.view4}>
+          <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-      <View style={styles.headerContainer}>
-        <Image
-          resizeMode="contain"
-          source={{
-            uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/394a56e9683da989e24140ddb33623e7",
-          }}
-          style={styles.headerImage}
-        />
-        <View style={styles.headerTextContainer}>
-          <Text>NGO Details</Text>
-        </View>
-      </View>
+          <View style={styles.view5}>
+          <Text style={styles.groupHeaderTitle}>NGO Details</Text>
+           </View>
+          </View>
+      
       <NGOInfoSection
         title="NAMI"
         subtitle="National Alliance on Mental Illness"
@@ -77,6 +71,26 @@ const NGOApp = () => {
 )};
 
 const styles = StyleSheet.create({
+  view4: {
+    alignItems: "stretch",
+    display: "flex",
+    flexDirection:"row",
+    gap: 5,
+    marginLeft:9,
+    paddingBottom: 12,
+    paddingTop:12,
+  },
+  groupHeaderTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+  },
+  view5: {
+    marginLeft:70,
+    fontFamily: "Inter, sans-serif",
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
+  },
   appContainer: {
     alignItems: "stretch",
     backgroundColor: "#FFF",

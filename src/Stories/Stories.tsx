@@ -22,14 +22,16 @@ const Stories = () => {
         <View style={styles.view1}>
           <View style={styles.view2}>
             <View style={styles.view3}>
-              <View style={styles.view4}>
-              <TouchableOpacity onPress={() => navigation.goBack()} >
+            <View style={styles.view4}>
+          <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-                <View>
-                  <Text  style={styles.view5}> Stories</Text>
-                </View>
-            <AntDesign style={styles.image2} size={25} name="search1"/>
+          <View style={styles.view5}>
+          <Text style={styles.groupHeaderTitle}>Bipolar Support Group</Text>
+          <AntDesign style={styles.image2} size={25} name="search1"/>
+           </View>
+          </View>
+           
 
                 {/* <Image
                   resizeMode="auto"
@@ -38,7 +40,7 @@ const Stories = () => {
                   }}
                   style={styles.image2}
                 /> */}
-              </View>
+              {/* </View> */}
             </View>
               <View style={styles.view7}>
                 <View style={styles.view8}>
@@ -60,45 +62,37 @@ const Stories = () => {
                 <View style={styles.view18}>
                   <View>
                     <Text style={styles.view19}>Mental Health</Text>
-                  </View>
-                  <View style={styles.view20}>
-                    <Text>Neeraj Chopra</Text>
-                  </View>
+                  </View>                
+                    <Text style={styles.view20}>Neeraj Chopra</Text>
                   <View >
                     <Text style={styles.view19}>How I gained confidence and overcame anxiety</Text>
                   </View>
                 </View>
                    <Image
                     source={{
-                         uri: "../img1.png",
+                         uri: "../n1.png",
                          }}
                   style={styles.image3}
                 />
               </View>
             </View>
+            <TouchableOpacity onPress={() => navigation.navigate("BipolarStory")} >
             <View style={styles.view16}>
               <View style={styles.view17}>
                 <View style={styles.view18}>
-                  <View >
                     <Text style={styles.view19}>Bipolar Disorder</Text>
-                  </View>
-                  <View >
-                    <Text style={styles.view20}>Masa Vaishnavi</Text>
-                  </View>
-                  <View >
-                    <Text style={styles.view19}>
-                      Riding the waves: My experience with bipolar disorder
-                    </Text>
-                  </View>
+                    <Text style={styles.view20}>Masa Vaishnavi</Text>                             
+                    <Text style={styles.view19}>Riding the waves: My experience with bipolar disorder</Text>
                 </View>
                 <Image
             source={{
-              uri: "../img1.png",
+              uri: "../img1.jpg",
             }}
                   style={styles.image3}
                 />
               </View>
             </View>
+            </TouchableOpacity>
             <View style={styles.view46}>
               <View style={styles.view47}>
                 {/* <View style={styles.view48}> */}
@@ -121,6 +115,26 @@ const Stories = () => {
     export default Stories;
     
     const styles = StyleSheet.create({
+      view4: {
+        alignItems: "stretch",
+        display: "flex",
+        flexDirection:"row",
+        gap: 5,
+        marginLeft:9,
+        paddingBottom: 12,
+        paddingTop:12,
+      },
+      view5: {
+        marginLeft:70,
+        fontFamily: "Inter, sans-serif",
+        display: "flex",
+        justifyContent:"center",
+        alignItems:"center",
+      },
+      groupHeaderTitle: {
+        fontSize: 18,
+        fontWeight: "700",
+      },
       view1: {
         alignItems: "stretch",
         backgroundColor: "#FFF",
@@ -162,19 +176,7 @@ const Stories = () => {
     paddingRight: 16,
     paddingBottom: 8,
       },
-      view4: {
-        justifyContent: "space-between",
-        alignItems: "stretch",
-        display: "flex",
-        gap: 20,
-        paddingVertical: 12, // Padding for top and bottom
-        paddingHorizontal: 0, // Padding for left and right
-      },
-      image1: { position: "relative", width: 24, aspectRatio: 1 },
-      view5: {
-        // fontFeatureSettings: "'dlig' on",
-        fontFamily: "Epilogue, sans-serif",
-      },
+     
       image2: { position: "relative", width: 24, aspectRatio: 1 },
       view6: {
         display: "flex",

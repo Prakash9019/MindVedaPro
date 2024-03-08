@@ -19,6 +19,7 @@ export type RootStackParamList = {
     ProfilePage:undefined;
     MsgRequest: undefined;
     ArticleScreen: undefined;
+    BipolarStory:undefined;
     Stories: undefined;
     MindfulApp:undefined;
     EmotionalCheckIn :undefined;

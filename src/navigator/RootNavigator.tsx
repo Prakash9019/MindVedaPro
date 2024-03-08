@@ -156,8 +156,13 @@ export const RootNavigator: React.FC = () => {
         component={SocialShareComponent}
         options={{ headerShown: false }}
       />
+       <RootStack.Screen
+        name="BipolarStory"
+        component={BipolarStory}
+        options={{ headerShown: false }}
+      />
       {/* <RootStack.Screen 
-        name="Drawer" ProfilePage CrisisSupportApp SocialShareComponent
+        name="Drawer" BipolarStory
         component={DrawerNavigatorNavigation}
         options={{ headerShown: false }}
       />

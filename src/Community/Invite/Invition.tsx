@@ -38,12 +38,14 @@ const CommunityInvitation = () => {
     <ScrollView>
     <View style={styles.mainContainer}>
     <View style={styles.headerContainer}>
-      <TouchableOpacity onPress={() => navigation.goBack()} >
+          <View style={styles.view4}>
+          <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-     <View style={styles.inviteContainer}>
-        <Text>Invite to join</Text>
-      </View>
+          <View style={styles.view5}>
+              <Text style={{fontSize:16,fontWeight:"600"}}>Invite to join</Text>
+           </View>
+          </View>
       </View>
       <View style={styles.welcomeContainer}>
         <SectionTitle title="Welcome to Our Bipolar Disorder Community Group" />
@@ -71,6 +73,48 @@ const CommunityInvitation = () => {
 };
 
 const styles = StyleSheet.create({
+  view3: {
+    alignItems: "stretch",
+    backgroundColor: "#F7FAFC",
+    display: "flex",
+    width: "100%",
+    flexDirection: "column",
+    fontSize: 18,
+    color: "#0D141C",
+    fontWeight: "700",
+   
+    paddingTop: 16,
+    paddingRight: 16,
+    paddingBottom: 8,
+    paddingLeft: 16,
+  }, 
+
+  view4: {
+    alignItems: "stretch",
+    display: "flex",
+    flexDirection:"row",
+    gap: 5,
+    paddingBottom: 12,
+    paddingTop:12,
+  },
+  view5: {
+    marginLeft:100,
+    fontFamily: "Inter, sans-serif",
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  view6: {
+    display: "flex",
+    marginTop: 16,
+    width: "100%",
+    flexDirection: "column",
+    alignItems: "stretch",
+    fontSize: 22,
+    fontWeight: "700",
+    paddingLeft:16,
+    paddingRight:16,
+  },
   mainContainer: {
     alignItems: 'stretch',
     backgroundColor: '#FFF',
@@ -103,10 +147,10 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     display: 'flex',
-    marginTop: 20,
+    marginTop: 0,
     width: '100%',
     flexDirection: 'column',
-    alignItems: 'stretch',
+    // alignItems: 'stretch',
     padding: 20, // Adjusted padding for better spacing
   },
   sectionTitleContainer: {
@@ -149,6 +193,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#6B1AE5',
     display: 'flex',
     marginTop: 24,
+    marginLeft: 24,
+    marginRight: 24,
     paddingBottom: 12,
     paddingTop: 12,
     paddingRight:60,

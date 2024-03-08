@@ -49,9 +49,14 @@ const SupportGroupApp1: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()} >
+      <View style={styles.view4}>
+          <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
+          <View style={styles.view5}>
+          <Text style={styles.groupHeaderTitle}>Bipolar Support Group</Text>
+           </View>
+          </View>
           <View style={styles.groupHeader}>
     {/* <Image resizeMode="cover" source={{ uri: title.imageUri }} style={styles.groupHeaderImage} /> */}
     <View style={styles.groupHeaderDetails}>
@@ -60,10 +65,14 @@ const SupportGroupApp1: React.FC = () => {
     </View>
   </View>
       {/* <GroupHeader title={{ name: "", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" /> */}
-      
-      <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
-       <Text style={styles.sectionButtonText}>Invite</Text>
+      <View style={{display:"flex",flexDirection:"row"}}>
+      <TouchableOpacity style={styles.sectionButton1} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
+     <Text style={styles.sectionButtonText}>Invite</Text>
       </TouchableOpacity>
+      <TouchableOpacity style={styles.sectionButton1} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
+      <Text style={styles.sectionButtonText}>Join</Text>
+      </TouchableOpacity>
+      </View>
       <ImageBackground source={{ uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} resizeMode="cover" style={styles.cardContainer}>
       <View style={styles.cardContent}>
         <Text style={styles.title}>Bipolar Support Group</Text>
@@ -88,6 +97,26 @@ const SupportGroupApp1: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  view4: {
+    alignItems: "stretch",
+    display: "flex",
+    flexDirection:"row",
+    gap: 5,
+    marginLeft:9,
+    paddingBottom: 12,
+    paddingTop:12,
+  },
+  view5: {
+    marginLeft:70,
+    fontFamily: "Inter, sans-serif",
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  groupHeaderTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+  },
   cardContainer: {
     overflow: 'hidden',
     display: 'flex',
@@ -146,21 +175,33 @@ const styles = StyleSheet.create({
   groupHeaderDetails: {
     alignItems: "center",
     marginTop: 8,
+    borderColor:"black",
+    borderStyle:"solid",
   },
-  groupHeaderTitle: {
-    fontSize: 18,
-    fontWeight: "700",
-  },
+ 
   groupHeaderMembers: {
     marginTop: 4,
     color: "#4F7596",
     fontSize: 14,
+  },
+  sectionButton1: {
+    borderRadius: 20,
+    backgroundColor: "#1A8AE5",
+    margin: 20,
+    padding: 10,
+    width: "40%",
+    height: "50%",
+    // display:"flex",
+    // flexDirection:"row",
+    alignItems: "center",
   },
   sectionButton: {
     borderRadius: 20,
     backgroundColor: "#1A8AE5",
     margin: 10,
     padding: 10,
+    // display:"flex",
+    // flexDirection:"row",
     alignItems: "center",
   },
   sectionButtonText: {

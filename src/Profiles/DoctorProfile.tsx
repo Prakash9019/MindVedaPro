@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     display: "flex",
     width: "100%",
     flexDirection: "column",
-  },
+  },  image1: { position: "relative", width: 24, aspectRatio: 1 },
   view3: {
     alignItems: "stretch",
     backgroundColor: "#F7FAFC",
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingLeft: 16,
   }, 
-  image1: { position: "relative", width: 24, aspectRatio: 1 },
+
   view4: {
     alignItems: "stretch",
     display: "flex",
