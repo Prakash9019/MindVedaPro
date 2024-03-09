@@ -26,6 +26,7 @@ import SurveyScreen from '../Home/MindTest/Page1';
 import ProfilePage from '../Profiles/Profile';
 import CrisisSupportApp from '../Home/Support/CallaCenter';
 import SocialShareComponent from '../Community/Invite/Share';
+import MentalHealthJourneyScreen from '../Stories/YourStory';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -161,8 +162,13 @@ export const RootNavigator: React.FC = () => {
         component={BipolarStory}
         options={{ headerShown: false }}
       />
+      <RootStack.Screen
+        name="MentalHealthJourneyScreen"
+        component={MentalHealthJourneyScreen}
+        options={{ headerShown: false }}
+      />
       {/* <RootStack.Screen 
-        name="Drawer" BipolarStory
+        name="Drawer" BipolarStory MentalHealthJourneyScreen
         component={DrawerNavigatorNavigation}
         options={{ headerShown: false }}
       />

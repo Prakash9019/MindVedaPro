@@ -160,12 +160,12 @@ interface TipItemProps {
 }
 
 const TipItem: React.FC<TipItemProps> = ({ tipImageUri, tipText }) => {
-  const [isSelected, setSelection] = React.useState(false);
+  // const [isSelected, setSelection] = React.useState(false);
   return (
   <View style={styles.tipContainer}>
-    <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
+    <View
+          // value={isSelected}
+          // onValueChange={setSelection}
           style={styles.tipImage}
         />
     {/* <Image resizeMode="cover" source={tipImageUri} style={styles.tipImage} /> */}
@@ -248,13 +248,23 @@ return (
       ))}
     </View>
     <SocialMediaActions />
+    
     <View style={styles.commentSection}>
-        <TextInput style={styles.commentInput} placeholder="Write a comment..." />
-        <TouchableOpacity style={styles.sendButton}>
+        <Image
+          resizeMode="cover"
+          source={require("../n1.jpg")}
+          style={styles.commentProfileImage}
+        />
+        <TextInput
+          style={styles.commentInput}
+          placeholder="Write a comment..."
+          placeholderTextColor="#4F7596"
+        />
+        <TouchableOpacity>
           <Image
             resizeMode="cover"
-            source={{ uri: "https://cdn.builder.io/api/v1/image/assets%2FTEMP%2FsendIconUri" }}
-            style={styles.sendIcon}
+            source={require("../n1.jpg")}
+            style={styles.commentButtonImage}
           />
         </TouchableOpacity>
       </View>
@@ -265,18 +275,28 @@ return (
 
 const styles = StyleSheet.create({
   commentSection: {
-        flexDirection: "row",
-        marginTop: 20,
-      },
-      commentInput: {
-        flex: 1,
-        borderColor: "#E8EDF2",
-        borderWidth: 1,
-        borderRadius: 20,
-        paddingHorizontal: 12,
-        height: 40,
-        marginRight: 8,
-      },
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: 16,
+    marginTop: 16,
+  },
+  commentProfileImage: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  commentInput: {
+    marginLeft: 16,
+    flex: 1,
+    borderBottomWidth: 1,
+    borderBottomColor: "#E8EDF2",
+    paddingVertical: 8,
+  },
+  commentButtonImage: {
+    width: 24,
+    height: 24,
+    marginLeft: 16,
+  },
       sendButton: {
         justifyContent: "center",
         alignItems: "center",
@@ -370,6 +390,7 @@ const styles = StyleSheet.create({
     marginLeft:90,
     borderColor:"black",
     marginRight: 8,
+    borderStyle:"solid",
     // backgroundColor:"grey"
   },
   tipTextContainer: {

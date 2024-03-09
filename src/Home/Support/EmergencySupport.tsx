@@ -84,8 +84,8 @@ const SupportOptions = () => {
       </View>
       <Text style={styles.mainTitle}>We are here for you</Text>
       <Text style={styles.mainDescription}>If you're feeling distressed, we can help. You're not alone.</Text>
-      {informationSections.map(section => (
-        <TouchableOpacity onPress={()=>{navigation.navigate("CrisisSupportApp")}}>
+      {informationSections.map((section,index) => (
+        <TouchableOpacity onPress={()=>{navigation.navigate("CrisisSupportApp")}} key={index}>
         <View style={styles.sectionContainer}>
           <View style={styles.textContainer}>
             <Text style={styles.title}>{section.title}</Text>

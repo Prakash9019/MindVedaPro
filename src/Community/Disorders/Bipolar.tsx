@@ -67,10 +67,10 @@ const SupportGroupApp1: React.FC = () => {
       {/* <GroupHeader title={{ name: "", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" /> */}
       <View style={{display:"flex",flexDirection:"row"}}>
       <TouchableOpacity style={styles.sectionButton1} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
-     <Text style={styles.sectionButtonText}>Invite</Text>
+     <Text style={styles.sectionButtonText}>Join</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionButton1} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
-      <Text style={styles.sectionButtonText}>Join</Text>
+      <Text style={styles.sectionButtonText}>Invite</Text>
       </TouchableOpacity>
       </View>
       <ImageBackground source={{ uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} resizeMode="cover" style={styles.cardContainer}>
@@ -83,14 +83,22 @@ const SupportGroupApp1: React.FC = () => {
         </TouchableOpacity>
       </View>
     </ImageBackground>
-      <SectionButton title="Consult with Experts" />
-
+    <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("ConsultHomePage")}} >
+       <Text style={styles.sectionButtonText}>Consult with Experts</Text>
+        </TouchableOpacity>
       <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
        <Text style={styles.sectionButtonText}>NGOs Working on Bipolar</Text>
         </TouchableOpacity>
-      <SectionButton title="Bipolar Chat Rooms" />
-      <SectionButton title="Happy Stories of People with Bipolar" />
-      <SectionButton title="Resources on Bipolar" />
+        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+       <Text style={styles.sectionButtonText}>Bipolar Chat Rooms</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+       <Text style={styles.sectionButtonText}>Happy Stories of People with Bipolar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+       <Text style={styles.sectionButtonText}>Resources on Bipolar</Text>
+        </TouchableOpacity>
+   
       {/* <FooterNavigation icons={iconsData} /> */}
     </ScrollView>
   );

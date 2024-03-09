@@ -56,6 +56,7 @@ const Stories = () => {
             <View style={styles.view15}>
               <Text>Positive stories</Text>
             </View>
+            <TouchableOpacity onPress={() => navigation.navigate("MentalHealthJourneyScreen")} >
             <View style={styles.view16}>
               <View style={styles.view17}>
                 <View style={styles.view18}>
@@ -73,6 +74,7 @@ const Stories = () => {
                 {/* </View> */}
               </View>
             </View>
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("BipolarStory")} >
             <View style={styles.view16}>
               <View style={styles.view17}>
@@ -173,7 +175,7 @@ const Stories = () => {
     paddingBottom: 8,
       },
      
-      image2: { position: "relative", width: 24, aspectRatio: 1 },
+      image2: { position: "relative", width: 24, aspectRatio: 1,marginLeft:89 },
       view6: {
         display: "flex",
         width: "100%",

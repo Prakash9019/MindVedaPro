@@ -1,9 +1,11 @@
 import React from "react";
-import { View, StyleSheet, Image, Text,TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, Text,TouchableOpacity, TextInput } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
-import {  useNavigation } from '@react-navigation/native';
+import {  useNavigation } from '@react-navigation/native'; 
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import Feather from 'react-native-vector-icons/Feather';
+
 interface HelpItemProps {
     imageUri: string;
     title: string;
@@ -19,7 +21,7 @@ const HelpLineItem : React.FC<HelpItemProps> = ({ title, time, number, imageUri 
       <Text style={styles.helpLineTime}>{time}</Text>
       <Text style={styles.helpLineNumber}>{number}</Text>
     </View>
-    <Image resizeMode="contain" source={{ uri: imageUri }} style={styles.helpLineImage} />
+    <Feather style={styles.helpLineImage} size={25} name="phone"/>
   </View>
 );
 
@@ -43,9 +45,16 @@ const CrisisSupportApp = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.goBack()} >
+       <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
+
+      <View style={styles.searchBar}>
+      <AntDesign style={styles.searchIcon} size={25} name="search1"/>
+      <View style={styles.searchInputContainer}>
+        <TextInput style={styles.searchText}>Search for a location</TextInput>
+      </View>
+    </View>
       {helpLines.map((line, index) => (
         <HelpLineItem
           key={index}
@@ -101,6 +110,28 @@ const styles = StyleSheet.create({
   helpLineImage: {
     width: 50,
     height: 50,
+  },
+  searchBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 12,
+    backgroundColor: "#E8F0F2",
+    // padding: 12,
+    paddingLeft:8,
+    margin: 8,
+  },
+  searchIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 8,
+  },
+  searchInputContainer: {
+    flex: 1,
+  },
+  searchText: {
+    fontFamily: "Lexend, sans-serif",
+    fontSize: 16,
+    color: "#4F8096",
   },
 });
 

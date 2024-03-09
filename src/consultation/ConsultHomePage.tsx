@@ -92,11 +92,11 @@ const ConsultHomePage = () => {
               style={styles.image3}
             /> */}
             {/* <View style={styles.view10}> */}
+            <AntDesign style={styles.searchIcon} size={25} name="search1"/>
             <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by expertise or condition" style={styles.view9}
       />
-           
-            <Text style={styles.view11}>Top experts</Text>
-          </View>
+           </View>
+           <Text style={styles.view11}>Top experts</Text>
         <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("DoctorProfile")}>
         {specialists.map((specialist) => (
         <SpecialistCard
@@ -129,9 +129,9 @@ const ConsultHomePage = () => {
             </View>
           </View>
         </View> */}
-      <TouchableOpacity style={styles.postButton}>
+      {/* <TouchableOpacity style={styles.postButton}>
         <Text style={styles.postButtonText}>Consult with Experts</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       
       </View>
     </View>
@@ -142,6 +142,9 @@ const ConsultHomePage = () => {
 export default ConsultHomePage;
 
 const styles = StyleSheet.create({
+  searchIcon:{
+      padding:10,
+  },
   backgroundImage: {
     // flex: 1,
     marginLeft:9,
@@ -254,7 +257,7 @@ const styles = StyleSheet.create({
     display: "flex",
     marginTop: 12,
     width: "100%",
-    flexDirection: "column",
+    flexDirection: "row",
     alignItems: "stretch",
   //1  //1 padding: "0 16px",
   },

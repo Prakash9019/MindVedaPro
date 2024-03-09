@@ -360,7 +360,7 @@ const StorySection: React.FC<StoryInputSectionProps> = ({ title }) => (
   <View style={styles.storyInputSectionContainer}>
     <View style={styles.storyInputIndicatorContainer}>
       <View style={styles.storyInputIndicator} />
-      <View style={{display:"flex" , flexDirection:"row"}}>
+      <View style={{display:"flex" , flexDirection:"row",marginTop:0,alignItems:"center",}}>
       <View style={styles.storyInputIndicatorActive} />
       <View style={styles.storyInputTitleContainer}>
          <Text>{title}</Text>
@@ -372,13 +372,6 @@ const StorySection: React.FC<StoryInputSectionProps> = ({ title }) => (
   </View>
 );
 
-const StoryFooter = () => (
-  <View style={styles.footerContainer}>
-    <View style={styles.footerInnerContainer}>
-      <Text>Post story</Text>
-    </View>
-  </View>
-);
 
 const StoryCreationScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -421,7 +414,9 @@ const StoryCreationScreen = () => {
           <StorySection key={index} title={title} />
         ))}
       </View>
-      <StoryFooter />
+      <TouchableOpacity style={styles.postButton}  onPress={()=>{navigation.navigate("ThankForStory")}}>
+        <Text style={styles.postButtonText}>Post Your Story</Text>
+      </TouchableOpacity>
       <View style={styles.spacer} />
     </View>
     </ScrollView>
@@ -432,7 +427,8 @@ const styles = StyleSheet.create({
   view7: {
         // fontFeatureSettings: "'dlig' on",
         fontFamily: "Inter, sans-serif",
-        marginTop: 368,
+        // marginTop: 368,
+
       },
   view4: {
     alignItems: "stretch",
@@ -444,14 +440,14 @@ const styles = StyleSheet.create({
     paddingTop:12,
   },
   view5: {
-    marginLeft:70,
+    marginLeft:110,
     fontFamily: "Inter, sans-serif",
     display: "flex",
     justifyContent:"center",
     alignItems:"center",
   },
   groupHeaderTitle: {
-    fontSize: 18,
+    fontSize: 19,
     fontWeight: "700",
   },
   screenContainer: {
@@ -465,6 +461,7 @@ const styles = StyleSheet.create({
     // margin: "0 auto",
   },
   headerContainer: {
+    marginLeft:9,
     justifyContent: "space-between",
     alignItems: "stretch",
     display: "flex",
@@ -472,6 +469,7 @@ const styles = StyleSheet.create({
     // padding: "12px 0",
   },
   headerImage: {
+    marginLeft:9,
     position: "relative",
     width: 24,
     flexShrink: 0,
@@ -481,12 +479,16 @@ const styles = StyleSheet.create({
     fontFamily: "Inter, sans-serif",
     flexGrow: 1,
     flexShrink: 1,
+    fontWeight:"bold",
     flexBasis: "auto",
   },
   storyContent: {
-    alignItems: "stretch",
+    // alignItems: "stretch",
     display: "flex",
     marginTop: 12,
+    // backgroundColor:"grey",
+    // marginLeft:12,
+    // marginRight:162,
     width: "100%",
     flexDirection: "column",
     // padding: "0 16px",
@@ -502,7 +504,10 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     display: "flex",
     marginTop: 12,
-    width: "100%",
+    marginBottom:12,
+    marginLeft: 12,
+    marginRight:15,
+    width: "94%",
     maxWidth: 358,
     flexDirection: "column",
     fontSize: 16,
@@ -517,61 +522,64 @@ const styles = StyleSheet.create({
   },
   storyQuestionTextContainer: {
     fontFamily: "Inter, sans-serif",
-    marginTop: 368,
+    // backgroundColor:"grey",
+    marginBottom: 50,
   },
   storyInputSectionContainer: {
-    alignItems: "stretch",
+    // alignItems: "stretch",
     display: "flex",
-    marginLeft:12,
-    marginTop: 12,
-    gap: 8,
+    marginLeft:15,
+    // marginTop: 12,
+    // gap: 8,
   },
   storyInputIndicatorContainer: {
     justifyContent: "center",
-    alignItems: "stretch",
+    // alignItems: "stretch",
     display: "flex",
-    flexDirection: "column",
-    flexBasis: "0%",
+    // flexDirection: "column",
+    // backgroundColor:"yellow",
+    // flexBasis: "0%",
     // padding: "0 16px",
   },
   storyInputIndicator: {
     backgroundColor: "#DEDBE5",
     flexShrink: 0,
-    height: 8,
-    marginTop: 4,
-    width: 8,
+    height: 19,
+    marginLeft:5,
+    // marginTop: 4,
+    width: 3,
   },
   storyInputIndicatorActive: {
-    borderRadius: 4,
+    borderRadius: 12,
+    // backgroundColor: "#141414",
     backgroundColor: "#141414",
-    marginTop: 4,
-    width: 8,
-    height: 8,
-    flexShrink: 0,
+    // marginTop: 4,
+    width: 12,
+    height: 12,
+    // flexShrink: 0,
   },
   storyInputTitleContainer: {
+    marginLeft:23,
     fontFamily: "Inter, sans-serif",
-    marginTop: 12,
+    marginTop: 4,
   },
-  footerContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 12,
+  postButton: {
+    marginTop: 12,
+    marginLeft: 53,
+    marginRight: 53,
     backgroundColor: "#421AE5",
-    alignSelf: "center",
-    display: "flex",
-    marginTop: 12,
-    width: "100%",
-    maxWidth: 358,
-    fontSize: 16,
-    color: "#FFF",
-    fontWeight: "700",
-    letterSpacing: 0.24,
-    // padding: "12px 60px",
-  },
-  footerInnerContainer: {
-    fontFamily: "Inter, sans-serif",
+    borderRadius: 12,
+    alignItems: "center",
     justifyContent: "center",
+
+    paddingVertical: 12,
+  },
+  postButtonText: {
+    paddingRight:12,
+    paddingLeft:12,
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "700",
   },
   spacer: {
     backgroundColor: "#FFF",

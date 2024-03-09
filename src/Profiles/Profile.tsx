@@ -41,7 +41,7 @@ const ProfilePage: React.FC = () => {
         <View style={styles.profileImageContainer}>
           <Image
             resizeMode="cover"
-            source={{ uri: "https://example.com/profile-picture.jpg" }}
+            source={require("../n1.jpg")}
             style={styles.profilePicture}
           />
         </View>
