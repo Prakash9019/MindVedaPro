@@ -1,5 +1,9 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../type';
+import {  useNavigation } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 interface ResourceItemProps {
   title: string;
@@ -16,6 +20,7 @@ const ResourceItem: React.FC<ResourceItemProps> = ({ title, imageUri }) => {
 };
 
 const BipolarDisorderResources: React.FC = () => {
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const resourceItems = [
     { title: 'Understand bipolar disorder', imageUri: 'imageUri1' },
     { title: 'Therapy and counseling', imageUri: 'imageUri2' },
@@ -26,10 +31,18 @@ const BipolarDisorderResources: React.FC = () => {
 
   return (
     <ScrollView style={styles.mainContainer}>
-      <View style={styles.headerContainer}>
-        <Image resizeMode="contain" source={{ uri: 'headerImageUri' }} style={styles.headerImage} />
-        <Text style={styles.headerTitle}>Bipolar Disorder Resources</Text>
-      </View>
+        <View style={styles.view3}>
+          <View style={styles.view4}>
+          <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft"/>
+          </TouchableOpacity>
+            <View style={styles.view5}>
+              <Text style={{fontSize:16,fontWeight:"600"}}> Bipolar Disorder Resources</Text>
+            </View>
+          </View>
+        </View>
+        <View>
+            </View>
       {resourceItems.map((item, index) => (
         <ResourceItem key={index} title={item.title} imageUri={item.imageUri} />
       ))}
@@ -59,6 +72,36 @@ const BipolarDisorderResources: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+    view3: {
+        alignItems: "stretch",
+        backgroundColor: "#F7FAFC",
+        display: "flex",
+        width: "100%",
+        flexDirection: "column",
+        fontSize: 18,
+        color: "#0D141C",
+        fontWeight: "700",
+       
+        paddingTop: 16,
+        paddingRight: 16,
+        paddingBottom: 8,
+        paddingLeft: 16,
+      },
+      view4: {
+        alignItems: "stretch",
+        display: "flex",
+        flexDirection:"row",
+        gap: 5,
+        paddingBottom: 12,
+        paddingTop:12,
+      },
+      view5: {
+        marginLeft:38,
+        fontFamily: "Inter, sans-serif",
+        display: "flex",
+        justifyContent:"center",
+        alignItems:"center",
+      },
   mainContainer: {
     flex: 1,
     backgroundColor: '#FFF',

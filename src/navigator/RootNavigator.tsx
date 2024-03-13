@@ -179,11 +179,6 @@ export const RootNavigator: React.FC = () => {
         component={BipolarDisorderResources}
         options={{ headerShown: false }}
       />
-       <RootStack.Screen
-        name="BipolarStory"
-        component={BipolarStory}
-        options={{ headerShown: false }}
-      />
       {/* <RootStack.Screen 
         name="Drawer" BipolarStory MentalHealthJourneyScreen ConfirmationScreen
         component={DrawerNavigatorNavigation}

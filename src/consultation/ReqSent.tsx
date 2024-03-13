@@ -1,5 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+import {  useNavigation } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 interface TitleProps {
   text: string;
@@ -11,15 +15,18 @@ const Title: React.FC<TitleProps> = ({ text, style }) => (
 );
 
 const ConfirmationScreen: React.FC = () => {
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image resizeMode="cover" source={{ uri: "imageUri" }} style={styles.icon} />
+      <TouchableOpacity onPress={() => navigation.goBack()} >
+            <AntDesign size={25} name="arrowleft" style={styles.icon} />
+          </TouchableOpacity>
       </View>
       <View style={styles.content}>
         <Title text="Request Sent" style={styles.mainTitle} />
         <Title text="Your message has been sent successfully" style={styles.subtitle} />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("DoctorProfile")}>
           <Text style={styles.buttonText}>Back to profile</Text>
         </TouchableOpacity>
       </View>

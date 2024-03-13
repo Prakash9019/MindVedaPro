@@ -312,7 +312,7 @@ export const BipolarStory = () => {
           <Text style={styles.groupHeaderTitle}>Bipolar Support Group</Text>
            </View>
           </View>
-        <Image resizeMode="cover" source={{ uri: "profileIconUrl" }} style={styles.headerIcon} />
+        {/* <Image resizeMode="cover" source={{ uri: "profileIconUrl" }} style={styles.headerIcon} /> */}
       </View>
       
       <View style={styles.storyCategoriesContainer}>
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
     paddingTop:12,
   },
   view5: {
-    marginLeft:70,
+    marginLeft:40,
     fontFamily: "Inter, sans-serif",
     display: "flex",
     justifyContent:"center",

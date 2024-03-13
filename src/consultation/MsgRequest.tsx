@@ -13,11 +13,13 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
  import {  useNavigation } from '@react-navigation/native';
  import AntDesign from 'react-native-vector-icons/AntDesign'
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const MsgRequest = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [value, onChangeText] = React.useState('');
   return (
+    <SafeAreaView>
         <View style={styles.view1}>
           <View style={styles.view2}>
             <View style={styles.view3}>
@@ -40,7 +42,7 @@ const MsgRequest = () => {
               {/* </View> */}
               <View style={styles.view8}>
               {/* onPress={()=> navigation.navigate("Stories")} */}
-              <TouchableOpacity style={styles.view9}  >
+              <TouchableOpacity style={styles.view9}  onPress={() => navigation.navigate("ConfirmationScreen")} >
               <Text style={{color:"white"}}>Send message request</Text>
             </TouchableOpacity>
                
@@ -49,6 +51,7 @@ const MsgRequest = () => {
             <View style={styles.view10} />
           </View>
         </View>
+        </SafeAreaView>
       );
     }
 export default MsgRequest;
