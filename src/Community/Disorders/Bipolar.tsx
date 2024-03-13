@@ -92,10 +92,10 @@ const SupportGroupApp1: React.FC = () => {
         <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
        <Text style={styles.sectionButtonText}>Bipolar Chat Rooms</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("BipolarStory")}} >
        <Text style={styles.sectionButtonText}>Happy Stories of People with Bipolar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("BipolarDisorderResources")}} >
        <Text style={styles.sectionButtonText}>Resources on Bipolar</Text>
         </TouchableOpacity>
    

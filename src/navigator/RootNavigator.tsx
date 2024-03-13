@@ -27,6 +27,8 @@ import ProfilePage from '../Profiles/Profile';
 import CrisisSupportApp from '../Home/Support/CallaCenter';
 import SocialShareComponent from '../Community/Invite/Share';
 import MentalHealthJourneyScreen from '../Stories/YourStory';
+import ConfirmationScreen from '../consultation/ReqSent';
+import BipolarDisorderResources from '../Community/Resources/BipolarResources';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -167,8 +169,23 @@ export const RootNavigator: React.FC = () => {
         component={MentalHealthJourneyScreen}
         options={{ headerShown: false }}
       />
+      <RootStack.Screen
+        name="ConfirmationScreen"
+        component={ConfirmationScreen}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="BipolarDisorderResources"
+        component={BipolarDisorderResources}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="BipolarStory"
+        component={BipolarStory}
+        options={{ headerShown: false }}
+      />
       {/* <RootStack.Screen 
-        name="Drawer" BipolarStory MentalHealthJourneyScreen
+        name="Drawer" BipolarStory MentalHealthJourneyScreen ConfirmationScreen
         component={DrawerNavigatorNavigation}
         options={{ headerShown: false }}
       />

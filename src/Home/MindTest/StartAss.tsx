@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
  import {  useNavigation } from '@react-navigation/native';
@@ -23,6 +23,7 @@ const AssessmentSection = () => {
 const MindfulApp = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
+    <SafeAreaView>
     <View style={styles.mainContainer}>
       <View style={styles.contentContainer}>
         <View style={styles.topImageContainer}>
@@ -44,6 +45,7 @@ const MindfulApp = () => {
         <View style={styles.bottomSpacing} />
       </View>
     </View>
+    </SafeAreaView>
   );
 };
 
