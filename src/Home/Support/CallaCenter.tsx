@@ -5,6 +5,9 @@ import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native'; 
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import call from 'react-native-phone-call'
+
 
 interface HelpItemProps {
     imageUri: string;
@@ -14,16 +17,32 @@ interface HelpItemProps {
   }
 
 // Create a reusable component for help line item
-const HelpLineItem : React.FC<HelpItemProps> = ({ title, time, number, imageUri }) => (
+const HelpLineItem : React.FC<HelpItemProps> = ({ title, time, number, imageUri }) => {
+  const [inputValue, setInputValue] = React.useState("6301750186");
+  const triggerCall = () => {
+
+    const args = {
+    number: inputValue,
+    skipCanOpen: true,
+    prompt: true,  
+    };
+    
+call(args).catch(console.error);
+
+};
+
+  return (
   <View style={styles.helpLineItemContainer}>
     <View style={styles.helpLineTextContainer}>
       <Text style={styles.helpLineTitle}>{title}</Text>
       <Text style={styles.helpLineTime}>{time}</Text>
       <Text style={styles.helpLineNumber}>{number}</Text>
     </View>
-    <Feather style={styles.helpLineImage} size={25} name="phone"/>
+    <TouchableOpacity activeOpacity={0.7} onPress={triggerCall} style={styles.helpLineImage}>
+    <Feather  size={25} name="phone"/>
+    </TouchableOpacity>
   </View>
-);
+)};
 
 const CrisisSupportApp = () => {
   // Data for help lines to map over

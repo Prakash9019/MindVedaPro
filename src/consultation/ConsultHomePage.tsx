@@ -256,9 +256,15 @@ const styles = StyleSheet.create({
   view8: {
     display: "flex",
     marginTop: 12,
-    width: "100%",
+    width: "92%",
+    borderRadius: 30,
+    paddingLeft:10,
+    marginRight:15,
+    marginLeft:4,
+    justifyContent: "center",
+    alignItems: "center",
     flexDirection: "row",
-    alignItems: "stretch",
+    backgroundColor: "#E8F0F2",
   //1  //1 padding: "0 16px",
   },
   view9: {

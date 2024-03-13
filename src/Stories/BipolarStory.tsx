@@ -293,7 +293,7 @@ const StoryPreview = ({ title, author, summary, imageUrl }: StoryPreviewProps) =
       <Text style={styles.storyPreviewAuthor}>{author}</Text>
       <Text>{summary}</Text>
     </View>
-    <Image resizeMode="cover" source={{ uri: imageUrl }} style={styles.storyPreviewImage} />
+    <Image resizeMode="cover" source={require("../n1.jpg")} style={styles.storyPreviewImage} />
   </View>
 );
 

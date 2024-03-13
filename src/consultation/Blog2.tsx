@@ -163,11 +163,7 @@ const TipItem: React.FC<TipItemProps> = ({ tipImageUri, tipText }) => {
   // const [isSelected, setSelection] = React.useState(false);
   return (
   <View style={styles.tipContainer}>
-    <View
-          // value={isSelected}
-          // onValueChange={setSelection}
-          style={styles.tipImage}
-        />
+     <AntDesign size={25} name="caretright" style={styles.tipImage}/>
     {/* <Image resizeMode="cover" source={tipImageUri} style={styles.tipImage} /> */}
     <View style={styles.tipTextContainer}>
       <Text>{tipText}</Text>
