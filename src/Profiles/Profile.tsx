@@ -4,6 +4,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
  import {  useNavigation } from '@react-navigation/native';
  import AntDesign from 'react-native-vector-icons/AntDesign' 
+ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
  
 interface UserProfileInfoProps {
   label: string;
@@ -30,7 +31,49 @@ const ProfileSectionTitle: React.FC<ProfileSectionTitleProps> = ({ title, descri
 );
 
 const ProfilePage: React.FC = () => {
+  const [image, setImage] = useState('');
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const requestCameraPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.CAMERA,
+        {
+          title: "App Camera Permission",
+          message: "App needs access to your camera ",
+          buttonNeutral: "Ask Me Later",
+          buttonNegative: "Cancel",
+          buttonPositive: "OK"
+        }
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log("Camera permission given");
+      } else {
+        console.log("Camera permission denied");
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
+
+  const handleCamera = async () => {
+    // setCount(count + 1);
+    requestCameraPermission();
+    const res = await launchCamera({ mediaType: 'photo', videoQuality: 'high', saveToPhotos: true })
+    Alert.alert('saved to your Gallery')
+    console.log(res.assets[0].uri);
+    setImage(res.assets[0].uri);
+    //fetchData(res.assets[0].uri);
+  }
+
+  const handleGallery = async () => {
+  //  setCount(count + 1);
+    requestCameraPermission();
+    const res = await launchImageLibrary({ mediaType: 'photo', videoQuality: 'high' })
+    console.log(res.assets[0].uri);
+    setImage(res.assets[0].uri)
+    //fetchData(res.assets[0].uri);
+  }
   return (
     <View style={{backgroundColor:"blue"}}>
     <View style={styles.profileContainer}>
@@ -38,13 +81,13 @@ const ProfilePage: React.FC = () => {
             <AntDesign size={25} name="arrowleft" style={{marginTop:34,marginLeft:12}}/>
           </TouchableOpacity>
       <View style={styles.profileHeader}>
-        <View style={styles.profileImageContainer}>
+        <TouchableOpacity style={styles.profileImageContainer} onPress={()={handleGallery()}}>
           <Image
             resizeMode="cover"
             source={require("../n1.jpg")}
             style={styles.profilePicture}
           />
-        </View>
+        </TouchableOpacity>
         {/* <Image
           resizeMode="cover"
           source={{ uri: "https://example.com/header-image.jpg" }}
