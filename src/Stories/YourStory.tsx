@@ -1,6 +1,9 @@
 import React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
-
+import { View, Image, Text, StyleSheet, TouchableOpacity,Alert,PermissionsAndroid } from "react-native";
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../type';
+ import {  useNavigation } from '@react-navigation/native';
+ import AntDesign from 'react-native-vector-icons/AntDesign' 
 interface StoryCardProps {
   title: string;
   subtitle: string;
@@ -17,8 +20,13 @@ const StoryCard: React.FC<StoryCardProps> = ({
   content,
   publishDate,
   readTime,
-}) => (
+}) => {
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  return (
   <View style={styles.container}>
+      <TouchableOpacity onPress={() => navigation.goBack()}  >
+            <AntDesign size={25} name="arrowleft" style={{marginTop:34,marginLeft:12}}/>
+          </TouchableOpacity>
     <Image resizeMode="cover" source={{ uri: imageUrl }} style={styles.storyImage} />
     <Text style={styles.title}>{title}</Text>
     <View style={styles.tagContainer}>
@@ -27,7 +35,7 @@ const StoryCard: React.FC<StoryCardProps> = ({
     <Text style={styles.publishDetails}>{`Published on ${publishDate} · ${readTime} read`}</Text>
     <Text style={styles.content}>{content}</Text>
   </View>
-);
+)};
 
 const styles = StyleSheet.create({
   container: {

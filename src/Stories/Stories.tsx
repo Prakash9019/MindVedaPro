@@ -59,7 +59,8 @@ const Stories = () => {
             <TouchableOpacity onPress={() => navigation.navigate("MentalHealthJourneyScreen")} >
             <View style={styles.view16}>
               <View style={styles.view17}>
-                <View style={styles.view18}>
+                {/* <View style={styles.view18}> */}
+                <View style={{width:"78%",marginRight:1}}>
                     <Text style={styles.view19}>Mental Health</Text>
                     <Text style={styles.view20}>Neeraj Chopra</Text>
                     <Text style={styles.view19}>How I gained confidence and overcame anxiety</Text>                
@@ -78,9 +79,9 @@ const Stories = () => {
             <TouchableOpacity onPress={() => navigation.navigate("BipolarStory")} >
             <View style={styles.view16}>
               <View style={styles.view17}>
-                <View style={styles.view18}>
+                <View style={{width:"78%",marginRight:2}}>
                     <Text style={styles.view19}>Bipolar Disorder</Text>
-                    <Text style={styles.view20}>Masa Vaishnavi</Text>                             
+                    <Text style={styles.view20}>Masa Vaishnavi</Text>                         
                     <Text style={styles.view19}>Riding the waves: My experience with bipolar disorder</Text>
                 </View>
                 <Image
@@ -262,7 +263,7 @@ const Stories = () => {
        // backgroundColor:"grey",
         display: "flex",
          flexDirection:"row",
-        gap: 16,
+        gap: 4,
       },
       view18: {
         // alignItems: "stretch",      

@@ -76,7 +76,7 @@ const MentalWellnessApp = () => {
       <Text style={styles.sectionTitle}>Post of the Day</Text>
       <TouchableOpacity onPress={()=>{navigation.navigate("ArticleScreen")}}>
       <View style={styles.postSection}>
-        <View>
+        <View style={{width:"75%",marginRight:1}}>
         <Text>Emotional Support</Text>
         <Text>How to overcome anxiety?</Text>
         <Text>Posted by Dr. Emilia · Stress Specialist</Text>
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
   },
   postImage: {
     // display:"flex",
-    width: 90,
-    height: 90,
+    width: 85,
+    height: 85,
     borderRadius: 8,
   },
   header: {

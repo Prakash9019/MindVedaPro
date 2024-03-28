@@ -201,14 +201,6 @@ const styles = StyleSheet.create({
     paddingLeft:16,
     paddingRight:16,
   },
-  image2: {
-    position: "relative",
-    width: 72,
-    marginLeft: "10%",
-    height: 72,
-    aspectRatio: 1,
-    borderRadius: 12,
-  },
   view7: {
     color: "#0D141C",
     
@@ -381,18 +373,21 @@ const styles = StyleSheet.create({
   postContainer: { marginBottom: 16 },
   postTitle: { fontWeight: "bold", fontSize: 16 },
   postSubtitle: { fontSize: 14, color: "#999" },
-  postImage: {   height: 90,
-    width: 90,
+  postImage: {   height: "30%",
+    width: "30%",
     aspectRatio: 1.33,
  marginRight:23, backgroundColor:"green" ,borderRadius:8, },
   articleContainer: {    marginRight:10,  display: "flex", paddingBottom: 16, flexDirection:"row"},
   headerContainer: {
-    alignItems: "stretch",
+    // alignItems: "stretch",
     display: "flex",
-    flexGrow: 1,
+    width:"80%",
+    // backgroundColor:"blue",
+    // flexGrow: 1,
     flexDirection: "column",
-    paddingEnd: 12,
+    // paddingEnd: 12,
     paddingBottom: 21,
+    marginRight:4,
   },
 
 });

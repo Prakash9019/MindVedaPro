@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
-import {  useNavigation } from '@react-navigation/native';
+import {  useNavigation } from '@react-navigation/native';//
 import AntDesign from 'react-native-vector-icons/AntDesign'
-
+import Feather from 'react-native-vector-icons/Feather'
 interface ResourceItemProps {
   title: string;
   imageUri: string;
@@ -14,7 +14,7 @@ const ResourceItem: React.FC<ResourceItemProps> = ({ title, imageUri }) => {
   return (
     <View style={styles.resourceItemContainer}>
       <Text style={styles.resourceItemTitle}>{title}</Text>
-      <Image resizeMode="contain" source={{ uri: imageUri }} style={styles.resourceItemImage} />
+      <Feather size={35} name="arrow-right-circle" style={styles.resourceItemImage}/>
     </View>
   );
 };
@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   resourceItemImage: {
-    width: 50,
-    height: 50,
+    width: 35,
+    height: 35,
     marginLeft: 10,
   },
   discoverMore: {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   additionalTopicsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    // justifyContent: 'space-around',
     marginTop: 10,
     marginBottom: 20,
   },

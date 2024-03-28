@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, ImageSourcePropType,ImageBackground } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, ImageSourcePropType,TouchableWithoutFeedback,ImageBackground } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -45,7 +45,11 @@ interface FooterNavigationProps {
 
 
 const SupportGroupApp1: React.FC = () => {
-  
+  const [isButtonDisabled, setButtonDisabled] = React.useState(false);
+
+  const handleButtonPress = () => {
+    setButtonDisabled(true);
+  };
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <ScrollView style={styles.container}>
@@ -66,8 +70,24 @@ const SupportGroupApp1: React.FC = () => {
   </View>
       {/* <GroupHeader title={{ name: "", imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/28a13921ae9b0e83392b906639d49f984df1c172c19a91ea246ccf7c572c18b6?apiKey=42bb954c825745999302100cb42c8fd0&" }} memberCount="2.1k" /> */}
       <View style={{display:"flex",flexDirection:"row"}}>
-      <TouchableOpacity style={styles.sectionButton1} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
-     <Text style={styles.sectionButtonText}>Join</Text>
+      {/* <TouchableOpacity style={styles.sectionButton1}  onPress={handleButtonPress} disabled={isButtonDisabled}  >
+     <Text style={styles.sectionButtonText} >Join</Text>
+      </TouchableOpacity> */}
+      {/* {isButtonDisabled ? null :
+      ( //<TouchableOpacity onPress={handleButtonPress} style={styles.sectionButton1} disabled={isButtonDisabled}>
+   <Text style={styles.sectionButtonText}>Join</Text>
+)} */}
+      <TouchableOpacity
+        onPress={handleButtonPress}
+        disabled={isButtonDisabled}
+        style={[
+          styles.sectionButton,
+          { backgroundColor: isButtonDisabled ? 'white' : '#1A8AE5',
+          borderRadius: 20, margin: 20,    padding: 10,    width: isButtonDisabled ? "15%":"40%",    height: "50%", alignItems: "center",  }
+        ]}
+        
+      >
+        {!isButtonDisabled && <Text style={styles.sectionButtonText}>Join</Text>}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionButton1} onPress={()=>{navigation.navigate("CommunityInvitation")}} >
       <Text style={styles.sectionButtonText}>Invite</Text>
