@@ -1,6 +1,7 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
     "compilerOptions": {
-      "types": ["react-native-phone-call"]
+      "types": ["react-native-phone-call"],
+      "skipLibCheck": true
     }
 }

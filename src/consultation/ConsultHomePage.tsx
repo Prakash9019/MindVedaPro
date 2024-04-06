@@ -83,15 +83,6 @@ const ConsultHomePage = () => {
       </ImageBackground>
         {/* </Image> */}
         <View style={styles.view8}>
-          {/* <View style={styles.view9}> */}
-            {/* <Image
-              resizeMode="auto"
-              source={{
-                uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab6611e4a573cbdd3b14f41123fbcac6dad6856e7d79a3cc7de8fb238c8594af?apiKey=42bb954c825745999302100cb42c8fd0&",
-              }}
-              style={styles.image3}
-            /> */}
-            {/* <View style={styles.view10}> */}
             <AntDesign style={styles.searchIcon} size={25} name="search1"/>
             <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by expertise or condition" style={styles.view9}
       />

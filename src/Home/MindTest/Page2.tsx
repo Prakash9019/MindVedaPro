@@ -7,6 +7,7 @@ import {RootStackParamList} from '../../type';
 
 const EmotionalCheckIn = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+    const [selectedValue, setSelectedValue] = React.useState(null);
     const ratings = [
         { key: "1", text: "Great", style: styles.firstItem },
         { key: "2", text: "Good", style: null },
@@ -28,8 +29,12 @@ const EmotionalCheckIn = () => {
   </View>
      </View>
     <View style={styles.container1}>
+    <CustomRadioButton 
+                label="ReactJS"
+                selected={selectedValue === 'option1'}  onSelect={() => setSelectedValue('option1')} 
+            /> 
     {ratings.map(rating => (
-      <RatingItem key={rating.key} ratingText={rating.text} style={rating.style} />
+      <CustomRadioButton key={rating.key} label={rating.text}  selected={selectedValue === 'option1'} onSelect={() => setSelectedValue('option1')}    />
     ))}
   </View>
   </View>
@@ -37,10 +42,24 @@ const EmotionalCheckIn = () => {
 };
 
 interface RatingProps{
-    ratingText: string;
-    style: any;
+    label:string;
+    selected:boolean;
+    onSelect:boolean;
 }
-const RatingItem : React.FC<RatingProps> = ({ ratingText, style }) => (
+const CustomRadioButton :React.FC<RatingProps>= ({ label, selected, onSelect }) => ( 
+  <TouchableOpacity 
+      style={[styles.radioButton, 
+      { backgroundColor: selected ? '#007BFF' : '#FFF' }]} 
+      onPress={()=>onSelect} 
+  > 
+      <Text style={[styles.radioButtonText, 
+      { color: selected ? '#FFF' : '#000' }]}> 
+          {label} 
+      </Text> 
+  </TouchableOpacity> 
+); 
+
+const RatingItem :  = ({ ratingText, style }) => (
     <View style={[styles.ratingContainer, style]}>
       <View style={styles.ratingIcon} />
       <View style={styles.ratingTextContainer}>
@@ -59,6 +78,21 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         padding: 16,
       },
+      radioButton: { 
+        paddingVertical: 12, 
+        paddingHorizontal: 16, 
+        borderRadius: 8, 
+        marginVertical: 8, 
+        borderWidth: 1, 
+        borderColor: '#007BFF', 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'space-between', 
+        width: 280, 
+    }, 
+    radioButtonText: { 
+        fontSize: 16, 
+    }, 
   container: {
     marginTop: 20,
     width: "100%",

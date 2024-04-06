@@ -38,6 +38,7 @@ const RequestConst = () => {
           <View style={styles.view6}>
           <TouchableOpacity onPress={() => setOpen(true)}><Text>Select date and time</Text></TouchableOpacity>
               <Foundation size={30} name="calendar"/>
+              
               {/* <DatePicker  mode="datetime"/> */}
               <DatePicker
         modal
@@ -51,6 +52,7 @@ const RequestConst = () => {
           setOpen(false)
         }}
       />
+      
           </View>
           <View style={styles.view8}>
             <Text>Your concerns</Text>
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#DBDEE5',
     borderStyle: 'solid',
-    backgroundColor: "#FFF",
+    backgroundColor: "blue",
     marginTop: 24,
     marginLeft: 10,
     marginRight: 12,

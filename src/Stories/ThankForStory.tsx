@@ -166,14 +166,14 @@ const ThankForStory = () => {
            </TouchableOpacity>
         
       </View>
-      {/* <View style={styles.storyImageContainer}> */}
+      {/* <View style={styles.storyImageContainer}>  MentalWellnessApp */}
         <Image source={require("../n1.jpg")} style={styles.storyImageContainer} />
       {/* </View> */}
       <Text style={styles.thankYouText}>Thank you for sharing your journey</Text>
       <Text style={styles.inspirationText}>
         Your story has the power to inspire others. We're grateful for your trust.
       </Text>
-      <TouchableOpacity style={styles.homeButton} >
+      <TouchableOpacity style={styles.homeButton}  onPress={()=> navigation.navigate("MentalWellnessApp")} >
         <Text style={styles.homeButtonText}>Back to Home</Text>
       </TouchableOpacity>
       <View style={styles.footerSpace} />

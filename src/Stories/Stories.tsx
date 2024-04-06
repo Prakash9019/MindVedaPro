@@ -4,6 +4,7 @@ import * as React from "react";
       ScrollView,
       View,
       StyleSheet,
+      TextInput,
       Image,
       Text,
       TouchableOpacity,
@@ -26,10 +27,17 @@ const Stories = () => {
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
           <View style={styles.view5}>
+            
           <Text style={styles.groupHeaderTitle}>Stories</Text>
           <AntDesign style={styles.image2} size={25} name="search1"/>
            </View>
+            
           </View>
+          <View style={styles.searchView}>
+            <AntDesign style={styles.searchIcon} size={25} name="search1"/>
+            <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by expertise or condition" style={styles.bar}
+      />
+           </View>
            
 
                 {/* <Image
@@ -112,6 +120,35 @@ const Stories = () => {
     export default Stories;
     
     const styles = StyleSheet.create({
+      searchIcon:{
+        padding:10,
+    },
+    searchView: {
+      display: "flex",
+      marginTop: 12,
+      width: "92%",
+      borderRadius: 30,
+      paddingLeft:10,
+      marginRight:15,
+      marginLeft:4,
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "row",
+      backgroundColor: "#E8F0F2",
+    //1  //1 padding: "0 16px",
+    },
+    bar: {
+      borderRadius: 12,
+      backgroundColor: "#E8F0F2",
+      gap: 2,
+       width:"90%",
+       marginLeft:12,
+      height:60,
+      fontSize: 16,
+      color: "#4F8296",
+      fontWeight: "400",
+    //1  //1 padding: "12px 16px",
+    },
       view4: {
         alignItems: "stretch",
         display: "flex",

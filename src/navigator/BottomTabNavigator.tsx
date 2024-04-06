@@ -20,6 +20,7 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import ProfilePage from '../Profiles/Profile';
+import CommunityHomePage from '../Community/CommunityHomePage';
 const BottomTabs = createBottomTabNavigator();
 
 export const BottomTabsNavigation: React.FC = () => {
@@ -58,7 +59,7 @@ export const BottomTabsNavigation: React.FC = () => {
         }}
       />
       <BottomTabs.Screen
-        name="Community" component={SupportGroupApp1}
+        name="Community" component={CommunityHomePage}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="groups" color={color} size={35} />

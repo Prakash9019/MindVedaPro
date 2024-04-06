@@ -5,6 +5,7 @@ export type BottomTabParamList = {
     Exprets: undefined;
     Community: undefined;
     Profile: undefined;
+    CommunityHomePage:undefined;
     stories: undefined;
     ProfileScreen: undefined;
     DoctorProfile:undefined;
@@ -15,9 +16,12 @@ export type RootStackParamList = {
     BottomTabs: NavigatorScreenParams<BottomTabParamList>;
     StorySharing :undefined;
     ThankForStory: undefined;
+    SupportGroupApp1:undefined;
     RequestConst: undefined;
     ProfilePage:undefined;
     MsgRequest: undefined;
+    TestResult:undefined;
+    
     ArticleScreen: undefined;
     BipolarStory:undefined;
     BipolarDisorderResources:undefined;

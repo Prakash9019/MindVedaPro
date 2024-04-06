@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import {Slider as MySlider} from '@react-native-community/slider';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -18,6 +19,9 @@ const Header = () => {
     </TouchableOpacity>
   </View>
 )};
+const myLocalSlider: MySlider = {
+
+}
 
 const MoodQuestion = () => (
   <View style={styles.moodQuestionContainer}>
@@ -35,12 +39,22 @@ const Slider = () => (
   </View>
 );
 
-const SliderBackground = () => (
+const SliderBackground = () => {
+  const [sliderValue, setSliderValue] = React.useState(0);
+return(
   <View style={styles.sliderBackgroundContainer}>
+      <Slider
+        value={sliderValue}
+        onValueChange={(value) => setSliderValue(value)}
+        minimumValue={0}
+        maximumValue={100}
+        step={1}
+      />
+      <Text>Value: {sliderValue}</Text>
     <View style={styles.sliderBackgroundFill} />
     <View style={styles.sliderKnob} />
   </View>
-);
+)};
 
 const MoodScale = () => (
   <View style={styles.moodScaleContainer}>
