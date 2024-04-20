@@ -19,7 +19,7 @@ const Header = () => {
     </TouchableOpacity>
   </View>
 )};
-
+  
 
 const MoodQuestion = () => (
   <View style={styles.moodQuestionContainer}>

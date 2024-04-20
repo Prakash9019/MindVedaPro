@@ -45,6 +45,12 @@ const CommunityHomePage : React.FC = () => {
       members: 2100,
       page:"CommunityHomePage",
     },
+    {
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/42df165ba779a3685c8b13d3b794a75ed49db40f443b8b824e7e951b1415e395?apiKey=42bb954c825745999302100cb42c8fd0&",
+      title: "Bipolar Disorder",
+      members: 2100,
+      page:"CommunityHomePage",
+    },
   ];
 
   return (
@@ -61,12 +67,19 @@ const CommunityHomePage : React.FC = () => {
         </View>
       <View style={styles.view8}>
             <AntDesign style={styles.searchIcon} size={25} name="search1"/>
-            <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by expertise or condition" style={styles.view9}
+            <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by communitites" style={styles.view9}
       />
            </View>
       <View style={styles.communitiesList}>
         {communityData.map((item, index) => (
-          <CommunityItem key={index} imageUrl={item.imageUrl} title={item.title} members={item.members} page={item.page}/>
+          // <CommunityItem key={index} imageUrl={item.imageUrl} title={item.title} members={item.members} page={item.page} />
+          <TouchableOpacity style={styles.communityItemContainer} key={index} onPress={()=>{navigation.navigate("SupportGroupApp1")}}>
+          <Image resizeMode="cover" source={{ uri: item.imageUrl }} style={styles.communityItemImage} />
+          <View style={styles.communityItemTextContainer}>
+            <Text style={styles.communityItemTitle}>{item.title}</Text>
+            <Text style={styles.communityItemMembers}>{item.members.toLocaleString()} members</Text>
+          </View>
+        </TouchableOpacity>
         ))}
       </View>
     </View>
@@ -77,6 +90,7 @@ export default CommunityHomePage;
 const styles = StyleSheet.create({
     searchIcon:{
         padding:10,
+        marginLeft:20,
     },
     view3: {
         alignItems: "stretch",
@@ -102,7 +116,7 @@ const styles = StyleSheet.create({
         paddingTop:12,
       },
       view5: {
-        marginLeft:38,
+        marginLeft:88,
         fontFamily: "Inter, sans-serif",
         display: "flex",
         justifyContent:"center",
@@ -128,6 +142,7 @@ const styles = StyleSheet.create({
         gap: 2,
          width:"90%",
          marginLeft:12,
+         marginRight:12,
         height:60,
         fontSize: 16,
         color: "#4F8296",
@@ -145,21 +160,20 @@ const styles = StyleSheet.create({
     // margin: '0 auto',
   },
   communitiesList: {
+    padding:10,
     display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap', // Ensure items wrap to the next row when needed
     marginTop: 12,
-    width: '100%',
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    padding: 16,
+    justifyContent: 'space-between', // Add space between items
   },
   communityItemContainer: {
+    width: '48%', // Set width to 48% to fit two items per row with some space between them
     alignItems: 'stretch',
     borderRadius: 8,
     borderColor: 'rgba(219, 227, 229, 1)',
     borderStyle: 'solid',
     borderWidth: 1,
-    backgroundColor: '#FFF',
-    display: 'flex',
     flexDirection: 'column',
     padding: 16,
     marginBottom: 12,

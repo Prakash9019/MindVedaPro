@@ -26,18 +26,14 @@ const Stories = () => {
           <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
-          <View style={styles.view5}>
-            
-          <Text style={styles.groupHeaderTitle}>Stories</Text>
-          <AntDesign style={styles.image2} size={25} name="search1"/>
+          <View style={styles.searchView}>
+           
+        <TextInput editable multiline={true} numberOfLines={10} placeholder="Search your story" style={styles.bar} />
+       <AntDesign style={styles.searchIcon} size={25} name="search1"/>
            </View>
             
           </View>
-          <View style={styles.searchView}>
-            <AntDesign style={styles.searchIcon} size={25} name="search1"/>
-            <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by expertise or condition" style={styles.bar}
-      />
-           </View>
+          
            
 
                 {/* <Image
@@ -125,11 +121,11 @@ const Stories = () => {
     },
     searchView: {
       display: "flex",
-      marginTop: 12,
-      width: "92%",
+      // marginTop: ,
+      width: "85%",
       borderRadius: 30,
       paddingLeft:10,
-      marginRight:15,
+      marginRight:30,
       marginLeft:4,
       justifyContent: "center",
       alignItems: "center",
@@ -141,8 +137,8 @@ const Stories = () => {
       borderRadius: 12,
       backgroundColor: "#E8F0F2",
       gap: 2,
-       width:"90%",
-       marginLeft:12,
+       width:"85%",
+      //  marginLeft:12,
       height:60,
       fontSize: 16,
       color: "#4F8296",
@@ -155,11 +151,13 @@ const Stories = () => {
         flexDirection:"row",
         gap: 5,
         marginLeft:9,
+        marginTop:12,
         paddingBottom: 12,
         paddingTop:12,
       },
       view5: {
-        marginLeft:70,
+        marginLeft:8,
+        backgroundColor:'blue',
         fontFamily: "Inter, sans-serif",
         display: "flex",
         flexDirection:"row",
@@ -207,13 +205,13 @@ const Stories = () => {
         fontSize: 18,
         color: "#0D141C",
         fontWeight: "700",
-        paddingTop: 16,
-    paddingLeft: 16,
-    paddingRight: 16,
-    paddingBottom: 8,
+    //     paddingTop: 16,
+    // paddingLeft: 16,
+    // paddingRight: 16,
+    // paddingBottom: 8,
       },
      
-      image2: { position: "relative", width: 24, aspectRatio: 1,marginLeft:89 },
+      image2: { position: "relative", width: 24, aspectRatio: 1,marginLeft:3 },
       view6: {
         display: "flex",
         width: "100%",

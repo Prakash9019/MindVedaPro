@@ -7,7 +7,7 @@ import {RootStackParamList} from '../../type';
 
 const EmotionalCheckIn = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-    const [selectedValue, setSelectedValue] = React.useState(null);
+    const [selectedValue, setSelectedValue] = React.useState('');
     const ratings = [
         { key: "1", text: "Great", style: styles.firstItem },
         { key: "2", text: "Good", style: null },
@@ -29,12 +29,12 @@ const EmotionalCheckIn = () => {
   </View>
      </View>
     <View style={styles.container1}>
-    <CustomRadioButton 
+    {/* <CustomRadioButton 
                 label="ReactJS"
                 selected={selectedValue === 'option1'}  onSelect={() => setSelectedValue('option1')} 
-            /> 
+            />  */}
     {ratings.map(rating => (
-      <CustomRadioButton key={rating.key} label={rating.text}  selected={selectedValue === 'option1'} onSelect={() => setSelectedValue('option1')}    />
+      <RatingItem key={rating.key} ratingText={rating.text}  style={rating.style} selected={selectedValue}   />
     ))}
   </View>
   </View>
@@ -42,25 +42,27 @@ const EmotionalCheckIn = () => {
 };
 
 interface RatingProps{
-    label:string;
-    selected:boolean;
-    onSelect:boolean;
+  ratingText:string;
+  style:any;
+    selected:string;
+    // onSelect:boolean;
 }
-const CustomRadioButton :React.FC<RatingProps>= ({ label, selected, onSelect }) => ( 
-  <TouchableOpacity 
-      style={[styles.radioButton, 
-      { backgroundColor: selected ? '#007BFF' : '#FFF' }]} 
-      onPress={()=>onSelect} 
-  > 
-      <Text style={[styles.radioButtonText, 
-      { color: selected ? '#FFF' : '#000' }]}> 
-          {label} 
-      </Text> 
-  </TouchableOpacity> 
-); 
+// const CustomRadioButton :React.FC<RatingProps>= ({ label, selected, onSelect }) => ( 
+//   <TouchableOpacity 
+//       style={[styles.radioButton, 
+//       { backgroundColor: selected ? '#007BFF' : '#FFF' }]} 
+//       onPress={()=>onSelect} 
+//   > 
+//       <Text style={[styles.radioButtonText, 
+//       { color: selected ? '#FFF' : '#000' }]}> 
+//           {label} 
+//       </Text> 
+//   </TouchableOpacity> 
+// ); 
 
-const RatingItem :  = ({ ratingText, style }) => (
-    <View style={[styles.ratingContainer, style]}>
+const RatingItem :React.FC<RatingProps>= ({ ratingText, style,selected }) => ( 
+  
+    <View style={ ratingText === selected ? styles.ratingContainer : styles.ratingContainer2}>
       <View style={styles.ratingIcon} />
       <View style={styles.ratingTextContainer}>
         <Text style={styles.ratingText}>{ratingText}</Text>
@@ -119,6 +121,17 @@ const styles = StyleSheet.create({
   ratingContainer: {
     alignItems: "stretch",
     borderRadius: 12,
+    borderColor: "rgba(222, 219, 229, 1)",
+    borderWidth: 1,
+    display: "flex",
+    marginTop: 12,
+    padding: 18,
+    flexDirection: "row"
+  },
+  ratingContainer2: {
+    alignItems: "stretch",
+    borderRadius: 12,
+    backgroundColor:'blue',
     borderColor: "rgba(222, 219, 229, 1)",
     borderWidth: 1,
     display: "flex",

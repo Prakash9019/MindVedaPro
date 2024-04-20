@@ -1,9 +1,12 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity,TextInput, ScrollView } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
 import {  useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import InstaPost from "./InstaPost";
 interface HeaderImageProps {
   source: string;
   style: { [key: string]: any };
@@ -40,16 +43,25 @@ const MentalWellnessApp = () => {
  
   return (
     <ScrollView>
-    <View style={styles.container}>
-      
-      <TouchableOpacity onPress={()=>{navigation.navigate("ProfilePage")}} >
+    <View style={styles.container}>    
       <View style={styles.header}>
+      <TouchableOpacity onPress={()=>{navigation.navigate("ProfilePage")}} >
         <HeaderImage
           source="https://cdn.builder.io/api/v1/image/assets/TEMP/20c430cd24c554602ac7482620760b96c5976058992dd12c4f9fbe36daa29d22?apiKey=42bb954c825745999302100cb42c8fd0&"
           style={styles.headerLogo}
         />
+        </TouchableOpacity>
+         {/* <View style={styles.searchView}>
+        <TextInput editable multiline={true} numberOfLines={10} placeholder="Search your story" style={styles.bar} />
+       <AntDesign style={styles.searchIcon} size={25} name="search1"/>
+       </View> */}
+       
+       <View style={styles.iconContainer}>
+        <Ionicons style={styles.searchIcon} size={25} name="notifications" />
+        <MaterialCommunityIcons style={styles.searchIcon1} size={25} name="message-text"/>
       </View>
-      </TouchableOpacity>
+      </View>
+    
       <View style={styles.body}>
         <View style={styles.messageCard}>
           <HeaderImage
@@ -86,11 +98,53 @@ const MentalWellnessApp = () => {
       </TouchableOpacity>
       </View>
     </View>
+    <InstaPost />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    display: "flex",
+    flexDirection: 'row',
+    backgroundColor: "blue",
+    justifyContent: 'flex-end', // Align items to the end of the flex container
+    paddingHorizontal: 20, // Add padding horizontally to create some space from the right edge
+    paddingTop: 20, // Add padding vertically if needed
+  },
+  searchIcon: {
+    marginRight:10, // Adjust as needed to add space between icons
+  },
+  searchIcon1: {
+    // marginRight:20, // Adjust as needed to add space between icons
+  },
+searchView: {
+  display: "flex",
+  // marginTop: ,
+  width: "65%",
+  borderRadius: 30,
+  paddingLeft:10,
+  marginRight:6,
+  marginLeft:4,
+  // height:"10%"
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "row",
+  backgroundColor: "#E8F0F2",
+//1  //1 padding: "0 16px",
+},
+bar: {
+  borderRadius: 12,
+  backgroundColor: "#E8F0F2",
+  gap: 2,
+   width:"85%",
+  //  marginLeft:12,
+  height:50,
+  fontSize: 16,
+  color: "#4F8296",
+  fontWeight: "400",
+//1  //1 padding: "12px 16px",
+},
   container: {
     flex: 1,
     backgroundColor: "#FFF",
@@ -152,7 +206,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   header: {
-    padding: 20,
+    padding: 10,
+    display: "flex",
+    flexDirection: "row",
+    // alignItems: "center",
+    // justifyContent: "space-between",
   },
   headerLogo: {
     width: 32,

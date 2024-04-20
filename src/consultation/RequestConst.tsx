@@ -20,6 +20,7 @@ const RequestConst = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [date, setDate] = React.useState(new Date())
   const [open, setOpen] = React.useState(false)
+
   const [value, onChangeText] = React.useState('');
   return (
     <ScrollView>
@@ -36,10 +37,14 @@ const RequestConst = () => {
         <View style={styles.view4}>
          
           <View style={styles.view6}>
-          <TouchableOpacity onPress={() => setOpen(true)}><Text>Select date and time</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => setOpen(true)}>
+            {/* <Text>Select date and time</Text> */}
+           <Text >{date.toUTCString()}</Text>
+            </TouchableOpacity>
               <Foundation size={30} name="calendar"/>
-              
-              {/* <DatePicker  mode="datetime"/> */}
+            
+             
+              {/* {console.log(date)} */}
               <DatePicker
         modal
         open={open}
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#DBDEE5',
     borderStyle: 'solid',
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
     marginTop: 24,
     marginLeft: 10,
     marginRight: 12,
