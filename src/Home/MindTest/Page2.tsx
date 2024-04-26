@@ -48,13 +48,42 @@ const EmotionalCheckIn = () => {
     <Text style={styles.headerText}> {questions[currentQuestionIndex][0]} </Text>
   </View>
   <View style={styles.container1}>
+  <TouchableOpacity >
+    <View style={ styles.ratingContainer2}>
+      <View style={styles.ratingIcon} />
+      <View style={styles.ratingTextContainer}>
+        <Text style={styles.ratingText}>{questions[currentQuestionIndex][1]}</Text>
+      </View>
+    </View>
+    </TouchableOpacity>
+    <TouchableOpacity >
+    <View style={ styles.ratingContainer2}>
+      <View style={styles.ratingIcon} />
+      <View style={styles.ratingTextContainer}>
+        <Text style={styles.ratingText}>{questions[currentQuestionIndex][2]}</Text>
+      </View>
+    </View>
+    </TouchableOpacity>
+    <TouchableOpacity >
+    <View style={ styles.ratingContainer2}>
+      <View style={styles.ratingIcon} />
+      <View style={styles.ratingTextContainer}>
+        <Text style={styles.ratingText}>{questions[currentQuestionIndex][3]}</Text>
+      </View>
+    </View>
+    </TouchableOpacity>
+    <TouchableOpacity >
+    <View style={ styles.ratingContainer2}>
+      <View style={styles.ratingIcon} />
+      <View style={styles.ratingTextContainer}>
+        <Text style={styles.ratingText}>{questions[currentQuestionIndex][4]}</Text>
+      </View>
+    </View>
+    </TouchableOpacity>
     {/* <CustomRadioButton 
                 label="ReactJS"
                 selected={selectedValue === 'option1'}  onSelect={() => setSelectedValue('option1')} 
             />  */}
-    {questions.map((rating,index) => (
-      <RatingItem key={index+1} ratingText={rating[currentQuestionIndex][index+1]}  selected={selectedValue}   />
-    ))}
   </View>
   {/* <View style={styles.bodyContainer}>
     <Text style={styles.bodyText}>Take a moment to check in with yourself. We'll use this information to help track your emotional well-being over time</Text>
@@ -81,8 +110,8 @@ const handleclick =(e : any)=>{
 }
 
 const RatingItem :React.FC<RatingProps>= ({ ratingText,selected }) => ( 
-  <TouchableOpacity onPress={()=> handleclick(selected)}>
-    <View style={ ratingText === selected ? styles.ratingContainer : styles.ratingContainer2}>
+  <TouchableOpacity >
+    <View style={ styles.ratingContainer2}>
       <View style={styles.ratingIcon} />
       <View style={styles.ratingTextContainer}>
         <Text style={styles.ratingText}>{ratingText}</Text>
