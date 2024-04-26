@@ -69,11 +69,11 @@ function App(): JSX.Element {
   };
 
   return (
-    // <SafeAreaView>
+    
     <NavigationContainer>
      <RootNavigator/>
     </NavigationContainer>
-    // </SafeAreaView>
+  
   );
 }
 

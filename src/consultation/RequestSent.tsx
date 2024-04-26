@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "stretch",
     borderRadius: 12,
-    backgroundColor: "#1A5CE5",
+    backgroundColor: "#1A8AE5",
     alignSelf: "center",
     display: "flex",
     marginTop: 24,
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     // fontFeatureSettings: "'dlig' on",
     fontFamily: "Inter, sans-serif",
     alignItems: "center",
-    backgroundColor: "#1A5CE5",
+    backgroundColor: "#1A8AE5",
     justifyContent: "center",
   },
   view9: {

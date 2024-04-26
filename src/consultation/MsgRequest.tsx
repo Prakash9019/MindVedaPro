@@ -19,9 +19,8 @@ const MsgRequest = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [value, onChangeText] = React.useState('');
   return (
-    <SafeAreaView>
-        <View style={styles.view1}>
-          <View style={styles.view2}>
+    <SafeAreaView style={{backgroundColor:"white"}}>
+      
             <View style={styles.view3}>
             <TouchableOpacity onPress={() => navigation.goBack()} >
             <AntDesign size={25} name="arrowleft"/>
@@ -49,8 +48,7 @@ const MsgRequest = () => {
               </View>
             </View>
             <View style={styles.view10} />
-          </View>
-        </View>
+          
         </SafeAreaView>
       );
     }
@@ -136,7 +134,7 @@ export default MsgRequest;
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 12,
-        backgroundColor: "#1A5CE5",
+        backgroundColor: "#1A8AE5",
         display: "flex",
         marginTop: 24,
         color: "#FFF",
@@ -148,7 +146,7 @@ export default MsgRequest;
         // fontFeatureSettings: "'dlig' on",
         fontFamily: "Inter, sans-serif",
         alignItems: "stretch",
-        backgroundColor: "#1A5CE5",
+        backgroundColor: "#1A8AE5",
         justifyContent: "center",
       },
       view10: {

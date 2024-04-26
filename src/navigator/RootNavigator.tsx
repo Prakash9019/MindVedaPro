@@ -32,6 +32,10 @@ import BipolarDisorderResources from '../Community/Resources/BipolarResources';
 import CommunityHomePage from '../Community/CommunityHomePage';
 import TestResult from '../Home/MindTest/Result';
 import MentalWellnessApp from '../Home/HomePage';
+import ChatRoom from '../Community/Disorders/ChatRoom';
+import NotificationList from '../Home/Notification';
+import ConversionList from '../Home/Conversation';
+import { ImageBackgroundComponent } from 'react-native';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -197,8 +201,22 @@ export const RootNavigator: React.FC = () => {
         component={MentalWellnessApp}
         options={{ headerShown: false }}
       />
-     
-      {/* <RootStack.Screen 
+      <RootStack.Screen
+        name="ChatRoom"
+        component={ChatRoom}
+        options={{ headerShown: false }}
+      />
+     <RootStack.Screen
+        name="NotificationList"
+        component={NotificationList}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="ConversionList"
+        component={ConversionList}
+        options={{ headerShown: false }}
+      />
+      {/* <RootStack.Screen  ChatRoom NotificationList
         name="Drawer" CommunityHomePage TestResult
         component={DrawerNavigatorNavigation} 
         options={{ headerShown: false }}

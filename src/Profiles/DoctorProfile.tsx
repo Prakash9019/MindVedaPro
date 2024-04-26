@@ -100,12 +100,12 @@ const DoctorProfile = () => {
           <View style={styles.view10}>
             <View style={styles.view11}>
               <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("RequestConst")} >
-                <Text>Request Consultation</Text>
+                <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Request Consultation</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.view11}>
               <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("MsgRequest")} >
-                <Text>Send Query Anonymously</Text>
+                <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Send Query Anonymously</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "stretch",
     borderRadius: 12,
-    backgroundColor: "#E8EDF2",
+    backgroundColor: "#1A8AE5",
     display: "flex",
     flexGrow: 1,
     flexBasis: "0%",
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
     
     fontFamily: "Inter, sans-serif",
     // alignItems: "stretch",
-    backgroundColor: "#E8EDF2",
+    backgroundColor: "#1A8AE5",
     justifyContent: "center",
   },
   

@@ -64,8 +64,8 @@ const NGOApp = () => {
         Their work encompasses providing support, education, and advocacy for individuals and families affected by mental illness. They offer a variety of programs and initiatives, including support groups, education classes, and public awareness events.
       </Text>
       <ActionButton title="Donate" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {}} />
-      <ActionButton title="Volunteer" backgroundColor="#F0F2F5" textColor="#000000" onPress={() => {}} />
-      <ActionButton title="Find Support" backgroundColor="#F0F2F5" textColor="#000000" onPress={() => {}} />
+      <ActionButton title="Volunteer" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {}} />
+      <ActionButton title="Find Support" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {}} />
     </View>
   </View>
 )};
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   },
   ngoTitle: {
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "bold",
   },
   ngoSubtitle: {
     fontSize: 14,

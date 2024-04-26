@@ -19,7 +19,7 @@ const Stories = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
         
             <View style={styles.view3}>
             <View style={styles.view4}>
@@ -46,9 +46,9 @@ const Stories = () => {
               {/* </View> */}
             </View>
               <View style={styles.view7}>
-                <View style={styles.view8}>
-                  <Text>All stories</Text>
-                </View>
+                <TouchableOpacity style={styles.view8} onPress={() => navigation.navigate("BipolarStory")} >
+                  <Text>Bipolar disorder</Text>
+                </TouchableOpacity>
                 <View style={styles.view9}>
                   <Text>Anxiety</Text>
                 </View>
@@ -80,7 +80,7 @@ const Stories = () => {
               </View>
             </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate("BipolarStory")} >
+            <TouchableOpacity onPress={() => navigation.navigate("MentalHealthJourneyScreen")} >
             <View style={styles.view16}>
               <View style={styles.view17}>
                 <View style={{width:"78%",marginRight:2}}>
@@ -98,11 +98,11 @@ const Stories = () => {
             <View style={styles.view46}>
               <View style={styles.view47}>
                 {/* <View style={styles.view48}> */}
-                  <Text>Do you have a story to share?</Text>
+                  <Text style={{fontWeight:"bold", fontSize:16}}>Do you have a story to share?</Text>
                 {/* </View> */}
                 {/* <View style={styles.view49}> */}
                   <TouchableOpacity style={styles.view50} onPress={()=> navigation.navigate("StorySharing")}>
-                    <Text>Share</Text>
+                    <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Share</Text>
                   </TouchableOpacity>
                 </View>
               {/* </View> */}
@@ -116,6 +116,9 @@ const Stories = () => {
     export default Stories;
     
     const styles = StyleSheet.create({
+      container:{
+           backgroundColor:"#F7FAFC",
+      },
       searchIcon:{
         padding:10,
     },
@@ -347,7 +350,7 @@ const Stories = () => {
         paddingBottom: 8,
         paddingLeft: 12,
         paddingRight: 12,
-        backgroundColor: "#E8EDF2",
+        backgroundColor: "#1A8AE5",
         justifyContent: "center",
         alignItems: "center",
         // alignItems: "flex-end",

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity,TextInput } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -59,6 +59,11 @@ const NGOs: React.FC = () => {
        <TouchableOpacity onPress={() => navigation.goBack()} >
     <AntDesign size={25} name="arrowleft"/>
   </TouchableOpacity>
+  <View style={styles.view8}>
+            <AntDesign style={styles.searchIcon} size={25} name="search1"/>
+            <TextInput editable multiline={true} numberOfLines={10} placeholder="Search by communitites" style={styles.view9}
+      />
+           </View>
       {ngoData.map((ngo, index) => (
         <NgoItem key={index} ngo={ngo} />
       ))}
@@ -67,6 +72,38 @@ const NGOs: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  view8: {
+    display: "flex",
+    marginTop: 12,
+    width: "92%",
+    borderRadius: 30,
+    paddingLeft:10,
+    marginRight:15,
+    marginBottom:10,
+    marginLeft:4,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    backgroundColor: "#E8F0F2",
+  //1  //1 padding: "0 16px",
+  },
+  searchIcon:{
+    padding:10,
+    marginLeft:20,
+},
+  view9: {
+    borderRadius: 12,
+    backgroundColor: "#E8F0F2",
+    gap: 2,
+     width:"90%",
+     marginLeft:12,
+     marginRight:12,
+    height:60,
+    fontSize: 16,
+    color: "#4F8296",
+    fontWeight: "400",
+  //1  //1 padding: "12px 16px",
+  },
   container: {
     flex: 1,
     padding: 20,

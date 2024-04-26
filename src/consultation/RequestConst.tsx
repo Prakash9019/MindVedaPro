@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 12,
-    backgroundColor: "#1A5CE5",
+    backgroundColor: "#1A8AE5",
     display: "flex",
     marginTop: 100,
     marginBottom:50,

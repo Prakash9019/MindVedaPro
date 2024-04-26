@@ -14,7 +14,7 @@ const AssessmentSection = () => {
       Take 5 minutes to reflect and assess your current state of mind. The results will be used to personalize your
       experience.
     </Text>
-    <TouchableOpacity style={styles.startButtonContainer} onPress={()=> navigation.navigate("SurveyScreen")}>
+    <TouchableOpacity style={styles.startButtonContainer} onPress={()=> navigation.navigate("EmotionalCheckIn")}>
       <Text style={styles.startButtonText} >Start Assessment</Text>
     </TouchableOpacity>
   </View>

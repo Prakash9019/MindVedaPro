@@ -42,7 +42,7 @@ const handlePress = (title: string) => {
       navigation.navigate("CrisisSupportApp");
       break;
     case "reachOutToFriend":
-      navigation.navigate("CrisisSupportApp");
+      // navigation.navigate("CrisisSupportApp");
       break;
     // Add more cases as needed for other NGOs
   }
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
+    backgroundColor:"#F7FAFC",
     padding: 20,
   },
   headerContainer: {

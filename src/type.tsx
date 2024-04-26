@@ -21,7 +21,9 @@ export type RootStackParamList = {
     ProfilePage:undefined;
     MsgRequest: undefined;
     TestResult:undefined;
-    
+    ChatRoom : undefined;
+    NotificationList:undefined;
+    ConversionList:undefined;
     ArticleScreen: undefined;
     BipolarStory:undefined;
     BipolarDisorderResources:undefined;

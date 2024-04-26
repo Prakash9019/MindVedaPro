@@ -56,10 +56,12 @@ const MentalWellnessApp = () => {
        <AntDesign style={styles.searchIcon} size={25} name="search1"/>
        </View> */}
        
-       <View style={styles.iconContainer}>
+       <TouchableOpacity onPress={()=>{navigation.navigate("NotificationList")}} >
         <Ionicons style={styles.searchIcon} size={25} name="notifications" />
-        <MaterialCommunityIcons style={styles.searchIcon1} size={25} name="message-text"/>
-      </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigation.navigate("ConversionList")}} >
+        <MaterialCommunityIcons style={styles.searchIcon1} size={25} name="message-text"/></TouchableOpacity>
+    
       </View>
     
       <View style={styles.body}>
@@ -85,7 +87,7 @@ const MentalWellnessApp = () => {
           <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Start Test</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.sectionTitle}>Post of the Day</Text>
+      {/* <Text style={styles.sectionTitle}>Post of the Day</Text>
       <TouchableOpacity onPress={()=>{navigation.navigate("ArticleScreen")}}>
       <View style={styles.postSection}>
         <View style={{width:"75%",marginRight:1}}>
@@ -95,7 +97,7 @@ const MentalWellnessApp = () => {
         </View>
         <HeaderIcons src="https://cdn.builder.io/api/v1/image/assets%2FTEMP%2Fa5110698b89b90823fa03fe28a54d57ff3f76b7043716d58261cc8a7fc1e036a?apiKey=42bb954c825745999302100cb42c8fd0&" style={styles.postImage} />
       </View>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       </View>
     </View>
     <InstaPost />
@@ -109,13 +111,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: "blue",
     justifyContent: 'flex-end', // Align items to the end of the flex container
-    paddingHorizontal: 20, // Add padding horizontally to create some space from the right edge
-    paddingTop: 20, // Add padding vertically if needed
+    marginHorizontal:150,
+    alignItems:"flex-end",
+   // paddingHorizontal: 15, // Add padding horizontally to create some space from the right edge
+    paddingTop: 8, // Add padding vertically if needed
   },
   searchIcon: {
-    marginRight:10, // Adjust as needed to add space between icons
+    display:"flex",
+    justifyContent:"flex-end",
+   marginLeft:210,
+
+    // marginRight:5, // Adjust as needed to add space between icons
   },
   searchIcon1: {
+    marginLeft:10,
     // marginRight:20, // Adjust as needed to add space between icons
   },
 searchView: {
@@ -159,7 +168,7 @@ bar: {
     marginBottom: 16,
   },
   emergencySupport: {
-    backgroundColor: '#A11AE5',
+    backgroundColor: 'red',
     borderRadius: 20,
     marginLeft:36,
     marginRight:36,
@@ -181,7 +190,7 @@ bar: {
     marginBottom: 16,
   },
   startTest: {
-    backgroundColor: '#A11AE5',
+    backgroundColor: '#1A8AE5',
     borderRadius: 16,
     marginRight:36,
     marginLeft:36,
@@ -207,8 +216,11 @@ bar: {
   },
   header: {
     padding: 10,
+    margin:10,
+    // backgroundColor:"blue",
     display: "flex",
     flexDirection: "row",
+    gap:4,
     // alignItems: "center",
     // justifyContent: "space-between",
   },

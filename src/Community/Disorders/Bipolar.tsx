@@ -109,7 +109,7 @@ const SupportGroupApp1: React.FC = () => {
       <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
        <Text style={styles.sectionButtonText}>NGOs Working on Bipolar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("NGOs")}} >
+        <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("ChatRoom")}} >
        <Text style={styles.sectionButtonText}>Bipolar Chat Rooms</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.sectionButton} onPress={()=>{navigation.navigate("BipolarStory")}} >
