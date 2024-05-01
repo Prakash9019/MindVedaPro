@@ -167,7 +167,7 @@ const ThankForStory = () => {
         
       </View>
       {/* <View style={styles.storyImageContainer}>  MentalWellnessApp */}
-        <Image source={require("../n1.jpg")} style={styles.storyImageContainer} />
+        {/* <Image source={require("../n1.jpg")} style={styles.storyImageContainer} /> */}
       {/* </View> */}
       <Text style={styles.thankYouText}>Thank you for sharing your journey</Text>
       <Text style={styles.inspirationText}>

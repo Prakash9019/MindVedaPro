@@ -36,6 +36,10 @@ import ChatRoom from '../Community/Disorders/ChatRoom';
 import NotificationList from '../Home/Notification';
 import ConversionList from '../Home/Conversation';
 import { ImageBackgroundComponent } from 'react-native';
+import VolunteerSignupForm from '../Community/Disorders/Volunteer';
+import DonatePage from '../Community/Disorders/Donate';
+import ChatRoomVolunteer from '../Home/Support/ChatRoomVolunteer';
+import ProfileScreen from '../Profiles/EditProfile';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -124,6 +128,16 @@ export const RootNavigator: React.FC = () => {
       <RootStack.Screen
         name="NGOs"
         component={NGOs}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="VolunteerSignupForm"
+        component={VolunteerSignupForm}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="DonatePage"
+        component={DonatePage}
         options={{ headerShown: false }}
       />
       <RootStack.Screen
@@ -216,9 +230,19 @@ export const RootNavigator: React.FC = () => {
         component={ConversionList}
         options={{ headerShown: false }}
       />
-      {/* <RootStack.Screen  ChatRoom NotificationList
+      <RootStack.Screen
+        name="ChatRoomVolunteer"
+        component={ChatRoomVolunteer}
+        options={{ headerShown: false }}
+      />
+       <RootStack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{ headerShown: false }}
+      />
+      {/* <RootStack.Screen  ChatRoom NotificationList ChatRoomVolunteer
         name="Drawer" CommunityHomePage TestResult
-        component={DrawerNavigatorNavigation} 
+        component={DrawerNavigatorNavigation} ProfileScreen
         options={{ headerShown: false }}
       />
        */}

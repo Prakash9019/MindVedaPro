@@ -7,7 +7,7 @@ import {RootStackParamList} from '../../type';
 
 const EmotionalCheckIn = () => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-    const [selectedValue, setSelectedValue] = React.useState('');
+    const [selectedValue, setSelectedValue] = React.useState(false);
       const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
 
   const handleNextQuestion = () => {
@@ -20,12 +20,11 @@ const EmotionalCheckIn = () => {
       Alert.alert('End of quiz!');
     }
   };
-  // const questions = [
-  //   'Question 1: What is React?',
-  //   'Question 2: What is JSX?',
-  //   'Question 3: What is the useState hook?',
-  //   // Add more questions here
-  // ];
+  
+const handleclick =()=>{
+  setSelectedValue(true);
+}
+
   const questions = [
     ["How often have you felt overwhelmed or unable to cope with your emotions?", "Never", "Rarely", "Sometimes", "Often", "Always"],
     ["Have you experienced a loss of interest or pleasure in activities that you once enjoyed?", "Not at all", "Slightly", "Moderately", "Severely", "Extremely"],
@@ -48,8 +47,8 @@ const EmotionalCheckIn = () => {
     <Text style={styles.headerText}> {questions[currentQuestionIndex][0]} </Text>
   </View>
   <View style={styles.container1}>
-  <TouchableOpacity >
-    <View style={ styles.ratingContainer2}>
+  <TouchableOpacity onPress={()=> handleclick()}>
+    <View style={ selectedValue ? styles.ratingContainer2 :styles.ratingContainer }>
       <View style={styles.ratingIcon} />
       <View style={styles.ratingTextContainer}>
         <Text style={styles.ratingText}>{questions[currentQuestionIndex][1]}</Text>
@@ -103,10 +102,6 @@ interface RatingProps{
   // style:any;
     selected:string;
     // onSelect:boolean;
-}
-
-const handleclick =(e : any)=>{
-  // setSelectedValue(e);
 }
 
 const RatingItem :React.FC<RatingProps>= ({ ratingText,selected }) => ( 
@@ -186,7 +181,7 @@ const styles = StyleSheet.create({
   ratingContainer: {
     alignItems: "stretch",
     borderRadius: 12,
-    borderColor: "rgba(222, 219, 229, 1)",
+    borderColor: "blue",
     borderWidth: 1,
     display: "flex",
     marginTop: 12,

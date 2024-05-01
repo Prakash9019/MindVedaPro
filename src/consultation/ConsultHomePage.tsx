@@ -39,7 +39,7 @@ const ConsultHomePage = () => {
   const specialists = [
     {
       id: "1",
-      name: "Dr. Laura",
+      name: "Dr. Emilia",
       specialization: "PhD in Psychology, Anxiety specialist",
       rating: "4.5",
       imageUri: "https://cdn.builder.io/api/v1/image/assets/TEMP/0bbdf272996ad4266972bf8af6c85ab8769008aa3378bd5d8e1a93a4aebb5cc3",

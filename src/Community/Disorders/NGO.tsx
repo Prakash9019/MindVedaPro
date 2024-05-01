@@ -63,8 +63,8 @@ const NGOApp = () => {
       <Text style={styles.ngoExtraInfo}>
         Their work encompasses providing support, education, and advocacy for individuals and families affected by mental illness. They offer a variety of programs and initiatives, including support groups, education classes, and public awareness events.
       </Text>
-      <ActionButton title="Donate" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {}} />
-      <ActionButton title="Volunteer" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {}} />
+      <ActionButton title="Donate" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {navigation.navigate("DonatePage")}} />
+      <ActionButton title="Volunteer" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {navigation.navigate("VolunteerSignupForm")}} />
       <ActionButton title="Find Support" backgroundColor="#1A8AE5" textColor="#FFFFFF" onPress={() => {}} />
     </View>
   </View>

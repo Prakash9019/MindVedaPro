@@ -46,27 +46,7 @@ const BipolarDisorderResources: React.FC = () => {
       {resourceItems.map((item, index) => (
         <ResourceItem key={index} title={item.title} imageUri={item.imageUri} />
       ))}
-      <Text style={styles.discoverMore}>Discover more topics</Text>
-      <View style={styles.additionalTopicsContainer}>
-        <TouchableOpacity style={styles.topic}>
-          <Text style={styles.topicText}>Anxiety</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.topic}>
-          <Text style={styles.topicText}>Depression</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.topic}>
-          <Text style={styles.topicText}>Bipolar Disorder</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.topic}>
-          <Text style={styles.topicText}>Stress</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.topic}>
-          <Text style={styles.topicText}>Relationships</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.topic}>
-          <Text style={styles.topicText}>Trauma</Text>
-        </TouchableOpacity>
-      </View>
+    
     </ScrollView>
   );
 };

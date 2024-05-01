@@ -73,7 +73,7 @@ const Stories = () => {
     marginLeft: "55%",
     height: 72,}}> */}
                    <Image
-                    source={require("../n1.jpg")}
+                    source={require("./f4.jpg")}
                   style={styles.image3}
                 />
                 {/* </View> */}
@@ -89,7 +89,7 @@ const Stories = () => {
                     <Text style={styles.view19}>Riding the waves: My experience with bipolar disorder</Text>
                 </View>
                 <Image
-                    source={require("../n1.jpg")}
+                    source={require("./f5.jpg")}
                   style={styles.image3}
                 />
               </View>

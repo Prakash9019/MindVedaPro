@@ -18,12 +18,12 @@ const informationSections = [
     description: "Available 24/7",
     imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/b6ed422dcb116fb5583fb703fdf6ae296d5ba44a7374dbbe47690aab33a6f87d?apiKey=42bb954c825745999302100cb42c8fd0&",
   },
-  {
-    key: 'reachOutToFriend',
-    title: "Reach out to a friend",
-    description: "Sometimes talking to someone you trust can be helpful",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ec1d01cd10ef62811bfb9d9b7574510fb4a61b0e6a6b52315d8313e4d8ed7343?apiKey=42bb954c825745999302100cb42c8fd0&",
-  },
+  // {
+  //   key: 'reachOutToFriend',
+  //   title: "Reach out to a friend",
+  //   description: "Sometimes talking to someone you trust can be helpful",
+  //   imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ec1d01cd10ef62811bfb9d9b7574510fb4a61b0e6a6b52315d8313e4d8ed7343?apiKey=42bb954c825745999302100cb42c8fd0&",
+  // },
 ];
 
 interface SectionItemProps {
@@ -42,7 +42,6 @@ const handlePress = (title: string) => {
       navigation.navigate("CrisisSupportApp");
       break;
     case "reachOutToFriend":
-      // navigation.navigate("CrisisSupportApp");
       break;
     // Add more cases as needed for other NGOs
   }
@@ -63,6 +62,7 @@ const Section : React.FC<SectionItemProps> = ({ title, description, imageUrl }) 
 
 const SupportOptions = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <ScrollView>
     <View style={styles.container}>
@@ -70,8 +70,7 @@ const SupportOptions = () => {
             <AntDesign size={25} name="arrowleft"/>
           </TouchableOpacity>
       <View style={styles.headerContainer}>
-        <Image 
-       
+        <Image        
           source={{ uri: "https://cdn.builder.io/api/v1/image/assets/TEMP/8607e87e9f754262a39c3222ae14facef7f7f1660412e455ddf5b177b3b35bf6?apiKey=42bb954c825745999302100cb42c8fd0&" }} 
           style={styles.logo} 
         />
@@ -84,19 +83,32 @@ const SupportOptions = () => {
       </View>
       <Text style={styles.mainTitle}>We are here for you</Text>
       <Text style={styles.mainDescription}>If you're feeling distressed, we can help. You're not alone.</Text>
-      {informationSections.map((section,index) => (
-        <TouchableOpacity onPress={()=>{navigation.navigate("CrisisSupportApp")}} key={index}>
+      <TouchableOpacity onPress={()=>{navigation.navigate("CrisisSupportApp")}} >
         <View style={styles.sectionContainer}>
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{section.title}</Text>
-            <Text style={styles.description}>{section.description}</Text>
+            <Text style={styles.title}>Call a crisis center</Text>
+            <Text style={styles.description}>Recommended for immediate support</Text>
           </View>
-          <Image source={{ uri: section.imageUrl }} style={styles.sectionImage} />
+          {/* <Image source={{ uri: section.imageUrl }} style={styles.sectionImage} /> */}
         </View>
         </TouchableOpacity>
-        
-        // <Section key={section.key} title={section.title} description={section.description} imageUrl={section.imageUrl} />
-      ))}
+      <TouchableOpacity onPress={()=>{navigation.navigate("ChatRoomVolunteer")}} >
+        <View style={styles.sectionContainer}>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Chat with a trained volunteer</Text>
+            <Text style={styles.description}>Available 24/7</Text>
+          </View>
+          {/* <Image source={{ uri: section.imageUrl }} style={styles.sectionImage} /> */}
+        </View>
+        </TouchableOpacity>
+      
+       <View style={styles.sectionContainer}>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Reach out to a friend</Text>
+            <Text style={styles.description}>Sometimes talking to someone you trust can be helpful</Text>
+          </View>
+          {/* <Image source={{ uri: section.imageUrl }} style={styles.sectionImage} /> */}
+        </View>
     </View>
     </ScrollView>
   );
@@ -107,7 +119,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "stretch",
-    backgroundColor:"#F7FAFC",
+    // backgroundColor:"",
     padding: 20,
   },
   headerContainer: {

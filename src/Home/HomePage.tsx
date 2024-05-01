@@ -1,5 +1,6 @@
 import React from "react";
-import { View, StyleSheet, Image, Text, TouchableOpacity,TextInput, ScrollView } from "react-native";
+import { View, StyleSheet, Image,Modal,Button, Text, TouchableOpacity,TextInput, ScrollView, SafeAreaView } from "react-native";
+import { WebView } from 'react-native-webview';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
 import {  useNavigation } from '@react-navigation/native';
@@ -40,10 +41,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ imageUri, label }) => (
 // Main Component
 const MentalWellnessApp = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
- 
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const Google='https://www.chatbase.co/chatbot-iframe/o9j4Oy2qHq5QKyt1o2zQA';
   return (
-    <ScrollView>
-    <View style={styles.container}>    
+    <SafeAreaView >
+    <ScrollView style={styles.container}>
+    <View >    
       <View style={styles.header}>
       <TouchableOpacity onPress={()=>{navigation.navigate("ProfilePage")}} >
         <HeaderImage
@@ -87,25 +90,94 @@ const MentalWellnessApp = () => {
           <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Start Test</Text>
         </TouchableOpacity>
       </View>
-      {/* <Text style={styles.sectionTitle}>Post of the Day</Text>
-      <TouchableOpacity onPress={()=>{navigation.navigate("ArticleScreen")}}>
-      <View style={styles.postSection}>
-        <View style={{width:"75%",marginRight:1}}>
-        <Text>Emotional Support</Text>
-        <Text>How to overcome anxiety?</Text>
-        <Text>Posted by Dr. Emilia · Stress Specialist</Text>
-        </View>
-        <HeaderIcons src="https://cdn.builder.io/api/v1/image/assets%2FTEMP%2Fa5110698b89b90823fa03fe28a54d57ff3f76b7043716d58261cc8a7fc1e036a?apiKey=42bb954c825745999302100cb42c8fd0&" style={styles.postImage} />
-      </View>
-      </TouchableOpacity> */}
       </View>
     </View>
+    
     <InstaPost />
+   
     </ScrollView>
+    <TouchableOpacity style={styles.chatbotIcon} onPress={() => setModalVisible(true) } >
+        {/* You can use an icon or any other representation for your chatbot */}
+        {/* <Text style={styles.iconText}>Chatbot</Text> */}
+        <Image style={{width:"120%",height:"100%"}} source={require("./playstore-icon.png")} />
+      </TouchableOpacity>
+ 
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+         <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+          <View style={{ height:600, width:600,marginLeft:300,borderRadius:12,}}>
+      <WebView
+        source={{ uri: Google }}
+        // onLoad={console.log("Loading")}
+        style={styles.webview}
+      />
+      </View>
+            <Button title="Close" onPress={() => setModalVisible(false)} />
+          </View>
+        </View>
+      </Modal>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  chatbotIcon: {
+    position: 'absolute',
+    bottom: 20, // Adjust the position from the bottom
+    right: 20, // Adjust the position from the right
+    // backgroundColor: 'blue', // Set your icon background color
+    padding: 10,
+    width:"15%",
+    height:"10%",
+    borderRadius: 20, // Make it circular or adjust as needed
+    zIndex: 1, // Set the z-index to ensure it appears on top
+  },
+  iconText: {
+    // color: 'white',
+    // fontSize: 16,
+    width:"20%",
+    height:"20%",
+  },
+  button: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
+    width:"5%",
+    height:"5%",
+    zIndex:6,
+    marginLeft:230,
+    marginBottom:500,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderRadius:12,
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    // padding: 20,
+    width: '50%',
+    height: '80%',
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  webview: {
+    // backgroundColor:"blue",
+    width: '50%',
+    borderRadius:12,
+    height: '80%',
+  },
   iconContainer: {
     display: "flex",
     flexDirection: 'row',
@@ -155,7 +227,7 @@ bar: {
 //1  //1 padding: "12px 16px",
 },
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: "#FFF",
   },
   emergencyTitle: {

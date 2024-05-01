@@ -176,7 +176,7 @@ const ProfilePage: React.FC = () => {
           <UserProfileInfo label="Neeraj" content="@neera2043" />
           <UserProfileInfo label="Location" content="Vizag, India" />
         </View>
-        <TouchableOpacity style={styles.editProfileButton}>
+        <TouchableOpacity style={styles.editProfileButton} onPress={()=>{navigation.navigate("ProfileScreen")}}>
           <Text style={styles.editProfileButtonText}>Edit Profile</Text>
         </TouchableOpacity>
       </View>

@@ -29,6 +29,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {RootNavigator} from './src/navigator/RootNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomePage from './src/Home/HomePage';
+// import  ToastProvider  from 'react-native-toast-message';
 const Stack = createNativeStackNavigator();
 
 type SectionProps = PropsWithChildren<{
@@ -71,6 +72,7 @@ function App(): JSX.Element {
   return (
     
     <NavigationContainer>
+       {/* <ToastProvider ref={(ref) => Toast.setRef(ref)} /> */}
      <RootNavigator/>
     </NavigationContainer>
   

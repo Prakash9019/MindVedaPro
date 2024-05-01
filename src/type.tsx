@@ -22,6 +22,10 @@ export type RootStackParamList = {
     MsgRequest: undefined;
     TestResult:undefined;
     ChatRoom : undefined;
+    VolunteerSignupForm:undefined;
+    ChatRoomVolunteer:undefined;
+    ProfileScreen:undefined;
+    DonatePage:undefined;
     NotificationList:undefined;
     ConversionList:undefined;
     ArticleScreen: undefined;
