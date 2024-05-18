@@ -80,9 +80,9 @@ const RootStack = createNativeStackNavigator();
 function AuthenticationNavigator() {
   return (
     <AuthenticationStack.Navigator>
-      <AuthenticationStack.Screen name="Main" component={Main} />
-      <AuthenticationStack.Screen name="SignIn" component={SignIn} />
-      <AuthenticationStack.Screen name="SignUp" component={SignUp} />
+      <AuthenticationStack.Screen name="Main" component={Main} options={{ headerShown: false }}/>
+      <AuthenticationStack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }}/>
+      <AuthenticationStack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }}/>
     </AuthenticationStack.Navigator>
   );
 }
