@@ -15,6 +15,15 @@ import {RootStackParamList} from '../type';
 import ArticleScreen from "../consultation/Blog2";
  
 
+// const [profile,setProfile]= React.useState([]);
+const profile=[
+  {
+    name:"Dr. Emilia",
+    University:"Stanford University",
+    place:"Palo Alto, CA"
+  }
+]
+
 const ProfileHeader = () => (
   <View style={styles.profileHeaderContainer}>
     <Image
@@ -100,12 +109,12 @@ const DoctorProfile = () => {
           <View style={styles.view10}>
             <View style={styles.view11}>
               <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("RequestConst")} >
-                <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Request Consultation</Text>
+                <Text style={{color:"white",fontWeight:"bold", fontSize:16,justifyContent:"center",alignContent:"center"}}>Request Consultation</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.view11}>
               <TouchableOpacity style={styles.view12} onPress={()=> navigation.navigate("MsgRequest")} >
-                <Text style={{color:"white",fontWeight:"bold", fontSize:16}}>Send Query Anonymously</Text>
+                <Text style={{color:"white",fontWeight:"bold", fontSize:16,justifyContent:"center",alignContent:"center"}}>Send Query Anonymously</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -369,7 +378,7 @@ const styles = StyleSheet.create({
   buttonText: { fontSize: 16 },
   buttonTextWhite: { color: "#FFFFFF" },
   sectionTitle: { fontWeight: "bold", fontSize: 18, marginTop: 24, marginBottom: 16 },
-  sectionContent: { fontSize: 14, color: "#666", marginBottom: 16 },
+  sectionContent: { fontSize: 14, color: "#666", marginBottom: 16,fontWeight:"600" },
   postContainer: { marginBottom: 16 },
   postTitle: { fontWeight: "bold", fontSize: 16 },
   postSubtitle: { fontSize: 14, color: "#999" },

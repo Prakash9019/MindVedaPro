@@ -40,6 +40,10 @@ import VolunteerSignupForm from '../Community/Disorders/Volunteer';
 import DonatePage from '../Community/Disorders/Donate';
 import ChatRoomVolunteer from '../Home/Support/ChatRoomVolunteer';
 import ProfileScreen from '../Profiles/EditProfile';
+import Signup from '../Components/SignIn';
+import SignIn from '../Components/SignUp';
+import Main from '../Components/Main';
+import { Slide } from '@mui/material';
 // import { BottomTabsNavigation } from './BottomTabsNavigation';
 // import DrawerNavigatorNavigation from './DrawerNavigatorNavigation';
 // import Details from '../screen/Details';
@@ -50,12 +54,28 @@ const RootStack = createNativeStackNavigator();
 export const RootNavigator: React.FC = () => {
   return (
     <RootStack.Navigator>
+        
+      {/* <RootStack.Screen
+        name="Main"
+        component={Main}
+        options={{ headerShown: false }}
+      />
         <RootStack.Screen
-        name="BottomTabsNavigation"
-        component={BottomTabsNavigation}
+        name="SignUp"
+        component={Signup}
         options={{ headerShown: false }}
       />
       <RootStack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{ headerShown: false }}
+      />   */}
+      <RootStack.Screen
+        name="BottomTabs"
+        component={BottomTabsNavigation}
+        options={{ headerShown: false }}
+      />
+    <RootStack.Screen
         name="HomePage"
         component={HomePage}
         options={{ headerShown: false }}
@@ -240,6 +260,12 @@ export const RootNavigator: React.FC = () => {
         component={ProfileScreen}
         options={{ headerShown: false }}
       />
+       
+         {/* <RootStack.Screen
+        name="Slide"
+        component={Slide}
+        options={{ headerShown: false }}
+      /> */}
       {/* <RootStack.Screen  ChatRoom NotificationList ChatRoomVolunteer
         name="Drawer" CommunityHomePage TestResult
         component={DrawerNavigatorNavigation} ProfileScreen

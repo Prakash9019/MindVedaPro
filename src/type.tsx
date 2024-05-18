@@ -13,7 +13,7 @@ export type BottomTabParamList = {
 }
 
 export type RootStackParamList = {
-    BottomTabs: NavigatorScreenParams<BottomTabParamList>;
+    // BottomTabs: NavigatorScreenParams<BottomTabParamList>;
     StorySharing :undefined;
     ThankForStory: undefined;
     SupportGroupApp1:undefined;
@@ -22,6 +22,11 @@ export type RootStackParamList = {
     MsgRequest: undefined;
     TestResult:undefined;
     ChatRoom : undefined;
+    Main:undefined;
+    Slide:undefined;
+    SignIn:undefined;
+    SignUp:undefined;
+    HomePage:undefined;
     VolunteerSignupForm:undefined;
     ChatRoomVolunteer:undefined;
     ProfileScreen:undefined;
