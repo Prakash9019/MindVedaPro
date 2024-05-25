@@ -16,5 +16,8 @@
     "jsonwebtoken": "^9.0.0",
     "moment": "^2.30.1",
     "mongoose": "^6.10.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
   }
 }

@@ -1,32 +1,33 @@
 const mongoose= require("mongoose");
 const {Schema}= mongoose;
-var moment = require('moment')
 
 const NotesSchema = new Schema({
     user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'             // works as foriegn key for the user.js file
     },
-    title:{
+    username:{
         type: String,
         required: true
     },
-    description:{
+    age:{
         type: String,
-        required: true, 
+        // required: true, 
     },
-    date:{
-        type: Date,
-        default: moment(new Date()).utc().format('DD/MM/YY')//new Date().format('DD/MM/YYYY'),
+    email:{
+        type:String,
+        required:true,
     },
-    status:{
+    gender:{
         type: String,
-        default:"Incomplete",
+        default: "male"
     },
-    priority:{
-        type: String,
-        default:"P0",
+    location:{
+        type:String,
     },
+    image:{
+        type:String,
+    }
   });
 
   module.exports = mongoose.model('notes', NotesSchema);

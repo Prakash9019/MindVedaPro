@@ -1,7 +1,7 @@
 const connectDB = require('./db');
 const express = require('express');
 var cors=require('cors');
-
+require('dotenv').config();
 //connectDB();
 const app = express();
 const PORT=5000;
@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 app.use('/api/auth',require('./routers/auth.js'));
-app.use('/api/notes',require('./routers/notes'));
+app.use('/api/notes',require('./routers/Profile_route.js'));
 
 app.get('/',(req,res)=>{
     res.json("hello");
