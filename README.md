@@ -31,6 +31,10 @@ npm run android
 # OR using Yarn
 yarn android
 ```
+### Output of above code
+
+https://github.com/Prakash9019/MindVedaPro/assets/107988770/a7b6f289-39ee-48aa-99c1-07fbf491d043
+
 
 ### For iOS
 
