@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width - 20,
     height: height-40,
-    backgroundColor: "blue",
+    backgroundColor: "white",
     margin: 10,
     borderRadius: 10,
     shadowColor: "#000",

@@ -42,6 +42,7 @@ import { store } from './src/redux/store'
 // import {isAuthenticated} from "./src/redux/reducers";
 import { useAppSelector } from './src/redux/hooks';
 import { Provider } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -106,13 +107,34 @@ function App(): JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  console.log(isUser + "appp.js");
+  const j=AsyncStorage.getItem("isLoggedIn");
+  console.log(j);
+  // data:any
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  async function getData() {
+    const data : any = await AsyncStorage.getItem('isLoggedIn');
+    console.log(data, 'at app.jsx');
+    setIsLoggedIn(data);
+  }
+
+  useEffect(() => {
+    getData();
+    // setTimeout(() => {
+    //   SplashScreen.hide();
+    // }, 900);
+  }, [isLoggedIn]);
+console.log(isLoggedIn);
 
   // Conditionally render the appropriate navigator based on authentication state
   // console.log(isAuthenticated);
   return (
     <NavigationContainer>
        {/* <ToastProvider ref={(ref) => Toast.setRef(ref)} /> */}
-     <AppNavigation/>
+     {
+      <RootNavigate/>
+      // isUser ? <RootNavigate/> : <AuthenticationNavigator/>
+     }
     </NavigationContainer>
   )
 

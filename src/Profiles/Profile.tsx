@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Image, SafeAreaView, Text, StyleSheet, TouchableOpacity,Pressable,Alert,PermissionsAndroid, ScrollView } from "react-native";
 // import { , Text, Image, Pressable, StyleSheet } from 'react-native';
 import Modal from 'react-native-modal';
@@ -9,6 +9,9 @@ import {RootStackParamList} from '../type';
  import Entypo from 'react-native-vector-icons/Entypo' 
  import MaterialIcons from 'react-native-vector-icons/MaterialIcons' 
  import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+ import { updateUserField } from "../redux/action";
+ import type { RootState } from '../redux/store'
+ import { useSelector, useDispatch } from 'react-redux'
 //  import { images } from "./images"; 
 //  import { images } from '../../assets'; Entypo MaterialIcons
  
@@ -36,8 +39,15 @@ const ProfileSectionTitle: React.FC<ProfileSectionTitleProps> = ({ title, descri
   </View>
 );
 
+const isUser = useSelector((state: RootState) => state.userAuth.isAuthenticated)
 const ProfilePage: React.FC = () => {
   const [image, setImage] = React.useState("");
+
+  useEffect(()=>{
+    console.log(isUser);
+
+    updateUserField("isUser","image",image);
+  })
 
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const requestCameraPermission = async () => {

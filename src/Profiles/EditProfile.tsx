@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../type';
 import {  useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
-
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 type InformationFieldProps = {
   label: string;
   placeholder: string;
@@ -17,6 +18,29 @@ const InformationField: React.FC<InformationFieldProps> = ({ label, placeholder 
   </View>
 );
 
+useEffect(() => {
+  const fetchImages = async () => {
+    try {
+      const jwtData = AsyncStorage.getItem('jwtData');
+      const response= await axios.get('/api/notes/fetchall', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${jwtData}`, 
+        },
+      });
+      if(response.data.length===0 ){
+          //  setNote({name: " " , age: " ", Uid: " ",gender: " ",income: " ",education:" ",emp:" "});
+      }
+      else{
+        // setNote(response.data[0]);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchImages();
+}, []);
 const ProfileScreen: React.FC = () => {
     
   const informationFields = [

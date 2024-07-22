@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { 
     View, 
     Text, 
@@ -10,7 +10,6 @@ import {
     Alert
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {login} from "../redux/action";
 //import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
@@ -21,7 +20,6 @@ import {RootStackParamList} from '../type';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginRequest, loginSuccess } from '../redux/reducers';
-import store from '../redux/store';
 
 //import { AuthContext } from '../components/context';
 
@@ -40,7 +38,16 @@ const SignIn : React.FC<SignUpScreenProps> = ({ navigation }) => {
         isValidUser: true,
         isValidPassword: true,
     });
-
+    async function getData() {
+        const data = await AsyncStorage.getItem('isLoggedIn');
+        console.log(AsyncStorage)
+        console.log(data, 'at app.jsx');
+      
+      }
+      useEffect(()=>{
+        getData();
+        console.log("Hii");
+      },[])
 
     const textInputChange = (val : string) => {
         if( val.trim().length >= 4 ) {
@@ -101,7 +108,7 @@ const SignIn : React.FC<SignUpScreenProps> = ({ navigation }) => {
     const handleSubmit = async (e : any) => {
         e.preventDefault();
         dispatch(loginRequest());            
-        // const response = await axios.post('https://notes-application-api-pi.vercel.app/api/auth/login', {
+        // const response = await axios.post('https://mindveda1.vercel.app/api/auth/login', {
         //     email: data.username,
         //     password: data.password,
         //   });
@@ -109,7 +116,7 @@ const SignIn : React.FC<SignUpScreenProps> = ({ navigation }) => {
         //   const json = response.data;
 
         try {
-            const response = await fetch("https://notes-application-api-pi.vercel.app/api/auth/login", {
+            const response = await fetch("https://mindveda1.vercel.app/api/auth/login", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -119,6 +126,9 @@ const SignIn : React.FC<SignUpScreenProps> = ({ navigation }) => {
             // dispatch(login(username,password));
           
             const json = await response.json();
+            console.log(response);
+            console.log("hhhhhjson..");
+
             console.log(json);
             if (json.sucess){
             
@@ -127,6 +137,7 @@ const SignIn : React.FC<SignUpScreenProps> = ({ navigation }) => {
                 // console.log(store.getState().userAuth.isAuthenticated)
                 dispatch(loginSuccess({ user : json.jwtData, message: 'Login successful' }));
                 AsyncStorage.setItem('jwtData', json.jwtData); 
+            await AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
                 // console.log(store.getState().userAuth.isAuthenticated)
                 console.log("Token saved "+json.jwtData);    
             }

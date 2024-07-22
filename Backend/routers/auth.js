@@ -13,25 +13,26 @@ router.post('/user',[
     body('email').isLength({min:2}).isEmail(),
     body('password').isLength({min:3})
 ],async (req,res)=>{
+     const {username, email, password}=req.body;
      const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).send("please try to login with error box...");
     }
     try{
     //check the user email is vaildate or not 
-    const user=await User.findOne({email:req.body.email});
+    const user=await User.findOne({email:email});
     if(user){
       return res.status(400).send("please try to login user error...");
     }
 
     const salt=await bcrypt.genSalt(10);
-    const secPass=await bcrypt.hash(req.body.password,salt);
+    const secPass=await bcrypt.hash(password,salt);
    
     // const user=User(req.body);    //this two lines are used to simply check the application with backend
     // user.save();
      user=await User.create({
-      username: req.body.username,
-      email:req.body.email,
+      username,
+      email,
       password: secPass,
     });
     const data={
@@ -40,7 +41,7 @@ router.post('/user',[
       }
      }
      const jwtData=jwt.sign(data,jwt_s);
-     res.json({jwtData});
+     res.json({jwtData,username,email});
     }
     catch(error){
          console.log(error.message);
@@ -80,7 +81,7 @@ router.post('/login',[
   
      const jwtData=jwt.sign(data,jwt_s);
      sucess=true;
-     res.json({sucess,jwtData});
+     res.json({sucess,jwtData,email,username,user});
   }
    
    

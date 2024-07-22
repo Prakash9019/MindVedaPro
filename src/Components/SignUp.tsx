@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { 
     View, 
     Text, 
@@ -42,7 +42,7 @@ const SignUp = () => {
         e.preventDefault();
         try {
             console.log(data);
-            const response = await axios.post('https://notes-application-api-pi.vercel.app/api/auth/user', {
+            const response = await axios.post('https://mindveda1.vercel.app/api/auth/user', {
                 username:data.username,
               email: data.email,
               password: data.password,
@@ -52,7 +52,9 @@ const SignUp = () => {
             console.log(json);
             // Save the token to AsyncStorage
             dispatch(registerSuccess({user:json.jwtData , message : "Register Successfully" }))
+            
             await AsyncStorage.setItem('jwtData', json.jwtData);
+            await AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
             // Navigate to the next screen or perform other actions
             console.log('Token saved:', json.jwtData);
           } catch (error : any) {
@@ -61,6 +63,17 @@ const SignUp = () => {
            Alert.alert('Error', 'Login failed');
           }
     }
+    async function getData() {
+        const data = await AsyncStorage.getItem('isLoggedIn');
+        console.log(AsyncStorage)
+        console.log(data, 'at app.jsx');
+      
+      }
+      useEffect(()=>{
+        getData();
+        console.log("Hii");
+      },[])
+    
 
     const textInputChange = (val : string ) => {
         if( val.length !== 0 ) {
